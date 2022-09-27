@@ -68,24 +68,18 @@ public class PlayerControl : MonoBehaviour
 
     public void LButtonDown()
     {
-        if(gameObject.transform.position.x !=-1.76)
+        if(gameObject.transform.position.x > -0.89)
         {
+            leftBtn.GetComponent<Button>().interactable = true;
             transform.Translate(-0.88f, 0, 0);
-        }
-        else if(gameObject.transform.position.x > 1.76)
-        {
-            transform.Translate(0, 0, 0);
-        }
+        }       
     }
     public void RButtonDown()
     {
-        if (gameObject.transform.position.x != 1.76)
+        if (gameObject.transform.position.x < 0.89)
         {
+            rightBtn.GetComponent<Button>().interactable = true;
             transform.Translate(0.88f, 0, 0);
-        }
-        else if (gameObject.transform.position.x < 1.76)
-        {
-            transform.Translate(0, 0, 0);
         }
     }
 
