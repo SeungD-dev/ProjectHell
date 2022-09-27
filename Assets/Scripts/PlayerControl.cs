@@ -9,11 +9,14 @@ public class PlayerControl : MonoBehaviour
     
     public Vector3 player_Pos;
    
-    Rigidbody rb;
+    private Rigidbody rb;
     
     GameObject jumpBtn, leftBtn, rightBtn;
 
     bool jumpAllowed = true;
+    bool isJumping = false;
+
+    private Vector3 MoveDir;
 
 
 
@@ -26,6 +29,7 @@ public class PlayerControl : MonoBehaviour
       
        
         rb = GetComponent<Rigidbody>();
+        MoveDir = Vector3.zero;
 
 
 
@@ -36,11 +40,11 @@ public class PlayerControl : MonoBehaviour
     {
         player_Pos = gameObject.transform.position;
 
-        if(jumpAllowed == true)
+        if(jumpAllowed == false)
         {
             jumpBtn.GetComponent<Button>().interactable = true;
         }
-        if (jumpAllowed == false)
+        if (jumpAllowed == true)
         {
             jumpBtn.GetComponent<Button>().interactable = false;
         }
@@ -53,14 +57,13 @@ public class PlayerControl : MonoBehaviour
         if (!jumpAllowed)
         {
             jumpAllowed = true;
-            rb.AddForce(Vector3.up * jumpForce);
+           
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+             
             gameObject.layer = 7;
 
         }
-        else
-        {
-            return;
-        }
+       
     }
 
     public void LButtonDown()
@@ -83,6 +86,14 @@ public class PlayerControl : MonoBehaviour
         else if (gameObject.transform.position.x < 1.76)
         {
             transform.Translate(0, 0, 0);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            jumpAllowed = false;
         }
     }
 }
