@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    MeshRenderer sr;
     private float time;
+    private float fadeCount = 0; //알파값(투명도)
 
     GameObject Tile2, Tile4, Fog;
 
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
         Tile2 = GameObject.Find("Tile2");
         Tile4 = GameObject.Find("Tile4");
         Fog = GameObject.Find("Fog");
+        sr = Fog.GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -28,10 +31,19 @@ public class GameManager : MonoBehaviour
                 Tile2.SetActive(false);
                 Tile4.SetActive(false);
             }
-            if(time >= 5)
+            if(time >= 140 && fadeCount == 0)
             {
-                Fog.transform.position = new Vector3(0, 1.22f, 1.99f);
+                StartCoroutine("FogCoroutine"); //코루틴 함수 호출
             }
+        }
+    }
+    IEnumerator FogCoroutine()//패널의 알파값 조절 ( fadeOut )
+    {
+        while (fadeCount < 1.0f) //알파값 최소0 최대1
+        {
+            fadeCount += 0.03f;
+            yield return new WaitForSeconds(0.01f);
+            sr.material.color = new Color(255, 0, 0, fadeCount);//페이드아웃 반복문
         }
     }
 }
