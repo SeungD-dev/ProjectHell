@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
 
     private Vector3 MoveDir;
 
+   
+
 
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class PlayerControl : MonoBehaviour
         jumpBtn = GameObject.Find("JumpButton");
         leftBtn = GameObject.Find("LButton");
         rightBtn = GameObject.Find("RButton");
+        
       
        
         rb = GetComponent<Rigidbody>();
