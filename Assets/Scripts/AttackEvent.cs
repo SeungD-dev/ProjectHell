@@ -25,8 +25,8 @@ public class AttackEvent : MonoBehaviour
     void Start()
     {
         absorption = GameObject.Find("Absorption");
-       
-       
+
+        
        
      
         absorbBtn = GameObject.Find("AbsorbButton");
@@ -185,6 +185,7 @@ public class AttackEvent : MonoBehaviour
 
         if(Attackmode == false)
         {
+           
             Absorbmode = true;
         }
 
