@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 34680953296216627}
   - component: {fileID: 34680953296216624}
   - component: {fileID: 34680953296216625}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Note_B
   m_TagString: Note_B
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34680953296216630}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 502da23309129d643b8ee8a5cb8fa46e, type: 3}
   m_Name: 

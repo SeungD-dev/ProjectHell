@@ -38,7 +38,7 @@ public class AttackEvent : MonoBehaviour
     void Update()
     {
         //transform.localPosition = playerControl.player_Pos + new Vector3(0, 0.4f, -2.5f);
-
+        transform.localPosition = playerControl.player_Pos + new Vector3(0, +0.16f, +0.33f);
         countTime += Time.deltaTime;
 
         if(countTime >= absorbTime)
