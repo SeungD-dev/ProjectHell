@@ -90,6 +90,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
+            gameObject.layer = 6;
             jumpAllowed = false;
         }
     }
