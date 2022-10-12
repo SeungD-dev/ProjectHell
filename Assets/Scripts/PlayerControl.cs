@@ -18,6 +18,11 @@ public class PlayerControl : MonoBehaviour
 
     private Vector3 MoveDir;
 
+    PlayerHP playerhp;
+
+    bool isHurt;
+    private float fTickTime;
+    private float fDestroyTime = 3f;
    
 
 
@@ -34,6 +39,7 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         MoveDir = Vector3.zero;
 
+        playerhp = FindObjectOfType<PlayerHP>();
 
 
     }
@@ -42,8 +48,9 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         player_Pos = gameObject.transform.position;
+        fTickTime += Time.deltaTime;
 
-        if(jumpAllowed == false)
+        if (jumpAllowed == false)
         {
             jumpBtn.GetComponent<Button>().interactable = true;
         }
@@ -51,6 +58,25 @@ public class PlayerControl : MonoBehaviour
         {
             jumpBtn.GetComponent<Button>().interactable = false;
         }
+
+        /*if(playerhp.player_currentHP == 0)
+        {
+            //강림이 죽었을 때 내용 넣기
+        }*/
+        
+
+        if (playerhp.player_currentHP != playerhp.player_MaxHP)
+        {
+            if(fTickTime >= fDestroyTime)
+            {
+                StartCoroutine(HurtCooldown());
+                playerhp.IncreaseHP(1);
+                fTickTime = 0f;
+            }
+        }
+        
+
+        
 
 
     }
@@ -97,17 +123,30 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note_R"))
+        if (other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B"))
         {
+            Hurt();
+            StartCoroutine(HurtCooldown());
             Destroy(other.gameObject);
         }
-        if (other.CompareTag("Note_G"))
+       
+    }
+
+    public void Hurt()
+    {
+        if (!isHurt)
         {
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Note_B"))
-        {
-            Destroy(other.gameObject);
+            isHurt = true;
+            playerhp.DecreaseHP(1);
+            
         }
     }
+
+    IEnumerator HurtCooldown()
+    {
+        yield return new WaitForSeconds(1f);
+        isHurt = false;
+    }
+
+    
 }
