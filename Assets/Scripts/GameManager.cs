@@ -26,12 +26,12 @@ public class GameManager : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Stage_1")
         {
             time += Time.deltaTime;
-            if(time >= 100)
+            if(time >= 125)
             {
                 Tile2.SetActive(false);
                 Tile4.SetActive(false);
             }
-            if(time >= 140 && fadeCount == 0)
+            if(time >= 69 && fadeCount == 0)
             {
                 StartCoroutine("FogCoroutine"); //코루틴 함수 호출
             }
