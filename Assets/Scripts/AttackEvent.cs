@@ -53,15 +53,15 @@ public class AttackEvent : MonoBehaviour
     {
         if (gameObject.activeInHierarchy)
         {
-            if(asb == asbColor.normal)
+            if (asb == asbColor.normal)
             {
-               
-                if(col.gameObject.CompareTag("Note_R") && Absorbmode == true)
+
+                if (col.gameObject.CompareTag("Note_R") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
                     asb = asbColor.red;
                     AbsorbColorTransparency();
-                   
+                    Debug.Log("흡수됨");
                     Absorbmode = false;
 
                 }
@@ -70,7 +70,7 @@ public class AttackEvent : MonoBehaviour
                     Destroy(col.gameObject);
                     asb = asbColor.blue;
                     AbsorbColorTransparency();
-                   
+                    Debug.Log("흡수됨");
                     Absorbmode = false;
 
                 }
@@ -79,103 +79,104 @@ public class AttackEvent : MonoBehaviour
                     Destroy(col.gameObject);
                     asb = asbColor.green;
                     AbsorbColorTransparency();
-                    
+                    Debug.Log("흡수됨");
                     Absorbmode = false;
 
                 }
+            }
 
-                //첫 흡수가 빨간색일 때
-                if(asb == asbColor.red)
+            //첫 흡수가 빨간색일 때
+            if (asb == asbColor.red)
+            {
+                if (asb == asbColor.red && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
                 {
-                    if(asb == asbColor.red && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
-                    {
-                        Destroy(col.gameObject);
-                        Attackmode = true;
-                        Debug.Log("공격모드 활성화");
-                        asb = asbColor.normal;
-                        r = 1;
-                        b = 0;
-                        g = 0;
-                    }
-                    else if(asb == asbColor.red && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
-                    {
-                        Destroy(col.gameObject);
-                        Attackmode = false;
-                        
-                        asb = asbColor.blue;
-                    }
-                    else if (asb == asbColor.red && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
-                    {
-                        Destroy(col.gameObject);
-                        Attackmode = false;
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    Debug.Log("공격모드 활성화");
+                    asb = asbColor.normal;
+                    r = 1;
+                    b = 0;
+                    g = 0;
+                }
+                else if (asb == asbColor.red && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = false;
 
-                        asb = asbColor.green;
-                    }
-                   
-                    //첫 흡수가 파란색일 때
-                    else if(asb == asbColor.blue)
-                    {
-                        if(asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
-                        {
-                            Destroy(col.gameObject);
-                            Attackmode = true;
-                            Debug.Log("공격모드 활성화");
-                            asb = asbColor.normal;
-                            r = 0;
-                            b = 1;
-                            g = 0;
-                        }
-                        else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
-                        {
-                            Destroy(col.gameObject);
-                            Attackmode = false;
+                    asb = asbColor.blue;
+                }
+                else if (asb == asbColor.red && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = false;
 
-                            asb = asbColor.red;
-                        }
-                        else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
-                        {
-                            Destroy(col.gameObject);
-                            Attackmode = false;
-
-                            asb = asbColor.green;
-                        }
-
-                    }
-
-                    //첫 흡수가 초록색일 때
-                    else if (asb == asbColor.green)
-                    {
-                        if (asb == asbColor.green && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
-                        {
-                            Destroy(col.gameObject);
-                            Attackmode = true;
-                            Debug.Log("공격모드 활성화");
-                            asb = asbColor.normal;
-                            r = 0;
-                            g = 1;
-                            b = 0;
-                        }
-                        else if (asb == asbColor.green && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
-                        {
-                            Destroy(col.gameObject);
-                            Attackmode = false;
-
-                            asb = asbColor.red;
-                        }
-                        else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
-                        {
-                            Destroy(col.gameObject);
-                            Attackmode = false;
-
-                            asb = asbColor.blue;
-                        }
-
-                    }
-
+                    asb = asbColor.green;
                 }
             }
+            //첫 흡수가 파란색일 때
+            else if (asb == asbColor.blue)
+            {
+                if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    Debug.Log("공격모드 활성화");
+                    asb = asbColor.normal;
+                    r = 0;
+                    b = 1;
+                    g = 0;
+                }
+                else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = false;
+
+                    asb = asbColor.red;
+                }
+                else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = false;
+
+                    asb = asbColor.green;
+                }
+
+            }
+
+            //첫 흡수가 초록색일 때
+            else if (asb == asbColor.green)
+            {
+                if (asb == asbColor.green && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    Debug.Log("공격모드 활성화");
+                    asb = asbColor.normal;
+                    r = 0;
+                    g = 1;
+                    b = 0;
+                }
+                else if (asb == asbColor.green && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = false;
+
+                    asb = asbColor.red;
+                }
+                else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = false;
+
+                    asb = asbColor.blue;
+                }
+
+            }
+
         }
+
     }
+    
 
     public void AbsorbButtonDown()
     {
@@ -204,14 +205,14 @@ public class AttackEvent : MonoBehaviour
 
     public void AbsorbColorTransparency()
     {
-        GetComponent<MeshRenderer>().materials[0].color = new Color(0, 100, 100, 0f);
+        GetComponent<MeshRenderer>().materials[0].color = new Color(0, 0, 0, 0f);
         //absorptionSprite.color = new Color(0, 100, 100, 0f);
         absorption.GetComponent<SphereCollider>().enabled = false;
     }
 
     public void AbsorbUncolorTrasparency()
     {
-        GetComponent<MeshRenderer>().materials[0].color = new Color(0, 0, 0, 1f);
+        GetComponent<MeshRenderer>().materials[0].color = new Color(255, 0, 0, 1f);
         //absorptionSprite.color = new Color(0, 0, 0, 1f);
         absorption.GetComponent<SphereCollider>().enabled = true;
 
