@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
 
     GameObject Tile2, Tile4, Fog;
 
+    CameraShake cameraShake;
+
+    bool on = false;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +23,8 @@ public class GameManager : MonoBehaviour
         Tile4 = GameObject.Find("Tile4");
         Fog = GameObject.Find("Fog");
         sr = Fog.GetComponent<MeshRenderer>();
+        cameraShake = FindObjectOfType<CameraShake>();
+        
     }
 
     // Update is called once per frame
@@ -26,8 +33,13 @@ public class GameManager : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Stage_1")
         {
             time += Time.deltaTime;
-            if(time >= 125)
+            if(time >= 5)
             {
+                if (!on)
+                {
+                    cameraShake.Shake();
+                    on = true;
+                }
                 Tile2.SetActive(false);
                 Tile4.SetActive(false);
             }
