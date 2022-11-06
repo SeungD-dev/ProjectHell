@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     CameraShake cameraShake;
 
     bool on = false;
+
     
 
     // Start is called before the first frame update
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
         tr2 = Tile2.GetComponent<MeshRenderer>();
         tr4 = Tile4.GetComponent<MeshRenderer>();
         cameraShake = FindObjectOfType<CameraShake>();
+       
         
     }
 
@@ -36,7 +39,10 @@ public class GameManager : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Stage_1")
         {
             time += Time.deltaTime;
-            if(time < 7f)
+           
+           
+
+            if (time < 7f)
             {
                 tr2.material.color = new Color(255, 0, 255, 1);
                 tr4.material.color = new Color(255, 0, 255, 1);
@@ -69,9 +75,11 @@ public class GameManager : MonoBehaviour
                 }
                 xTime += Time.deltaTime;
             }
-            
+           
             if(time >= 10)
             {
+                
+               
                 if (!on)
                 {
                     cameraShake.Shake();
