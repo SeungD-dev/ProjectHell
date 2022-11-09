@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
 
     bool isHurt;
     private float fTickTime;
-    private float fDestroyTime = 3f;
+    private float fDestroyTime = 5f;
    
 
 
@@ -123,11 +123,13 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B"))
+        if (other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B") || other.CompareTag("Note_X"))
         {
             Hurt();
+            fTickTime = 0f;
             StartCoroutine(HurtCooldown());
             Destroy(other.gameObject);
+            Debug.Log(playerhp.player_currentHP);
         }
        
     }
@@ -144,7 +146,7 @@ public class PlayerControl : MonoBehaviour
 
     IEnumerator HurtCooldown()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         isHurt = false;
     }
 
