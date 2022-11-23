@@ -17,7 +17,7 @@ public class LineActive : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 2)
+        if (time >= 12)
         {
             GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(true);
             GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(true);
