@@ -36,14 +36,14 @@ public class Anubis_Anim : MonoBehaviour
             anim.SetBool("AnubisIdle", false);
             anim.SetBool("Anubis_IsAttack", true);
             //anim.SetTrigger("Anubis_Attack");
-            anim.SetBool("boom", true);
+            anim.SetTrigger("boom");
            
            
            
         }
         if (time >= 8.8)
         {
-            anim.SetBool("boom", false);
+            
             anim.SetBool("Anubis_IsAttack", false);
             anim.SetBool("AnubisIdle", true);
 
