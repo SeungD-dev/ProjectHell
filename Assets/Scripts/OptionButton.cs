@@ -9,8 +9,21 @@ public class OptionButton : MonoBehaviour
 {
     public AudioMixer bgmMixer;
     public Slider bgmSlider;
-    
-    public void AudioControl()
+
+
+    void Start()
+    {
+        bgmSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+    }
+
+    public void SetLevel(float sliderValue)
+    {
+        bgmMixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+    }
+
+
+    /*public void AudioControl()
     {
         float sound = bgmSlider.value;
 
@@ -21,5 +34,5 @@ public class OptionButton : MonoBehaviour
     public void ToggleAudioVolume()
     {
         AudioListener.volume = AudioListener.volume == 0 ? 1 : 0;
-    }
+    }*/
 }

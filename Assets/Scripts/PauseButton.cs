@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class PauseButton : MonoBehaviour
 {
     public Image fadePanel; //검은화면 오브젝트
-    public Image optionPanel;
 
     GameManager gameManager;
 
@@ -15,15 +14,12 @@ public class PauseButton : MonoBehaviour
     {
         fadePanel = GetComponent<Image>();
         fadePanel.gameObject.SetActive(false);
-        optionPanel = GetComponent<Image>();
-        optionPanel.gameObject.SetActive(false);
         gameManager = FindObjectOfType<GameManager>();
     }
 
     public void pauseButton()
     {       
         fadePanel.gameObject.SetActive(true);
-        //optionPanel.gameObject.SetActive(false);
         gameManager.Pause();       
     }
 
@@ -40,11 +36,13 @@ public class PauseButton : MonoBehaviour
 
     public void optionButton()
     {
-        optionPanel.gameObject.SetActive(true);
+        gameManager.optionPanel.gameObject.SetActive(true);
+        fadePanel.gameObject.SetActive(false);
     }
 
     public void optionOkButton()
     {
-        optionPanel.gameObject.SetActive(false);
+        gameManager.optionPanel.gameObject.SetActive(false);
+        fadePanel.gameObject.SetActive(true);
     }
 }

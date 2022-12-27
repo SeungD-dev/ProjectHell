@@ -20,7 +20,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MyMixere
+  m_Name: MyMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -31,7 +31,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: b04d4d6fcdab15c4c845fb26d9240758
-    name: BGM
+    name: MusicVol
   m_AudioMixerGroupViews:
   - guids:
     - c1274d4508f449649af8b6bceaad4713

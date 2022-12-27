@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.Animations;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     CameraShake cameraShake;
     PauseButton pauseButton;
+
+    public Image optionPanel;
 
     bool on = false;
     bool IsPause;
@@ -31,6 +34,10 @@ public class GameManager : MonoBehaviour
         tr4 = Tile4.GetComponent<MeshRenderer>();
         cameraShake = FindObjectOfType<CameraShake>();
         pauseButton = FindObjectOfType<PauseButton>();
+
+        optionPanel = GetComponent<Image>();
+        optionPanel.gameObject.SetActive(false);
+
         IsPause = false;
     }
 
