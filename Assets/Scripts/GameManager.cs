@@ -7,16 +7,17 @@ using UnityEngine.Animations;
 public class GameManager : MonoBehaviour
 {
     MeshRenderer sr, tr2, tr4;
-    private float time;
+    public float time;
     private float xTime = 0, blinktime = 0.1f, waittime = 0.2f;
     private float fadeCount = 0; //알파값(투명도)
 
     GameObject Tile2, Tile4, Fog;
 
     CameraShake cameraShake;
+    PauseButton pauseButton;
 
     bool on = false;
-
+    bool IsPause;
     
 
     // Start is called before the first frame update
@@ -29,8 +30,8 @@ public class GameManager : MonoBehaviour
         tr2 = Tile2.GetComponent<MeshRenderer>();
         tr4 = Tile4.GetComponent<MeshRenderer>();
         cameraShake = FindObjectOfType<CameraShake>();
-       
-        
+        pauseButton = FindObjectOfType<PauseButton>();
+        IsPause = false;
     }
 
     // Update is called once per frame
@@ -38,9 +39,7 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Stage_1")
         {
-            time += Time.deltaTime;
-           
-           
+            time += Time.deltaTime;                      
 
             if (time < 7f)
             {
@@ -77,9 +76,7 @@ public class GameManager : MonoBehaviour
             }
            
             if(time >= 10)
-            {
-                
-               
+            {                           
                 if (!on)
                 {
                     cameraShake.Shake();
@@ -92,6 +89,22 @@ public class GameManager : MonoBehaviour
             {
                 StartCoroutine("FogCoroutine"); //코루틴 함수 호출
             }
+        }
+    }
+
+    public void Pause()
+    {
+        if (IsPause == false)
+        {
+            Time.timeScale = 0;
+            IsPause = true;
+            return;
+        }
+        if (IsPause == true)
+        {
+            Time.timeScale = 1;
+            IsPause = false;
+            return;
         }
     }
     IEnumerator FogCoroutine()//패널의 알파값 조절 ( fadeOut )
