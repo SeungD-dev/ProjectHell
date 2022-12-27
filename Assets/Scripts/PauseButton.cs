@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseButton : MonoBehaviour
 {
     public Image fadePanel; //검은화면 오브젝트
+    public AudioSource audioSource;
 
     GameManager gameManager;
 
@@ -18,7 +19,8 @@ public class PauseButton : MonoBehaviour
     }
 
     public void pauseButton()
-    {       
+    {
+        audioSource.Pause();
         fadePanel.gameObject.SetActive(true);
         gameManager.Pause();       
     }
@@ -27,6 +29,7 @@ public class PauseButton : MonoBehaviour
     {
         gameManager.Pause();
         fadePanel.gameObject.SetActive(false);
+        audioSource.Play();
     }
 
     public void selectSceneButton()

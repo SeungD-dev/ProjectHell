@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     CameraShake cameraShake;
     PauseButton pauseButton;
 
-    public Image optionPanel;
+    public GameObject optionPanel;
 
     bool on = false;
     bool IsPause;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         cameraShake = FindObjectOfType<CameraShake>();
         pauseButton = FindObjectOfType<PauseButton>();
 
-        optionPanel = GetComponent<Image>();
+        optionPanel = GameObject.Find("OptionPanel");
         optionPanel.gameObject.SetActive(false);
 
         IsPause = false;
