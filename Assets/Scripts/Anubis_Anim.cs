@@ -12,8 +12,8 @@ public class Anubis_Anim : MonoBehaviour
     SpriteRenderer sr;
 
     GameObject boom;
-    
 
+    bool asdf = true;
 
 
     // Start is called before the first frame update
@@ -30,20 +30,21 @@ public class Anubis_Anim : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 8.797)
+        if (time >= 8.797 && asdf == true)
         {
+            anim.SetTrigger("kaboom");
            
             anim.SetBool("AnubisIdle", false);
             anim.SetBool("Anubis_IsAttack", true);
-            //anim.SetTrigger("Anubis_Attack");
-            anim.SetTrigger("boom");
+           
+           
            
            
            
         }
         if (time >= 8.8)
         {
-            
+            asdf = false;
             anim.SetBool("Anubis_IsAttack", false);
             anim.SetBool("AnubisIdle", true);
 

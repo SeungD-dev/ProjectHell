@@ -48,11 +48,11 @@ public class PlayerHP : MonoBehaviour
 
     public void IncreaseHP(int p_num)
     {
-        if (player_currentHP < player_MaxHP)
+        /*if (player_currentHP < player_MaxHP)
             player_currentHP += p_num;
         else
             player_currentHP = player_MaxHP; //최대체력을 넘을 수 없도록
-        //ShowHPImage();
+        //ShowHPImage();*/
     }
 
     void ShowHPImage()

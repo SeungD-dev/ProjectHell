@@ -5,6 +5,8 @@ using UnityEngine;
 public class NoteBreak : MonoBehaviour
 {
     public GameObject player;
+  
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,6 +29,8 @@ public class NoteBreak : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player.transform.position = new Vector3(0, 0.2f, -2.8f);
+            
+           
         }
     }
 }

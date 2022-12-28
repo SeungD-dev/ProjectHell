@@ -131,6 +131,11 @@ public class PlayerControl : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log(playerhp.player_currentHP);
         }
+        else if (other.CompareTag("UnderFloor"))
+        {
+            Hurt();
+            Debug.Log(playerhp.player_currentHP);
+        }
        
     }
 
@@ -146,7 +151,7 @@ public class PlayerControl : MonoBehaviour
 
     IEnumerator HurtCooldown()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         isHurt = false;
     }
 

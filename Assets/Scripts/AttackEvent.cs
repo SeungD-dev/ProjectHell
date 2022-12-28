@@ -10,12 +10,12 @@ public class AttackEvent : MonoBehaviour
 
     private float countTime;
 
-    bool  Absorbmode, Attackmode;
+    public bool  Absorbmode, Attackmode;
 
     private float absorbTime = 0.1f;
 
     enum asbColor { normal, red, blue , green}
-    int r, g, b;
+    public int r, g, b;
 
     asbColor asb;
 
