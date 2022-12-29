@@ -8,12 +8,6 @@ public class Quiz : MonoBehaviour
     private string name;
     public GameObject player;
     public GameObject camera;
-    // Start is called before the first frame update
-    void Start()
-    {
-        name = this.gameObject.name;
-        // Debug.Log(this.gameObject.name);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
