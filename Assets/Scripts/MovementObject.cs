@@ -7,6 +7,7 @@ public class MovementObject : MonoBehaviour
     [SerializeField]
     private VirtualJoystick virtualJoystick;
     private float moveSpeed = 10;
+    public GameObject ViewCamera = null;
 
     void Update()
     {
@@ -18,4 +19,24 @@ public class MovementObject : MonoBehaviour
             transform.position += new Vector3(-y, 0, x) * moveSpeed * Time.deltaTime;
         }
     }
+
+    /*private void FixedUpdate()
+    {
+        if (ViewCamera != null)
+        {
+            Vector3 direction = (Vector3.up * 4 + Vector3.back) * 2;
+            RaycastHit hit;
+            Debug.DrawLine(transform.position, transform.position + direction, Color.red);
+            if (Physics.Linecast(transform.position, transform.position + direction, out hit))
+            {
+                ViewCamera.transform.position = hit.point;
+            }
+            else
+            {
+                ViewCamera.transform.position = transform.position + direction;
+            }
+            ViewCamera.transform.LookAt(transform.position);
+            //ViewCamera.Rotate
+        }
+    }*/
 }
