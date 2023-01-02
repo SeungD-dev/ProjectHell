@@ -18,10 +18,6 @@ public class MovementObject : MonoBehaviour
         {
             transform.position += new Vector3(-y, 0, x) * moveSpeed * Time.deltaTime;
         }
-    }
-
-    /*private void FixedUpdate()
-    {
         if (ViewCamera != null)
         {
             Vector3 direction = (Vector3.up * 4 + Vector3.back) * 2;
@@ -33,10 +29,10 @@ public class MovementObject : MonoBehaviour
             }
             else
             {
-                ViewCamera.transform.position = transform.position + direction;
+                ViewCamera.transform.position = transform.position + new Vector3(6, 9, 0);
             }
             ViewCamera.transform.LookAt(transform.position);
-            //ViewCamera.Rotate
+            ViewCamera.transform.eulerAngles = new Vector3(45, -90, 0);
         }
-    }*/
+    }
 }
