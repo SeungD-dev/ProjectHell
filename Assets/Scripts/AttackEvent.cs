@@ -10,7 +10,7 @@ public class AttackEvent : MonoBehaviour
 
     private float countTime;
 
-    public bool  Absorbmode, Attackmode;
+    public bool  Absorbmode, Attackmode = false,Shootmode = false;
 
     private float absorbTime = 0.1f;
 
@@ -21,11 +21,15 @@ public class AttackEvent : MonoBehaviour
 
     PlayerControl playerControl;
 
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
         absorption = GameObject.Find("Absorption");
 
+       
         
        
      
@@ -192,8 +196,9 @@ public class AttackEvent : MonoBehaviour
 
         if(Attackmode == true)
         {
-            Debug.Log("공격 발사됨");
-            Attackmode = false;
+            Debug.Log("발사 준비");
+           
+            Shootmode = true;
             asb = asbColor.normal;
             r = 0;
             g = 0;
