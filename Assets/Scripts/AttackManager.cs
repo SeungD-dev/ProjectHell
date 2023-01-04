@@ -23,7 +23,7 @@ public class AttackManager : MonoBehaviour
     {
        
        
-        ShootAttack();
+      
     }
 
     public void ShootAttack()

@@ -7,6 +7,7 @@ public class AttackEvent : MonoBehaviour
     public GameObject absorption;
     public GameObject absorbBtn;
     public SpriteRenderer absorptionSprite;
+    
 
     private float countTime;
 
@@ -20,6 +21,7 @@ public class AttackEvent : MonoBehaviour
     asbColor asb;
 
     PlayerControl playerControl;
+    AttackManager attackManager;
 
     
 
@@ -36,6 +38,7 @@ public class AttackEvent : MonoBehaviour
         absorbBtn = GameObject.Find("AbsorbButton");
 
         playerControl = FindObjectOfType<PlayerControl>();
+        attackManager = FindObjectOfType<AttackManager>();
     }
 
     // Update is called once per frame
@@ -193,18 +196,25 @@ public class AttackEvent : MonoBehaviour
            
             Absorbmode = true;
         }
-
         if(Attackmode == true)
         {
             Debug.Log("발사 준비");
-           
             Shootmode = true;
+        }
+
+        if(Attackmode == true && Shootmode == true)
+        {
+            
+            attackManager.ShootAttack();
+           
+            Absorbmode = false;
             asb = asbColor.normal;
             r = 0;
             g = 0;
             b = 0;
             
         }
+
        
     }
 
@@ -229,5 +239,7 @@ public class AttackEvent : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         absorbBtn.SetActive(true);
     }
+
+   
 
 }
