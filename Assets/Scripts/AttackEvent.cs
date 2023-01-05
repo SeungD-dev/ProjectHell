@@ -16,6 +16,8 @@ public class AttackEvent : MonoBehaviour
     private float absorbTime = 0.1f;
 
     enum asbColor { normal, red, blue , green}
+    public enum ballColor {normal,red, blue, green }
+    public ballColor bc = ballColor.normal;
     public int r, g, b;
 
     asbColor asb;
@@ -62,11 +64,12 @@ public class AttackEvent : MonoBehaviour
         {
             if (asb == asbColor.normal)
             {
-
+                bc = ballColor.normal;
                 if (col.gameObject.CompareTag("Note_R") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
                     asb = asbColor.red;
+                    bc = ballColor.red;
                     AbsorbColorTransparency();
                     Debug.Log("흡수됨");
                     Absorbmode = false;
@@ -76,6 +79,7 @@ public class AttackEvent : MonoBehaviour
                 {
                     Destroy(col.gameObject);
                     asb = asbColor.blue;
+                    bc = ballColor.blue;
                     AbsorbColorTransparency();
                     Debug.Log("흡수됨");
                     Absorbmode = false;
@@ -85,6 +89,7 @@ public class AttackEvent : MonoBehaviour
                 {
                     Destroy(col.gameObject);
                     asb = asbColor.green;
+                    bc = ballColor.green;
                     AbsorbColorTransparency();
                     Debug.Log("흡수됨");
                     Absorbmode = false;
@@ -95,12 +100,14 @@ public class AttackEvent : MonoBehaviour
             //첫 흡수가 빨간색일 때
             if (asb == asbColor.red)
             {
+                bc = ballColor.red;
                 if (asb == asbColor.red && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
                     Attackmode = true;
                     Debug.Log("공격모드 활성화");
-                    asb = asbColor.normal;
+                    asb = asbColor.red;
+                    bc = ballColor.red;
                     r = 1;
                     b = 0;
                     g = 0;
@@ -111,6 +118,7 @@ public class AttackEvent : MonoBehaviour
                     Attackmode = false;
 
                     asb = asbColor.blue;
+                    bc = ballColor.blue;
                 }
                 else if (asb == asbColor.red && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
                 {
@@ -118,17 +126,20 @@ public class AttackEvent : MonoBehaviour
                     Attackmode = false;
 
                     asb = asbColor.green;
+                    bc = ballColor.green;
                 }
             }
             //첫 흡수가 파란색일 때
             else if (asb == asbColor.blue)
             {
+                bc = ballColor.blue;
                 if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
                     Attackmode = true;
                     Debug.Log("공격모드 활성화");
-                    asb = asbColor.normal;
+                    asb = asbColor.blue;
+                    bc = ballColor.blue;
                     r = 0;
                     b = 1;
                     g = 0;
@@ -139,6 +150,7 @@ public class AttackEvent : MonoBehaviour
                     Attackmode = false;
 
                     asb = asbColor.red;
+                    bc = ballColor.red;
                 }
                 else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
                 {
@@ -146,6 +158,7 @@ public class AttackEvent : MonoBehaviour
                     Attackmode = false;
 
                     asb = asbColor.green;
+                    bc = ballColor.green;
                 }
 
             }
@@ -153,12 +166,14 @@ public class AttackEvent : MonoBehaviour
             //첫 흡수가 초록색일 때
             else if (asb == asbColor.green)
             {
+                bc = ballColor.green;
                 if (asb == asbColor.green && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
                     Attackmode = true;
                     Debug.Log("공격모드 활성화");
-                    asb = asbColor.normal;
+                    asb = asbColor.green;
+                    bc = ballColor.green;
                     r = 0;
                     g = 1;
                     b = 0;
@@ -169,6 +184,7 @@ public class AttackEvent : MonoBehaviour
                     Attackmode = false;
 
                     asb = asbColor.red;
+                    bc = ballColor.red;
                 }
                 else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
                 {
@@ -176,6 +192,7 @@ public class AttackEvent : MonoBehaviour
                     Attackmode = false;
 
                     asb = asbColor.blue;
+                    bc = ballColor.blue;
                 }
 
             }

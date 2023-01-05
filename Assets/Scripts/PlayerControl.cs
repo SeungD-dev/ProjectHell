@@ -23,8 +23,16 @@ public class PlayerControl : MonoBehaviour
     bool isHurt;
     private float fTickTime;
     private float fDestroyTime = 5f;
-   
 
+    AttackEvent attackEvent;
+    public Material[] meshes;
+    private MeshFilter meshFilter;
+    public MeshRenderer ball;
+    
+    
+    
+   
+   
 
 
     // Start is called before the first frame update
@@ -33,13 +41,18 @@ public class PlayerControl : MonoBehaviour
         jumpBtn = GameObject.Find("JumpButton");
         leftBtn = GameObject.Find("LButton");
         rightBtn = GameObject.Find("RButton");
+
         
-      
        
         rb = GetComponent<Rigidbody>();
         MoveDir = Vector3.zero;
 
         playerhp = FindObjectOfType<PlayerHP>();
+        attackEvent = FindObjectOfType<AttackEvent>();
+        meshFilter = GetComponent<MeshFilter>();
+        ball = GetComponent<MeshRenderer>();
+     
+        
 
 
     }
@@ -74,9 +87,27 @@ public class PlayerControl : MonoBehaviour
                 fTickTime = 0f;
             }
         }
-        
+        if (attackEvent.bc == AttackEvent.ballColor.normal)
+        {
+            ball.materials[0];
+        }
+        if (attackEvent.bc == AttackEvent.ballColor.red)
+        {
+            meshFilter.sharedMesh = meshes[1];
+           
+        }
+       
+        if (attackEvent.bc == AttackEvent.ballColor.green)
+        {
+            meshFilter.sharedMesh = meshes[2];
+        }
+        if (attackEvent.bc == AttackEvent.ballColor.blue)
+        {
+            meshFilter.sharedMesh = meshes[3];
+        }
 
-        
+
+
 
 
     }
