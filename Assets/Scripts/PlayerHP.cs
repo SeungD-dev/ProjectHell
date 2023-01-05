@@ -8,14 +8,21 @@ public class PlayerHP : MonoBehaviour
 {
     public int player_MaxHP = 3;
     public int player_currentHP = 3;
+    public Image[] hpImage = null;
     PlayerControl playerControl;
+    SpriteRenderer sr;
+    
+    
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //ColorTransparency();
         playerControl = FindObjectOfType<PlayerControl>();
+        sr =GetComponent<SpriteRenderer>();
+       
     }
 
     // Update is called once per frame
@@ -44,21 +51,65 @@ public class PlayerHP : MonoBehaviour
             player_currentHP -= p_num;
             //ShowHPImage();
         }
+        if(player_currentHP == 2 && this.gameObject.name == "HPImg(3)")
+        {
+            sr.color = new Color(255, 255,255, 0);
+        }
+        if(player_currentHP == 1)
+        {
+            Debug.Log("sibal");
+            if (this.gameObject.name == "HPImg(3)" || this.gameObject.name == "HPImg(2)")
+                Debug.Log("sex");
+                //sr.color = new Color(255, 255, 255, 0);
+        }
     }
 
     public void IncreaseHP(int p_num)
     {
-        /*if (player_currentHP < player_MaxHP)
+        if (player_currentHP < player_MaxHP)
             player_currentHP += p_num;
         else
             player_currentHP = player_MaxHP; //최대체력을 넘을 수 없도록
-        //ShowHPImage();*/
+        //ShowHPImage();
+        if(player_currentHP == player_MaxHP)
+        {
+            //this.gameObject.SetActive(false);
+        }
+        else
+        {
+            //this.gameObject.SetActive(true);
+        }
+
     }
 
-    void ShowHPImage()
+    /*void ShowHPImage()
     {
-        //체력 이미지 관련 넣기
+        for (int i = 0; i < hpImage.Length; i++)
+        {
+            if (i < player_currentHP)
+                hpImage[i].gameObject.SetActive(true);
+            else
+                hpImage[i].gameObject.SetActive(false);
+        }
     }
+    /*public void ColorTransparency() //체력바 투명도 0
+    {
+        for (int i = 0; i < hpImage.Length; i++)
+        {
+            Color color = hpImage[i].color;
+            color.a = 0.0f;
+            hpImage[i].color = color;
+        }
+    }
+    /*public void UnColorTransparency() //체력바 투명도 100
+    {
+        for (int i = 0; i < hpImage.Length; i++)
+        {
+            Color color = hpImage[i].color;
+            color.a = 1.0f;
+            hpImage[i].color = color;
+        }
+    }*/
 
     public void ExitGame()
     {

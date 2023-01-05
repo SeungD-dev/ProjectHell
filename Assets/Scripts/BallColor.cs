@@ -5,37 +5,21 @@ using UnityEngine;
 public class BallColor : MonoBehaviour
 {
 
-   // public Material[] ballColor;
-    
-    //public int index;
+   
     AttackEvent attackEvent;
-    //Renderer rd;
-    //Material[] mat;
-    public Material[] mats = new Material[4];
+   
+    public Material[] ballcolor;
+    Material[] mats;
     private Renderer ballRender;
-    public Material normal, red, green, blue;
+   
 
-    /*static BallColor instance = null;
-    public static BallColor Instance
-    {
-        get
-        {
-            if (null == instance) return null;
-            return instance;
-        }
-    }*/
 
-    private void Awake()
-    {
-        /*if (null == instance) instance = this;
-        ballColor = Resources.LoadAll<Material>("Material/BallColor");*/
-    }
 
     void Start()
     {
-       /* Renderer rd = this.GetComponent<MeshRenderer>();
-        Material[] mat = rd.sharedMaterials;*/
+       
         attackEvent = FindObjectOfType<AttackEvent>();
+        ballRender = GetComponent<Renderer>();
         mats = ballRender.sharedMaterials;
     }
 
@@ -44,29 +28,33 @@ public class BallColor : MonoBehaviour
     {
         if (attackEvent.bc == AttackEvent.ballColor.normal)
         {
-            //mat[0] = BallColor.Instance.ballColor[index];
-            mats[0] = normal;
+           
+            mats[0] = ballcolor[0];
+            ballRender.materials = mats;
            
         }
         if (attackEvent.bc == AttackEvent.ballColor.red)
         {
-            // mat[1] = BallColor.Instance.ballColor[index];
-            mats[1] = red;
-          
+           
+            mats[0] = ballcolor[1];
+            ballRender.materials = mats;
+
 
         }
 
         if (attackEvent.bc == AttackEvent.ballColor.green)
         {
-            //mat[2] = BallColor.Instance.ballColor[index];
-            mats[2] = green;
-          
+           
+            mats[0] = ballcolor[2];
+            ballRender.materials = mats;
+
         }
         if (attackEvent.bc == AttackEvent.ballColor.blue)
         {
-            // mat[3] = BallColor.Instance.ballColor[index];
-            mats[3] = blue;
            
+            mats[0] = ballcolor[3];
+            ballRender.materials = mats;
+
         }
     }
 }
