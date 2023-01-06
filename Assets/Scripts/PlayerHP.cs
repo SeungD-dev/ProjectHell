@@ -8,7 +8,7 @@ public class PlayerHP : MonoBehaviour
 {
     public int player_MaxHP = 3;
     public int player_currentHP = 3;
-    public Image[] hpImage = null;
+    public SpriteRenderer[] hpImage = null;
     PlayerControl playerControl;
     SpriteRenderer sr;
     
@@ -22,6 +22,7 @@ public class PlayerHP : MonoBehaviour
         //ColorTransparency();
         playerControl = FindObjectOfType<PlayerControl>();
         sr =GetComponent<SpriteRenderer>();
+        Debug.Log(this.gameObject.name);
        
     }
 
@@ -51,16 +52,13 @@ public class PlayerHP : MonoBehaviour
             player_currentHP -= p_num;
             //ShowHPImage();
         }
-        if(player_currentHP == 2 && this.gameObject.name == "HPImg(3)")
+        if(player_currentHP == 2)
         {
-            sr.color = new Color(255, 255,255, 0);
+            hpImage[2].color = new Color(255, 255, 255, 0);
         }
-        if(player_currentHP == 1)
+        else if(player_currentHP == 1)
         {
-            Debug.Log("sibal");
-            if (this.gameObject.name == "HPImg(3)" || this.gameObject.name == "HPImg(2)")
-                Debug.Log("sex");
-                //sr.color = new Color(255, 255, 255, 0);
+            hpImage[1].color = new Color(255, 255, 255, 0);
         }
     }
 
@@ -73,11 +71,14 @@ public class PlayerHP : MonoBehaviour
         //ShowHPImage();
         if(player_currentHP == player_MaxHP)
         {
-            //this.gameObject.SetActive(false);
+            hpImage[0].color = new Color(255, 255, 255, 255);
+            hpImage[1].color = new Color(255, 255, 255, 255);
+            hpImage[2].color = new Color(255, 255, 255, 255);
+            StartCoroutine(ShowHp());
         }
-        else
+        else if (player_currentHP == 2)
         {
-            //this.gameObject.SetActive(true);
+            hpImage[1].color = new Color(255, 255, 255, 255);
         }
 
     }
@@ -110,6 +111,14 @@ public class PlayerHP : MonoBehaviour
             hpImage[i].color = color;
         }
     }*/
+
+    IEnumerator ShowHp()
+    {
+        yield return new WaitForSeconds(2.0f);
+        hpImage[0].color = new Color(255, 255, 255, 0);
+        hpImage[1].color = new Color(255, 255, 255, 0);
+        hpImage[2].color = new Color(255, 255, 255, 0);
+    }
 
     public void ExitGame()
     {

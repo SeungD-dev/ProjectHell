@@ -1769,9 +1769,8 @@ GameObject:
   m_Component:
   - component: {fileID: 268907165}
   - component: {fileID: 268907166}
-  - component: {fileID: 268907167}
   m_Layer: 0
-  m_Name: HPImg(2)
+  m_Name: HP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1844,21 +1843,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &268907167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268907164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e282f36c593124191d433c41e0c926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_MaxHP: 3
-  player_currentHP: 3
-  hpImage: []
 --- !u!1001 &270860318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4153,9 +4137,8 @@ GameObject:
   - component: {fileID: 529534045}
   - component: {fileID: 529534048}
   - component: {fileID: 529534047}
-  - component: {fileID: 529534049}
   m_Layer: 0
-  m_Name: HPImg(1)
+  m_Name: HP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4241,21 +4224,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &529534049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529534044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e282f36c593124191d433c41e0c926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_MaxHP: 3
-  player_currentHP: 3
-  hpImage: []
 --- !u!4 &529884581 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: 4e0d4faf393af4243b3a142e3fbb7281, type: 3}
@@ -10568,9 +10536,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1349094123}
   - component: {fileID: 1349094124}
-  - component: {fileID: 1349094125}
   m_Layer: 0
-  m_Name: HPImg(3)
+  m_Name: HP3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10643,21 +10610,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1349094125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349094122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e282f36c593124191d433c41e0c926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_MaxHP: 3
-  player_currentHP: 3
-  hpImage: []
 --- !u!4 &1353072119 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: 8f7ba262f44b1034697299c22105ac06, type: 3}
@@ -16425,9 +16377,9 @@ MonoBehaviour:
   player_MaxHP: 3
   player_currentHP: 3
   hpImage:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 529534048}
+  - {fileID: 268907166}
+  - {fileID: 1349094124}
 --- !u!1001 &1974873009
 PrefabInstance:
   m_ObjectHideFlags: 0
