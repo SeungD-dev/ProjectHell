@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     public Vector3 player_Pos;
    
     private Rigidbody rb;
+
+    public SpriteRenderer ganglim;
     
     GameObject jumpBtn, leftBtn, rightBtn;
 
@@ -26,14 +28,9 @@ public class PlayerControl : MonoBehaviour
 
     AttackEvent attackEvent;
 
-   
-   
-
-
-
-
-
-
+    Color HalfA = new Color(1, 1, 1, 0.5f);
+    Color FullA = new Color(1, 1, 1, 1);
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +48,7 @@ public class PlayerControl : MonoBehaviour
 
         Renderer rd = this.GetComponent<MeshRenderer>();
         Material[] mat = rd.sharedMaterials;
-     
-        
-
-
+ 
     }
 
     // Update is called once per frame
@@ -82,17 +76,11 @@ public class PlayerControl : MonoBehaviour
         {
             if(fTickTime >= fDestroyTime)
             {
-                StartCoroutine(HurtCooldown());
+                // StartCoroutine(HurtCooldown());
                 playerhp.IncreaseHP(1);
                 fTickTime = 0f;
             }
         }
-      
-
-
-
-
-
     }
 
     public void JumpTouched()
@@ -139,18 +127,21 @@ public class PlayerControl : MonoBehaviour
     {
         if (other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B") || other.CompareTag("Note_X"))
         {
-            Hurt();
-            fTickTime = 0f;
-            StartCoroutine(HurtCooldown());
             Destroy(other.gameObject);
+            if (!isHurt)
+            {
+                Hurt();
+                fTickTime = 0f;
+                StartCoroutine(HurtCooldown());
+                StartCoroutine(GanglimHurtdown());
+            }          
             Debug.Log(playerhp.player_currentHP);
         }
         else if (other.CompareTag("UnderFloor"))
         {
             Hurt();
             Debug.Log(playerhp.player_currentHP);
-        }
-       
+        }     
     }
 
     public void Hurt()
@@ -159,15 +150,28 @@ public class PlayerControl : MonoBehaviour
         {
             isHurt = true;
             playerhp.DecreaseHP(1);
-            
+            Debug.Log("¤·¤·¤·¤·");
         }
     }
 
     IEnumerator HurtCooldown()
     {
         yield return new WaitForSeconds(1f);
+        Debug.Log("½ÇÇà");
         isHurt = false;
     }
-
-    
+    IEnumerator GanglimHurtdown()
+    {
+        ganglim.color = HalfA;
+        yield return new WaitForSeconds(0.2f);
+        ganglim.color = FullA;
+        yield return new WaitForSeconds(0.2f);
+        ganglim.color = HalfA;
+        yield return new WaitForSeconds(0.2f);
+        ganglim.color = FullA;
+        yield return new WaitForSeconds(0.2f);
+        ganglim.color = HalfA;
+        yield return new WaitForSeconds(0.2f);
+        ganglim.color = FullA;
+    }
 }

@@ -47,7 +47,7 @@ public class PlayerHP : MonoBehaviour
 
     public void DecreaseHP(int p_num)
     {
-        if(player_currentHP > 0)
+        if(player_currentHP >= 0)
         {
             player_currentHP -= p_num;
             //ShowHPImage();
