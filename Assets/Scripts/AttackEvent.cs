@@ -95,6 +95,13 @@ public class AttackEvent : MonoBehaviour
                     Absorbmode = false;
 
                 }
+                if (col.gameObject.CompareTag("Note_Fake"))
+                {
+                    Destroy(col.gameObject);
+                    playerControl.Hurt();
+                    AbsorbColorTransparency();
+                    Absorbmode = false;
+                }
             }
 
             //첫 흡수가 빨간색일 때
@@ -128,6 +135,13 @@ public class AttackEvent : MonoBehaviour
                     asb = asbColor.green;
                     bc = ballColor.green;
                 }
+                else if (col.gameObject.CompareTag("Note_Fake"))
+                {
+                    Destroy(col.gameObject);
+                    playerControl.Hurt();
+                    AbsorbColorTransparency();
+                    Absorbmode = false;
+                }
             }
             //첫 흡수가 파란색일 때
             else if (asb == asbColor.blue)
@@ -160,7 +174,13 @@ public class AttackEvent : MonoBehaviour
                     asb = asbColor.green;
                     bc = ballColor.green;
                 }
-
+                else if (col.gameObject.CompareTag("Note_Fake"))
+                {
+                    Destroy(col.gameObject);
+                    playerControl.Hurt();
+                    AbsorbColorTransparency();
+                    Absorbmode = false;
+                }
             }
 
             //첫 흡수가 초록색일 때
@@ -194,7 +214,13 @@ public class AttackEvent : MonoBehaviour
                     asb = asbColor.blue;
                     bc = ballColor.blue;
                 }
-
+                else if (col.gameObject.CompareTag("Note_Fake"))
+                {
+                    Destroy(col.gameObject);
+                    playerControl.Hurt();
+                    AbsorbColorTransparency();
+                    Absorbmode = false;
+                }
             }
 
         }

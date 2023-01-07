@@ -55,8 +55,7 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         player_Pos = gameObject.transform.position;
-        fTickTime += Time.deltaTime;
-
+        
         if (jumpAllowed == false)
         {
             jumpBtn.GetComponent<Button>().interactable = true;
@@ -151,6 +150,7 @@ public class PlayerControl : MonoBehaviour
             isHurt = true;
             playerhp.DecreaseHP(1);
             Debug.Log("しししし");
+            fTickTime += Time.deltaTime;
         }
     }
 
