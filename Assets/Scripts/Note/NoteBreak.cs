@@ -5,8 +5,6 @@ using UnityEngine;
 public class NoteBreak : MonoBehaviour
 {
     public GameObject player;
-  
-   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,11 +24,17 @@ public class NoteBreak : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("Note_Fake"))
+        {
+            Destroy(other.gameObject);
+        }
         if (other.CompareTag("Player"))
         {
             player.transform.position = new Vector3(0, 0.2f, -2.8f);
-            
-           
+        }
+        if (other.CompareTag("Note_AbsorbX"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }
