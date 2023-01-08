@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TagChanger : MonoBehaviour
 {
-    public Material[] mat = new Material[3];
+    public Material[] mat = new Material[4];
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +22,11 @@ public class TagChanger : MonoBehaviour
         {
             other.gameObject.tag = "Note_G";
             other.gameObject.GetComponent<MeshRenderer>().material = mat[1];
+        }
+        if (other.CompareTag("Note_X"))
+        {
+            other.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            other.gameObject.GetComponent<MeshRenderer>().material = mat[3];
         }
     }
 }
