@@ -6,7 +6,6 @@ public class Anubis_Status : MonoBehaviour
 {
     private int AnubisHP = 5;
     private float AnubisHPtime = 90;
-
     
     void Start()
     {
@@ -47,8 +46,7 @@ public class Anubis_Status : MonoBehaviour
             }
             if(AnubisHP == 0)
             {
-                Destroy(other.gameObject);
-               
+                Destroy(other.gameObject);              
             }
         }
     }
