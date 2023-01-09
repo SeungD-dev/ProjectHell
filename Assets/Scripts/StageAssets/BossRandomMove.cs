@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossRandomMove : MonoBehaviour
 {
-    public float[] possibleXValues = { -1.7f, -0.8f, 0f, 0.8f, 1.7f };
-    public float duration = 2f;
+    public float[] possibleXValues = { -1.7f, -0.8f, 0, 0.8f, 1.7f };
+    public float duration = 7f;
     public float newX;
     
 

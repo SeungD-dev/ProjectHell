@@ -11,35 +11,48 @@ public class SwordTrail : MonoBehaviour
     private float time;
     public GameObject[] slash;
     GameObject prefabToInstantiate;
+    public float duration = 7f;
 
 
 
     void Start()
     {
         brm = FindObjectOfType<BossRandomMove>();
+        InvokeRepeating("BossSlash", 0, duration);
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(brm.newX == 0f)
-        {
-            prefabToInstantiate = slash[0];
-        }
-        else
-        {
-            prefabToInstantiate = slash[1];
-        }
+        
 
-        Instantiate(prefabToInstantiate, transform.position, Quaternion.identity);
-
-        if(brm.newX == 0f)
+        if(this.gameObject.tag == "SwordTrail")
         {
-            slash[0].transform.localPosition += Vector3.back * slashSpeed * Time.deltaTime;
+            this.gameObject.transform.localPosition += Vector3.back * slashSpeed * Time.deltaTime;
         }
-        else
+        else if(this.gameObject.tag == "SwordTrail_Vertical")
         {
-            slash[1].transform.localPosition += Vector3.back * slashSpeed * Time.deltaTime;
+            this.gameObject.transform.localPosition += Vector3.back * slashSpeed * Time.deltaTime;
         }
     }
+
+    void BossSlash()
+    {
+        if (this.gameObject.tag == "Boss")
+        {
+            if (brm.newX == 0f)
+            {
+                prefabToInstantiate = slash[0];
+            }
+            else if(brm.newX == -1.7f || brm.newX == -0.8f || brm.newX == 0.8f || brm.newX == 1.7f)
+            {
+                prefabToInstantiate = slash[1];
+            }
+
+            Instantiate(prefabToInstantiate, transform.position, Quaternion.identity);
+        }
+    }
+
 }

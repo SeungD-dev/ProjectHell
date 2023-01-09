@@ -6,7 +6,7 @@ public class TimeScale : MonoBehaviour
 {
 
     private float time;
-    AudioSource audioSource;
+    public AudioSource audioSource;
 
     private void Start()
     {
