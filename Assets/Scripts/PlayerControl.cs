@@ -54,6 +54,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fTickTime += Time.deltaTime;
         player_Pos = gameObject.transform.position;
         
         if (jumpAllowed == false)
@@ -150,7 +151,7 @@ public class PlayerControl : MonoBehaviour
             isHurt = true;
             playerhp.DecreaseHP(1);
             Debug.Log("しししし");
-            fTickTime += Time.deltaTime;
+            fTickTime = 0;
         }
     }
 
