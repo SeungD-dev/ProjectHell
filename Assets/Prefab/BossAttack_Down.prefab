@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 34680953296216626}
   - component: {fileID: 34680953296216627}
   - component: {fileID: 34680953296216624}
-  - component: {fileID: 34680953296216625}
-  m_Layer: 8
-  m_Name: Note_BB
-  m_TagString: Note_BB
+  - component: {fileID: 429912261865029597}
+  m_Layer: 12
+  m_Name: BossAttack_Down
+  m_TagString: BossAttack_Down
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,11 +29,11 @@ Transform:
   m_GameObject: {fileID: 34680953296216630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 0.3, z: 0.6}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &34680953296216626
 MeshFilter:
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0adf26fb449fcb048980857497f803b8, type: 2}
+  - {fileID: 2100000, guid: 01699bd95a4ee5f48a1d3d829269d58b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &34680953296216625
+--- !u!114 &429912261865029597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 34680953296216630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502da23309129d643b8ee8a5cb8fa46e, type: 3}
+  m_Script: {fileID: 11500000, guid: 10d0e50c7ce451041aa24fe2ec4ccfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteSpeed: 0
+  bossAttack: {fileID: 34680953296216630, guid: 064d51f54413fae45a4d026a40dfbb9a, type: 3}
+  bossAttackAppear: {fileID: 0}
+  attackSpeed: 5

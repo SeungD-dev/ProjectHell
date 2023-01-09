@@ -1002,8 +1002,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1973964574}
-        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
+      - m_Target: {fileID: 1973964577}
+        m_TargetAssemblyTypeName: PlayerControl_Y, Assembly-CSharp
         m_MethodName: RButtonDown
         m_Mode: 1
         m_Arguments:
@@ -2557,8 +2557,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1973964574}
-        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
+      - m_Target: {fileID: 1973964577}
+        m_TargetAssemblyTypeName: PlayerControl_Y, Assembly-CSharp
         m_MethodName: JumpTouched
         m_Mode: 1
         m_Arguments:
@@ -7630,7 +7630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 966165553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765a66b60e6f41348a9b4711f7d63a2e, type: 3}
+  m_Script: {fileID: 11500000, guid: ac30104d7f1b52443a5fb75fbfa326b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ballcolor:
@@ -8443,8 +8443,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1717610647}
-        m_TargetAssemblyTypeName: AttackEvent, Assembly-CSharp
+      - m_Target: {fileID: 1717610653}
+        m_TargetAssemblyTypeName: AttackEvent_Y, Assembly-CSharp
         m_MethodName: AbsorbButtonDown
         m_Mode: 1
         m_Arguments:
@@ -9963,8 +9963,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310099700}
-  - component: {fileID: 1310099699}
-  - component: {fileID: 1310099701}
+  - component: {fileID: 1310099702}
+  - component: {fileID: 1310099703}
   m_Layer: 5
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -9972,23 +9972,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1310099699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310099698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bafd0bf567b9b9e4486671576d5b89a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackPrefab:
-  - {fileID: 34680953296216630, guid: 1a8a88836d8fc314499eb99f7d9f6479, type: 3}
-  - {fileID: 34680953296216630, guid: cece3f1906f35f44faecd27f8b090c72, type: 3}
-  - {fileID: 34680953296216630, guid: 32401bed79811164cbb3c672963db9f9, type: 3}
-  attackAppear: {fileID: 1310099700}
 --- !u!224 &1310099700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10009,7 +9992,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1310099701
+--- !u!114 &1310099702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10018,7 +10001,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310099698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9ed14b1da07784898f822299722288, type: 3}
+  m_Script: {fileID: 11500000, guid: 535b2d75a7155d14f80e925d9cb02863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackPrefab:
+  - {fileID: 34680953296216630, guid: 1a8a88836d8fc314499eb99f7d9f6479, type: 3}
+  - {fileID: 34680953296216630, guid: cece3f1906f35f44faecd27f8b090c72, type: 3}
+  - {fileID: 34680953296216630, guid: 32401bed79811164cbb3c672963db9f9, type: 3}
+  attackAppear: {fileID: 1310099700}
+--- !u!114 &1310099703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310099698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e21c1476bc68be4f912de6333c60c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1312386733 stripped
@@ -10478,8 +10478,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1973964574}
-        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
+      - m_Target: {fileID: 1973964577}
+        m_TargetAssemblyTypeName: PlayerControl_Y, Assembly-CSharp
         m_MethodName: LButtonDown
         m_Mode: 1
         m_Arguments:
@@ -13851,8 +13851,8 @@ GameObject:
   - component: {fileID: 1717610650}
   - component: {fileID: 1717610649}
   - component: {fileID: 1717610648}
-  - component: {fileID: 1717610647}
   - component: {fileID: 1717610652}
+  - component: {fileID: 1717610653}
   m_Layer: 10
   m_Name: Absorption
   m_TagString: Untagged
@@ -13860,28 +13860,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1717610647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717610646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5378e816ecd4494882238cbf75d60bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  absorption: {fileID: 1717610646}
-  absorbBtn: {fileID: 1117328644}
-  absorptionSprite: {fileID: 0}
-  Absorbmode: 0
-  Attackmode: 0
-  Shootmode: 0
-  bc: 0
-  r: 0
-  g: 0
-  b: 0
 --- !u!135 &1717610648
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13976,6 +13954,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1717610653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717610646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d345869dea8208a49a8c46dc4677635d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  absorption: {fileID: 1717610646}
+  absorbBtn: {fileID: 1117328644}
+  absorptionSprite: {fileID: 0}
+  Absorbmode: 0
+  Attackmode: 0
+  Shootmode: 0
+  bc: 0
+  r: 0
+  g: 0
+  b: 0
 --- !u!4 &1722080280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: 4b3c96b44d3c5be4e8685f4ac008d4bc, type: 3}
@@ -16276,9 +16276,9 @@ GameObject:
   - component: {fileID: 1973964572}
   - component: {fileID: 1973964571}
   - component: {fileID: 1973964570}
-  - component: {fileID: 1973964574}
   - component: {fileID: 1973964575}
   - component: {fileID: 1973964576}
+  - component: {fileID: 1973964577}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -16370,21 +16370,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1973964574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973964569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6294bd78562d0db4a8f73e1a323077fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 3
-  player_Pos: {x: 0, y: 0, z: 0}
-  ganglim: {fileID: 934214922}
 --- !u!54 &1973964575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16419,6 +16404,21 @@ MonoBehaviour:
   - {fileID: 529534048}
   - {fileID: 268907166}
   - {fileID: 1349094124}
+--- !u!114 &1973964577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973964569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5d6c78f6e595c4dacad799866536c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 3
+  player_Pos: {x: 0, y: 0, z: 0}
+  ganglim: {fileID: 934214922}
 --- !u!1001 &1974873009
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,30 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackEvent : MonoBehaviour
+public class AttackEvent_Y : MonoBehaviour
 {
     public GameObject absorption;
     public GameObject absorbBtn;
     public SpriteRenderer absorptionSprite;
-    
+
 
     private float countTime;
 
-    public bool  Absorbmode, Attackmode = false,Shootmode = false;
+    public bool Absorbmode, Attackmode = false, Shootmode = false;
 
     private float absorbTime = 0.1f;
 
-    enum asbColor { normal, red, blue , green}
-    public enum ballColor {normal,red, blue, green }
+    enum asbColor { normal, red, blue, green }
+    public enum ballColor { normal, red, blue, green }
     public ballColor bc = ballColor.normal;
     public int r, g, b;
 
     asbColor asb;
 
-    PlayerControl playerControl;
-    AttackManager attackManager;
+    PlayerControl_Y playerControl;
+    AttackManager_Y attackManager;
 
-    
+
 
 
     // Start is called before the first frame update
@@ -34,8 +34,8 @@ public class AttackEvent : MonoBehaviour
         absorption = GameObject.Find("Absorption");
         absorbBtn = GameObject.Find("AbsorbButton");
 
-        playerControl = FindObjectOfType<PlayerControl>();
-        attackManager = FindObjectOfType<AttackManager>();
+        playerControl = FindObjectOfType<PlayerControl_Y>();
+        attackManager = FindObjectOfType<AttackManager_Y>();
     }
 
     // Update is called once per frame
@@ -45,7 +45,7 @@ public class AttackEvent : MonoBehaviour
         transform.localPosition = playerControl.player_Pos + new Vector3(0, +0.16f, +0.33f);
         countTime += Time.deltaTime;
 
-        if(countTime >= absorbTime)
+        if (countTime >= absorbTime)
         {
             AbsorbColorTransparency();
 
@@ -68,7 +68,6 @@ public class AttackEvent : MonoBehaviour
                     AbsorbColorTransparency();
                     Debug.Log("Èí¼öµÊ");
                     Absorbmode = false;
-
                 }
                 if (col.gameObject.CompareTag("Note_B") && Absorbmode == true)
                 {
@@ -78,7 +77,6 @@ public class AttackEvent : MonoBehaviour
                     AbsorbColorTransparency();
                     Debug.Log("Èí¼öµÊ");
                     Absorbmode = false;
-
                 }
                 if (col.gameObject.CompareTag("Note_G") && Absorbmode == true)
                 {
@@ -90,12 +88,50 @@ public class AttackEvent : MonoBehaviour
                     Absorbmode = false;
 
                 }
+
                 if (col.gameObject.CompareTag("Note_Fake"))
                 {
                     Destroy(col.gameObject);
                     playerControl.Hurt();
                     AbsorbColorTransparency();
                     Absorbmode = false;
+                }
+
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    g = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    r = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    b = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
                 }
             }
 
@@ -137,7 +173,45 @@ public class AttackEvent : MonoBehaviour
                     AbsorbColorTransparency();
                     Absorbmode = false;
                 }
+
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    g = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    r = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    b = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
             }
+            
             //Ã¹ Èí¼ö°¡ ÆÄ¶õ»öÀÏ ¶§
             else if (asb == asbColor.blue)
             {
@@ -175,6 +249,43 @@ public class AttackEvent : MonoBehaviour
                     playerControl.Hurt();
                     AbsorbColorTransparency();
                     Absorbmode = false;
+                }
+
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    g = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    r = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    b = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
                 }
             }
 
@@ -216,12 +327,47 @@ public class AttackEvent : MonoBehaviour
                     AbsorbColorTransparency();
                     Absorbmode = false;
                 }
+
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    g = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    r = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    AbsorbColorTransparency();
+                    Debug.Log("Èí¼öµÊ");
+                    Absorbmode = false;
+                    b = 1;
+                    Shootmode = true; Attackmode = true;
+                    attackManager.ShootAttack();
+                }
             }
-
         }
-
     }
-    
+
 
     public void AbsorbButtonDown()
     {
@@ -229,31 +375,23 @@ public class AttackEvent : MonoBehaviour
         StartCoroutine("AttackCooldown");
         AbsorbUncolorTrasparency();
 
-        if(Attackmode == false)
+        if (Attackmode == false)
         {
-           
             Absorbmode = true;
         }
-        if(Attackmode == true)
+        if (Attackmode == true)
         {
             Debug.Log("¹ß»ç ÁØºñ");
             Shootmode = true;
         }
 
-        if(Attackmode == true && Shootmode == true)
+        if (Attackmode == true && Shootmode == true)
         {
-            
             attackManager.ShootAttack();
-           
+
             Absorbmode = false;
             asb = asbColor.normal;
-            r = 0;
-            g = 0;
-            b = 0;
-            
         }
-
-       
     }
 
     public void AbsorbColorTransparency()
@@ -268,7 +406,6 @@ public class AttackEvent : MonoBehaviour
         GetComponent<MeshRenderer>().materials[0].color = new Color(255, 0, 0, 1f);
         //absorptionSprite.color = new Color(0, 0, 0, 1f);
         absorption.GetComponent<SphereCollider>().enabled = true;
-
     }
 
     IEnumerator AttackCooldown()
@@ -277,7 +414,4 @@ public class AttackEvent : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         absorbBtn.SetActive(true);
     }
-
-   
-
 }
