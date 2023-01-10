@@ -4670,7 +4670,8 @@ GameObject:
   - component: {fileID: 578387786}
   - component: {fileID: 578387785}
   - component: {fileID: 578387784}
-  - component: {fileID: 578387783}
+  - component: {fileID: 578387789}
+  - component: {fileID: 578387790}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Boss
@@ -4678,26 +4679,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &578387783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578387782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d272706549c3408459a13910d876caba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possibleXValues:
-  - -1.7
-  - -0.8
-  - 0
-  - 0.8
-  - 1.7
-  duration: 7
-  newX: 0
 --- !u!54 &578387784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4712,7 +4693,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &578387785
 CapsuleCollider:
@@ -4793,6 +4774,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &578387789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578387782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23c9a9bc6c7f9b46a1f7faca3af7882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleXValues:
+  - -1.7
+  - -0.8
+  - 0
+  - 0.8
+  - 1.7
+  bossPos: {fileID: 578387782}
+  newX: 0
+  time: 0
+--- !u!114 &578387790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578387782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195cd75e04a427c4a8abfb9d81e984f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slashSpeed: 8
+  duration: 5
+  slash:
+  - {fileID: 34680953296216630, guid: a0d9e6867057f944097f7ea88b14ec14, type: 3}
+  - {fileID: 34680953296216630, guid: c14732d31f956184ab29202a8d4dc7df, type: 3}
 --- !u!4 &587417292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: 4b3c96b44d3c5be4e8685f4ac008d4bc, type: 3}
