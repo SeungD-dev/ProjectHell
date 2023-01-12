@@ -770,7 +770,6 @@ GameObject:
   - component: {fileID: 1332577270}
   - component: {fileID: 1332577273}
   - component: {fileID: 1332577272}
-  - component: {fileID: 1332577271}
   - component: {fileID: 1332577274}
   m_Layer: 5
   m_Name: oundeBackground
@@ -800,18 +799,6 @@ RectTransform:
   m_AnchoredPosition: {x: -390, y: -810}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1332577271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332577269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb3b7465526ed341a14bcf982dffbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1332577272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,6 +983,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621746768037122503, guid: d9eb2b7ea1636914d986297e80eec689, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030591263483591629, guid: d9eb2b7ea1636914d986297e80eec689, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

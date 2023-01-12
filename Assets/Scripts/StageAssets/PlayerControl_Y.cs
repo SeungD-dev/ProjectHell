@@ -150,7 +150,8 @@ public class PlayerControl_Y : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B") || other.CompareTag("Note_X") 
-            || other.CompareTag("BossAttack") || other.CompareTag("BossAttack_Up") || other.CompareTag("BossAttack_Down"))
+            || other.CompareTag("BossAttack") || other.CompareTag("BossAttack_Up") || other.CompareTag("BossAttack_Down") ||
+             other.CompareTag("SwordTrail") || other.CompareTag("SwordTrail_Vertical"))
         {
             Destroy(other.gameObject);
             if (!isHurt)

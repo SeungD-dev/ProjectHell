@@ -40,13 +40,15 @@ public class SwordTrail_Y : MonoBehaviour
             if (brm.newX == 0f)
             {
                 prefabToInstantiate = slash[0];
+                Instantiate(prefabToInstantiate, new Vector3(0, 0.5f, 7), Quaternion.identity);
             }
             else if (brm.newX == -1.7f || brm.newX == -0.8f || brm.newX == 0.8f || brm.newX == 1.7f)
             {
                 prefabToInstantiate = slash[1];
+                Instantiate(prefabToInstantiate, transform.position, Quaternion.identity);
             }
 
-            Instantiate(prefabToInstantiate, transform.position, Quaternion.identity);
+            
         }
     }
 

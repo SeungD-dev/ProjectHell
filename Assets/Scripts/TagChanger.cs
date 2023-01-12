@@ -8,6 +8,7 @@ public class TagChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("fjgkldf");
         if (other.CompareTag("Note_R"))
         {
             other.gameObject.tag = "Note_B";
@@ -20,6 +21,7 @@ public class TagChanger : MonoBehaviour
         }
         if (other.CompareTag("Note_B"))
         {
+            Debug.Log("¿€µø");
             other.gameObject.tag = "Note_G";
             other.gameObject.GetComponent<MeshRenderer>().material = mat[1];
         }

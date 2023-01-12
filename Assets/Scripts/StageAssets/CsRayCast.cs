@@ -67,7 +67,6 @@ public class CsRayCast : MonoBehaviour
 
 
 
-
 		/*Debug.DrawRay(transform.position, transform.forward * 8, Color.red);
 
 		//  레이캐스트가 빨간줄로 실제로 보게 만들어 준다.

@@ -8,37 +8,16 @@ public class NoteBreak : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Note_R"))
+        if (other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B") || other.CompareTag("Note_X") ||
+            other.CompareTag("Note_Fake") || other.CompareTag("BossAttack") || other.CompareTag("Note_AbsorbX") || other.CompareTag("SwordTrail") ||
+            other.CompareTag("SwordTrail_Vertical") || other.CompareTag("Note_BB") || other.CompareTag("Note_BG") || other.CompareTag("Note_BR"))
         {
             Destroy(other.gameObject);
         }
-        if (other.CompareTag("Note_G"))
-        {
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Note_B"))
-        {
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Note_X"))
-        {
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Note_Fake"))
-        {
-            Destroy(other.gameObject);
-        }
+        
         if (other.CompareTag("Player"))
         {
             player.transform.position = new Vector3(0, 0.2f, -2.8f);
-        }
-        if (other.CompareTag("BossAttack"))
-        {
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Note_AbsorbX"))
-        {
-            Destroy(other.gameObject);
         }
     }
 }

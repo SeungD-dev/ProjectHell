@@ -21,11 +21,12 @@ public class BossAttack : MonoBehaviour
         }
     }
     private void OnTriggerEnter(Collider other)
-    {
+    {    
         if(this.gameObject.tag == "BossAttack")
         {
+            Debug.Log("dfsf");
             counter = Random.Range(0, 10);
-            if (counter >= 8)
+            if (counter == 9)
             {
                 GameObject t_attack = Instantiate(bossAttack, bossAttackAppear.position, Quaternion.identity);
                 t_attack.transform.SetParent(this.transform);

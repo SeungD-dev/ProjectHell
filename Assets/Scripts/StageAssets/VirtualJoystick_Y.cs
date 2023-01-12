@@ -49,8 +49,7 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
             if (this.value != null)
             {
                 this.go_Player.transform.rotation = Quaternion.Euler(0f,
-                                                                     Mathf.Atan2(this.value.x, this.value.y) * Mathf.Rad2Deg,
-                                                                     0f);
+                Mathf.Atan2(this.value.x, this.value.y) * Mathf.Rad2Deg, 0f);
             }
         }
     }

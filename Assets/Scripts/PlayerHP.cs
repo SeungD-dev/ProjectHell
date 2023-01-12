@@ -54,11 +54,15 @@ public class PlayerHP : MonoBehaviour
         }
         if(player_currentHP == 2)
         {
+            hpImage[0].color = new Color(255, 255, 255, 255);
+            hpImage[1].color = new Color(255, 255, 255, 255);
             hpImage[2].color = new Color(255, 255, 255, 0);
         }
         else if(player_currentHP == 1)
         {
+            hpImage[0].color = new Color(255, 255, 255, 255);
             hpImage[1].color = new Color(255, 255, 255, 0);
+            hpImage[2].color = new Color(255, 255, 255, 0);
         }
     }
 
@@ -78,7 +82,9 @@ public class PlayerHP : MonoBehaviour
         }
         else if (player_currentHP == 2)
         {
+            hpImage[0].color = new Color(255, 255, 255, 255);
             hpImage[1].color = new Color(255, 255, 255, 255);
+            hpImage[2].color = new Color(255, 255, 255, 0);
         }
 
     }

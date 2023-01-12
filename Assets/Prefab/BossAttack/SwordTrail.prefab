@@ -112,3 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slashSpeed: 8
   slash: []
+  duration: 7
