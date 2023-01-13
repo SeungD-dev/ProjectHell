@@ -9,25 +9,51 @@ public class AttackRandomSpawn : MonoBehaviour
     public GameObject attackPrefab;
     public Transform player;
     BoxCollider rangeCollider;
+    
+    private Color[] colors = { Color.red, new Color(246, 187, 67), Color.yellow, Color.green, Color.blue, new Color(139, 0, 255) };
   
+    public  bool isAttackDestroyed = true;
+    ColorChange cc;
+   
 
     private void Start()
     {
-        StartCoroutine(RandomRespawn());
+
+        cc = FindObjectOfType<ColorChange>();
+
     }
+    private void Update()
+    {
+        if(isAttackDestroyed == true)
+        {
+            StartCoroutine(RandomRespawn());
+            isAttackDestroyed = false;
+        }
+    }
+
+
 
     IEnumerator RandomRespawn()
     {
-        while (true)
-        {
+        
             yield return new WaitForSeconds(3f);
 
             GameObject instantPrefab = Instantiate(attackPrefab, Return_RandomPosition(), Quaternion.identity);
-        }
+           
+            int randomColorIndex = Random.Range(0, colors.Length);
+            Material material = instantPrefab.GetComponent<Renderer>().material;
+           material.color = colors[randomColorIndex];
+            
+            isAttackDestroyed = false;
+
+          
+
+        
     }
 
     private void Awake()
     {
+       
         rangeCollider = rangeObject.GetComponent<BoxCollider>();
     }
   

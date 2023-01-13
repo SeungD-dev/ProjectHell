@@ -907,7 +907,6 @@ MonoBehaviour:
   - {fileID: 1217488180}
   - {fileID: 122099467}
   white: {r: 1, g: 1, b: 1, a: 1}
-  orange: {r: 246, g: 187, b: 67, a: 1}
   spotLight:
   - {fileID: 1053729126}
   - {fileID: 230668524}
@@ -1318,6 +1317,7 @@ MonoBehaviour:
   rangeObject: {fileID: 1432816357}
   attackPrefab: {fileID: 34680953296216630, guid: cea6eb9b0daa40d43b05410afce1616b, type: 3}
   player: {fileID: 1374812515}
+  isAttackDestroyed: 0
 --- !u!1 &1725543126
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,15 +6,14 @@ using UnityEngine.AI;
 public class BossAttackMove : MonoBehaviour
 {
     NavMeshAgent agent;
-   
-    
-    
-  
-    GameObject player;
+   GameObject player;
+   AttackRandomSpawn atr;
 
+   
 
     void Awake()
     {
+        atr = FindObjectOfType<AttackRandomSpawn>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -26,5 +25,14 @@ public class BossAttackMove : MonoBehaviour
     void Update()
     {
         agent.SetDestination(player.transform.position);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+            atr.isAttackDestroyed = true;
+        }
     }
 }

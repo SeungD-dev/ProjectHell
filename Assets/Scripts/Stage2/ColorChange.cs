@@ -5,47 +5,66 @@ using UnityEngine;
 public class ColorChange : MonoBehaviour
 {
 
-    public GameObject[] gameObjects;  // array of GameObjects to change color
+    public GameObject[] gameObjects;  
    
     public Color white = Color.white;
-    public Color orange = new Color(246, 187, 67);
-    private Color[] colors = { Color.red, new Color(246, 187, 67), Color.yellow, Color.green, Color.blue, new Color(139,0,255)  };
+   
+    public Color[] colors = { Color.red, new Color(246, 187, 67), Color.yellow, Color.green, Color.blue, new Color(139,0,255)  };
     
    
     private float time;  // time until the next color change
     private float colorTime;
     public Light[] spotLight;
-    private List<int> usedColors;
+    public List<int> usedColors;
+    AttackRandomSpawn ars;
+    public int random;
+    
+
+  
 
     void Start()
     {
+        ars = FindObjectOfType<AttackRandomSpawn>();
         usedColors = new List<int>();
-        time = 5.0f;
+        time = 15.0f;
         colorTime = 0.0f;
-        SetColor();
+
+       
+      
     }
+
 
     void Update()
     {
-        time -= Time.deltaTime;
-        colorTime += Time.deltaTime;
-        if (time <= 0)
+        if(ars.isAttackDestroyed == true)
         {
-            SetColor();
-            time = 3.0f;
+            
+            StartCoroutine(SetColor());
         }
-        if (colorTime >= 2.0f)
+        else
         {
-            for (int i = 0; i < gameObjects.Length; i++)
+            colorTime += Time.deltaTime;
+            if (colorTime > 2)
             {
-                gameObjects[i].GetComponent<Renderer>().material.color = white;
-                spotLight[i].color = white;
+                colorTime = 0.0f;
+                for (int i = 0; i < gameObjects.Length; i++)
+                {
+                    gameObjects[i].GetComponent<Renderer>().material.color = white;
+                    spotLight[i].color = white;
+                }
             }
-            colorTime = 0.0f;
         }
+      
+        time -= Time.deltaTime;
+        
+       
+       
+
+
     }
-    void SetColor()
+    IEnumerator SetColor()
     {
+
         for (int i = 0; i < gameObjects.Length; i++)
         {
             int random = Random.Range(0, colors.Length);
@@ -58,18 +77,16 @@ public class ColorChange : MonoBehaviour
             usedColors.Add(random);
         }
         usedColors.Clear();
+        yield return new WaitForSeconds(2f);
+
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            gameObjects[i].GetComponent<Renderer>().material.color = white;
+            spotLight[i].color = white;
+        }
+
     }
 
 
 
-    /* void SetColor()
-     {
-         for (int i = 0; i < gameObjects.Length; i++)
-         {
-             int random = Random.Range(0, colors.Length);
-             gameObjects[i].GetComponent<Renderer>().material.color = colors[random];
-             spotLight[i].color = colors[random];
-         }
-         colorTime = 0.0f;
-     }*/
 }
