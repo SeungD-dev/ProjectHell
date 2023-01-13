@@ -17,16 +17,25 @@ public class CsRayCast : MonoBehaviour
 	bool isCollision = false;
 
 
-
-
 	public GameObject monster;
 	ChasePlayer chasePlayer;
-
 	float time;
-	bool stopMonster;
+
+	// ray의 길이
+	[SerializeField]
+	private float _maxDistance = 1.5f;
+
+	// ray의 색상
+	[SerializeField]
+	private Color _rayColor = Color.red;
+
+	public GameObject button;
+	VirtualJoystick_Y virtualJoystick;
+	
     private void Start()
     {
         chasePlayer = monster.GetComponent<ChasePlayer>();
+		virtualJoystick = button.GetComponent<VirtualJoystick_Y>();
     }
 
     // Update is called once per frame
@@ -97,5 +106,22 @@ public class CsRayCast : MonoBehaviour
 		// DrawSolidArc(시작점, 노멀벡터(법선벡터), 그려줄 방향 벡터, 각도, 반지름)
 		Handles.DrawSolidArc(transform.position, Vector3.up, transform.forward, angleRange / 2, radius);
 		Handles.DrawSolidArc(transform.position, Vector3.up, transform.forward, -angleRange / 2, radius);
+
+
+		Gizmos.color = _rayColor;
+
+		// 함수 파라미터 : Capsule의 시작점, Capsule의 끝점, Capsule의 크기(x, z 중 가장 큰 값이 크기가 됨), Ray의 방향, RaycastHit 결과, Capsule의 회전값, CapsuleCast를 진행할 거리
+		if (true == Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, _maxDistance))
+		{
+			// Hit된 지점까지 ray를 그려준다.
+			Gizmos.DrawRay(transform.position, transform.forward * hit.distance);
+			virtualJoystick.moveSpeed = 0f;
+		}
+		else
+		{
+			// Hit가 되지 않았으면 최대 검출 거리로 ray를 그려준다.
+			Gizmos.DrawRay(transform.position, transform.forward * _maxDistance);
+			virtualJoystick.moveSpeed = 7;
+		}
 	}
 }

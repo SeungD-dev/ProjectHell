@@ -10,30 +10,32 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
     //움직이는 범위를 제한하기 위해서 선언함
     [SerializeField] private RectTransform rect_Background;
-    [SerializeField] private RectTransform rect_Joystick;
+    [SerializeField] public RectTransform rect_Joystick;
 
     //백그라운드의 반지름의 범위를 저장시킬 변수
     private float radius;
 
     //화면에서 움직일 플레이어
-    [SerializeField] private GameObject go_Player;
+    [SerializeField] public GameObject go_Player;
     //움직일 속도
-    [SerializeField] private float moveSpeed;
+    [SerializeField] public float moveSpeed;
 
     //터치가 시작됐을 때 움직이거라
     private bool isTouch = false;
     //움직일 좌표
-    private Vector3 movePosition;
+    public Vector3 movePosition;
 
     //private Animation anim;
     //캐릭터 회전값을 만들기위해 value를 전역변수로 설정함
     private Vector2 value;
 
+    public float width = 0.5f;
+
     void Start()
     {
         //inspector에 그 rect Transform에 접근하는 거 맞음
         //0.5를 곱해서 반지름을 구해서 값을 넣어줌
-        this.radius = rect_Background.rect.width * 0.5f;
+        this.radius = rect_Background.rect.width * width;
 
         //this.anim = this.go_Player.GetComponent<Animation>();
 
@@ -97,10 +99,9 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
         //x축에 방향에 속도 시간을 곱한 값
         //y축에 0, 점프 안할거라서
         //z축에 y방향에 속도 시간을 곱한 값
-        this.movePosition = new Vector3(value.x * moveSpeed * Time.deltaTime,
-                                        0f,
-                                        value.y * moveSpeed * Time.deltaTime);
 
-        //this.anim.Play("run@loop");
+        this.movePosition = new Vector3(value.x * moveSpeed * Time.deltaTime,
+                                    0f,
+                                    value.y * moveSpeed * Time.deltaTime);
     }
 }
