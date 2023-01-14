@@ -9,28 +9,27 @@ public class ColorChange : MonoBehaviour
    
     public Color white = Color.white;
    
-    public Color[] colors = { Color.red, new Color(246, 187, 67), Color.yellow, Color.green, Color.blue, new Color(139,0,255)  };
+    
     
    
-    private float time;  // time until the next color change
+   
     private float colorTime;
     public Light[] spotLight;
-    public List<int> usedColors;
+   
     AttackRandomSpawn ars;
-    public int random;
-    
-
-  
-
-    void Start()
+   
+   void Start()
     {
         ars = FindObjectOfType<AttackRandomSpawn>();
-        usedColors = new List<int>();
-        time = 15.0f;
-        colorTime = 0.0f;
-
        
-      
+       
+        colorTime = 0.0f;
+        ColorManager.colors = new Color[]  { Color.red, new Color(255, 141, 0), Color.yellow, Color.green, Color.blue, new Color(139, 0, 255) };
+        
+
+
+
+
     }
 
 
@@ -41,7 +40,7 @@ public class ColorChange : MonoBehaviour
             
             StartCoroutine(SetColor());
         }
-        else
+        /*else
         {
             colorTime += Time.deltaTime;
             if (colorTime > 2)
@@ -53,10 +52,9 @@ public class ColorChange : MonoBehaviour
                     spotLight[i].color = white;
                 }
             }
-        }
+        }*/
       
-        time -= Time.deltaTime;
-        
+      
        
        
 
@@ -64,19 +62,24 @@ public class ColorChange : MonoBehaviour
     }
     IEnumerator SetColor()
     {
-
+       
         for (int i = 0; i < gameObjects.Length; i++)
         {
-            int random = Random.Range(0, colors.Length);
-            while (usedColors.Contains(random))
+           ColorManager.randomColorIndex = Random.Range(0, ColorManager.colors.Length);
+            
+            while (ColorManager.usedColors.Contains(ColorManager.colors[ColorManager.randomColorIndex])) 
             {
-                random = Random.Range(0, colors.Length);
+                ColorManager.randomColorIndex = Random.Range(0, ColorManager.colors.Length);
             }
-            gameObjects[i].GetComponent<Renderer>().material.color = colors[random];
-            spotLight[i].color = colors[random];
-            usedColors.Add(random);
+            
+            gameObjects[i].GetComponent<Renderer>().material.color = ColorManager.colors[ColorManager.randomColorIndex];
+            
+            spotLight[i].color = ColorManager.colors[ColorManager.randomColorIndex];
+            
+            ColorManager.usedColors.Add(ColorManager.colors[ColorManager.randomColorIndex]); 
         }
-        usedColors.Clear();
+        Debug.Log("SetColor" + ColorManager.randomColorIndex);
+        
         yield return new WaitForSeconds(2f);
 
         for (int i = 0; i < gameObjects.Length; i++)
@@ -84,8 +87,11 @@ public class ColorChange : MonoBehaviour
             gameObjects[i].GetComponent<Renderer>().material.color = white;
             spotLight[i].color = white;
         }
+        ColorManager.usedColors.Clear();
 
     }
+
+   
 
 
 

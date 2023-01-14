@@ -1317,7 +1317,7 @@ MonoBehaviour:
   rangeObject: {fileID: 1432816357}
   attackPrefab: {fileID: 34680953296216630, guid: cea6eb9b0daa40d43b05410afce1616b, type: 3}
   player: {fileID: 1374812515}
-  isAttackDestroyed: 0
+  isAttackDestroyed: 1
 --- !u!1 &1725543126
 GameObject:
   m_ObjectHideFlags: 0

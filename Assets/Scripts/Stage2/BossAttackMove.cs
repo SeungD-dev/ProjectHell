@@ -7,13 +7,13 @@ public class BossAttackMove : MonoBehaviour
 {
     NavMeshAgent agent;
    GameObject player;
-   AttackRandomSpawn atr;
+   AttackRandomSpawn ars;
 
    
 
     void Awake()
     {
-        atr = FindObjectOfType<AttackRandomSpawn>();
+        ars = FindObjectOfType<AttackRandomSpawn>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -29,10 +29,15 @@ public class BossAttackMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
+
         if (other.CompareTag("Player"))
         {
             Destroy(this.gameObject);
-            atr.isAttackDestroyed = true;
+            ars.isAttackDestroyed = true;
         }
+       
+
     }
+  
 }
