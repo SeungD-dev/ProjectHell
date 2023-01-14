@@ -10,14 +10,21 @@ public class ChasePlayer : MonoBehaviour
 
     public bool goMonster;
 
+    UnityEngine.AI.NavMeshAgent agent;
+
     private void Start()
     {
         goMonster = true;
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
     // Update is called once per frame
     void Update()
     {
         if (goMonster == true)
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, playerPos.localPosition, monsterSpeed);
+        {
+            //transform.localPosition = Vector3.MoveTowards(transform.localPosition, playerPos.localPosition, monsterSpeed);
+            agent.destination = playerPos.localPosition;
+        }
+        else agent.destination = this.gameObject.transform.localPosition;
     }
 }

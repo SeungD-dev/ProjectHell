@@ -31,6 +31,8 @@ public class CsRayCast : MonoBehaviour
 
 	public GameObject button;
 	VirtualJoystick_Y virtualJoystick;
+
+	public int count;
 	
     private void Start()
     {
