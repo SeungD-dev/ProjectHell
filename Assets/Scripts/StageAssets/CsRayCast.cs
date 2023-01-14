@@ -33,8 +33,8 @@ public class CsRayCast : MonoBehaviour
 	VirtualJoystick_Y virtualJoystick;
 
 	public int count;
-	
-    private void Start()
+
+	private void Start()
     {
         chasePlayer = monster.GetComponent<ChasePlayer>();
 		virtualJoystick = button.GetComponent<VirtualJoystick_Y>();
@@ -73,34 +73,7 @@ public class CsRayCast : MonoBehaviour
 			if (time >= 5f)
 				chasePlayer.goMonster = true;
 			time += Time.deltaTime;
-		}
-
-
-
-
-		/*Debug.DrawRay(transform.position, transform.forward * 8, Color.red);
-
-		//  레이캐스트가 빨간줄로 실제로 보게 만들어 준다.
-
-		RaycastHit hit;
-
-		if (Physics.Raycast(transform.position, transform.forward, out hit, 8))
-		// (시작점,방향 ,hit info,거리)
-		{
-			// 광선이 충돌한 오브젝트를 로그창에 보여 준다.
-			Debug.Log(hit.collider.gameObject.name);
-			
-			chasePlayer.goMonster = false;
-			time = 0;
-		}
-		else
-        {
-			if(time >= 5f)
-				chasePlayer.goMonster = true;
-			time += Time.deltaTime;
-		}*/
-
-
+		}		
 	}
 	private void OnDrawGizmos()
 	{
@@ -126,4 +99,14 @@ public class CsRayCast : MonoBehaviour
 			virtualJoystick.moveSpeed = 7;
 		}
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Key"))
+        {
+			count++;
+			Debug.Log(count);
+			Destroy(other.gameObject);
+		}
+    }
 }

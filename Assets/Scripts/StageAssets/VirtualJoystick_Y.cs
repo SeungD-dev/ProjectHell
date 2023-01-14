@@ -31,6 +31,8 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
     public float width = 0.5f;
 
+    public GameObject ViewCamera = null;
+
     void Start()
     {
         //inspector에 그 rect Transform에 접근하는 거 맞음
@@ -44,6 +46,7 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
     //이동 구현
     void Update()
     {
+        RaycastHit m_Hit;
         if (this.isTouch)
         {
             this.go_Player.transform.position += this.movePosition;
@@ -53,6 +56,19 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
                 this.go_Player.transform.rotation = Quaternion.Euler(0f,
                 Mathf.Atan2(this.value.x, this.value.y) * Mathf.Rad2Deg, 0f);
             }
+        }
+
+        Debug.DrawLine(go_Player.transform.position, ViewCamera.transform.position, Color.red);
+        Vector3 direction = new Vector3(0, 7, -5);
+
+        if (Physics.Linecast(go_Player.transform.position, ViewCamera.transform.position, out m_Hit))
+        {
+            ViewCamera.transform.position = m_Hit.point;
+        }
+        else
+        {
+            //cameraPosition = this.gameObject.transform.position;
+            ViewCamera.transform.position = this.go_Player.transform.position + direction;
         }
     }
 
