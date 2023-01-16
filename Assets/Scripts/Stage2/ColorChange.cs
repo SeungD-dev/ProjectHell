@@ -24,7 +24,7 @@ public class ColorChange : MonoBehaviour
        
        
         colorTime = 0.0f;
-        ColorManager.colors = new Color[]  { Color.red, new Color(255, 141, 0), Color.yellow, Color.green, Color.blue, new Color(139, 0, 255) };
+        ColorManager.colors = new Color[]  { Color.red, new Color32(255, 141, 0,255), Color.yellow, Color.green, Color.blue, new Color32(139, 0, 255,255) };
         
 
 

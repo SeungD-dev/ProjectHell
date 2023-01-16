@@ -9,3 +9,4 @@ public class ColorManager : MonoBehaviour
     public static int randomColorIndex;
    
 }
+ 
