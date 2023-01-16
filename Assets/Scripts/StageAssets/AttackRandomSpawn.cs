@@ -10,6 +10,7 @@ public class AttackRandomSpawn : MonoBehaviour
     public Transform player;
     BoxCollider rangeCollider;
     public  bool isAttackDestroyed = true;
+    public GameObject instantPrefab;
    
     private void Update()
     {
@@ -30,7 +31,7 @@ public class AttackRandomSpawn : MonoBehaviour
         yield return new WaitForSeconds(2f);
             
 
-            GameObject instantPrefab = Instantiate(attackPrefab, Return_RandomPosition(), Quaternion.identity);
+            instantPrefab = Instantiate(attackPrefab, Return_RandomPosition(), Quaternion.identity);
        
         instantPrefab.GetComponent<Renderer>().material.color = ColorManager.colors[ColorManager.randomColorIndex];
        

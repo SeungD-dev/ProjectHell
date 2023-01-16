@@ -17,6 +17,8 @@ public class ColorChange : MonoBehaviour
     public Light[] spotLight;
    
     AttackRandomSpawn ars;
+    int itscolor;
+
    
    void Start()
     {
@@ -24,8 +26,17 @@ public class ColorChange : MonoBehaviour
        
        
         colorTime = 0.0f;
-        ColorManager.colors = new Color[]  { Color.red, new Color32(255, 141, 0,255), Color.yellow, Color.green, Color.blue, new Color32(139, 0, 255,255) };
-        
+        //ColorManager.colors = new Color[]  { Color.red, new Color32(255, 141, 0,255), Color.yellow, Color.green, Color.blue, new Color32(139, 0, 255,255) };
+        ColorManager.colors = new Color[6];
+        ColorManager.colors[0] = Color.red;
+        ColorManager.colors[1] = new Color32(255, 141, 0, 255);
+        ColorManager.colors[2] = Color.yellow;
+        ColorManager.colors[3] = Color.green;
+        ColorManager.colors[4] = Color.blue;
+        ColorManager.colors[5] = new Color32(139,0,255,255);
+
+        GetComponent<Renderer>();
+
 
 
 
@@ -53,8 +64,8 @@ public class ColorChange : MonoBehaviour
                 }
             }
         }*/
-      
-      
+
+
        
        
 
@@ -82,11 +93,11 @@ public class ColorChange : MonoBehaviour
         
         yield return new WaitForSeconds(2f);
 
-        for (int i = 0; i < gameObjects.Length; i++)
+        /*for (int i = 0; i < gameObjects.Length; i++)
         {
             gameObjects[i].GetComponent<Renderer>().material.color = white;
             spotLight[i].color = white;
-        }
+        }*/
         ColorManager.usedColors.Clear();
 
     }

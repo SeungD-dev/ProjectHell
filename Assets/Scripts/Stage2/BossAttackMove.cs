@@ -8,6 +8,9 @@ public class BossAttackMove : MonoBehaviour
     NavMeshAgent agent;
    GameObject player;
    AttackRandomSpawn ars;
+   // Color[] colorChoices;
+    //int colorNum;
+    ColorChange cc;
 
    
 
@@ -16,7 +19,9 @@ public class BossAttackMove : MonoBehaviour
         ars = FindObjectOfType<AttackRandomSpawn>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
-
+        cc = FindObjectOfType<ColorChange>();
+       
+        //this.gameObject.GetComponent<Renderer>().material.color = colorChoices[colorNum];
        
         
     }
@@ -32,6 +37,12 @@ public class BossAttackMove : MonoBehaviour
         
 
         if (other.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+            ars.isAttackDestroyed = true;
+        }
+       
+       if(this.gameObject.GetComponent<Renderer>().material.color == cc.gameObject.GetComponent<Renderer>().material.color)
         {
             Destroy(this.gameObject);
             ars.isAttackDestroyed = true;

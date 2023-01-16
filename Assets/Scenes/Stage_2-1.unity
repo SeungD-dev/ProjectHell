@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 122099470}
   - component: {fileID: 122099469}
   - component: {fileID: 122099468}
+  - component: {fileID: 122099472}
   m_Layer: 0
   m_Name: LightField3
   m_TagString: Untagged
@@ -221,6 +222,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &122099472
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122099467}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &230668522
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +438,7 @@ GameObject:
   - component: {fileID: 454370792}
   - component: {fileID: 454370791}
   - component: {fileID: 454370790}
+  - component: {fileID: 454370794}
   m_Layer: 0
   m_Name: LightField1
   m_TagString: Untagged
@@ -507,6 +525,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &454370794
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454370789}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &480419997
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081916998}
   - component: {fileID: 1081916997}
+  - component: {fileID: 1081916999}
   m_Layer: 0
   m_Name: ColorChange
   m_TagString: Untagged
@@ -926,6 +961,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1081916999
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081916996}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1193983942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1117,7 @@ GameObject:
   - component: {fileID: 1217488183}
   - component: {fileID: 1217488182}
   - component: {fileID: 1217488181}
+  - component: {fileID: 1217488185}
   m_Layer: 0
   m_Name: LightField2
   m_TagString: Untagged
@@ -1126,6 +1204,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1217488185
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217488180}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1374812509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,6 +1412,7 @@ MonoBehaviour:
   attackPrefab: {fileID: 34680953296216630, guid: cea6eb9b0daa40d43b05410afce1616b, type: 3}
   player: {fileID: 1374812515}
   isAttackDestroyed: 1
+  instantPrefab: {fileID: 0}
 --- !u!1 &1725543126
 GameObject:
   m_ObjectHideFlags: 0
