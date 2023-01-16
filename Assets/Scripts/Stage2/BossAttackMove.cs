@@ -11,6 +11,7 @@ public class BossAttackMove : MonoBehaviour
    // Color[] colorChoices;
     //int colorNum;
     ColorChange cc;
+    Renderer rend;
 
    
 
@@ -20,7 +21,7 @@ public class BossAttackMove : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         cc = FindObjectOfType<ColorChange>();
-       
+        rend = GetComponent<Renderer>();
         //this.gameObject.GetComponent<Renderer>().material.color = colorChoices[colorNum];
        
         
@@ -41,13 +42,17 @@ public class BossAttackMove : MonoBehaviour
             Destroy(this.gameObject);
             ars.isAttackDestroyed = true;
         }
-       
-       if(this.gameObject.GetComponent<Renderer>().material.color == cc.gameObject.GetComponent<Renderer>().material.color)
+        var attackPrefab = gameObject.GetComponent<Renderer>();
+        var focusLight = other.gameObject.GetComponent<Renderer>();
+        
+        if (attackPrefab.sharedMaterial.color == focusLight.sharedMaterial.color)
         {
             Destroy(this.gameObject);
             ars.isAttackDestroyed = true;
         }
        
+       
+
 
     }
   

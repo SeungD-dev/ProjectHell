@@ -5,23 +5,54 @@ using UnityEngine.AI;
 
 public class AttackRandomSpawn : MonoBehaviour
 {
-    public GameObject rangeObject;
+   
+    public GameObject[] rangeObjects;
+    GameObject rangeObject;
     public GameObject attackPrefab;
     public Transform player;
     BoxCollider rangeCollider;
     public  bool isAttackDestroyed = true;
     public GameObject instantPrefab;
+    int randomIndex;
+    public int randomResult;
+
+
+  
    
+
+    private void Start()
+    {
+        ColorManager.colors = new Color[] { Color.red, new Color32(255, 141, 0, 255), Color.yellow, Color.green, Color.blue, new Color32(139, 0, 255, 255) };
+      
+       
+    }
+
     private void Update()
     {
+       
+            randomIndex = Random.Range(0, rangeObjects.Length);
+            rangeObject = rangeObjects[randomIndex];
+            rangeCollider = rangeObjects[randomIndex].GetComponent<BoxCollider>();
+        
         if (isAttackDestroyed == true)
         {
+           
             StartCoroutine(RandomRespawn());
+            
 
             isAttackDestroyed = false;
 
         }
+       
     }
+    private void Awake()
+    {
+
+       
+    }
+
+
+
 
 
 
@@ -38,6 +69,8 @@ public class AttackRandomSpawn : MonoBehaviour
         
        
         ColorManager.usedColors.Add(ColorManager.colors[ColorManager.randomColorIndex]);
+        randomResult = ColorManager.randomColorIndex;
+
       
         Debug.Log("randomRespawn" + ColorManager.randomColorIndex);
             
@@ -47,12 +80,7 @@ public class AttackRandomSpawn : MonoBehaviour
         
     }
 
-    private void Awake()
-    {
-       
-        rangeCollider = rangeObject.GetComponent<BoxCollider>();
-    }
-  
+   
 
 
     Vector3 Return_RandomPosition()
@@ -69,4 +97,6 @@ public class AttackRandomSpawn : MonoBehaviour
         return respawnPosition;
 
     }
+
+   
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ColorManager : MonoBehaviour
 {
     public static List<Color> usedColors = new List<Color>();
+    public static List<Color> changedColors = new List<Color>();
     public static Color[] colors; 
     public static int randomColorIndex;
    
