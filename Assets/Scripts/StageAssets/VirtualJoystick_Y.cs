@@ -55,6 +55,8 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
             {
                 this.go_Player.transform.rotation = Quaternion.Euler(0f,
                 Mathf.Atan2(this.value.x, this.value.y) * Mathf.Rad2Deg, 0f);
+                this.ViewCamera.transform.rotation = Quaternion.Euler(41,
+                Mathf.Atan2(this.value.x, this.value.y) * Mathf.Rad2Deg, 0f);
             }
         }
 
@@ -63,12 +65,18 @@ public class VirtualJoystick_Y : MonoBehaviour, IPointerDownHandler, IPointerUpH
 
         if (Physics.Linecast(go_Player.transform.position, ViewCamera.transform.position, out m_Hit))
         {
-            ViewCamera.transform.position = m_Hit.point;
+            //ViewCamera.transform.position = m_Hit.point;
         }
         else
         {
-            //cameraPosition = this.gameObject.transform.position;
-            ViewCamera.transform.position = this.go_Player.transform.position + direction;
+            /*if(go_Player.transform.rotation.y < 45 && go_Player.transform.rotation.y >= -45)
+                ViewCamera.transform.position = this.go_Player.transform.position + new Vector3(0, 7, -5);
+            if (go_Player.transform.rotation.y > 45 && go_Player.transform.rotation.y <= 135)
+                ViewCamera.transform.position = this.go_Player.transform.position + new Vector3(-5, 7, 0);
+            if (go_Player.transform.rotation.y > 135 || go_Player.transform.rotation.y <= -135)
+                ViewCamera.transform.position = this.go_Player.transform.position + new Vector3(0, 7, 5);
+            if (go_Player.transform.rotation.y > -45 && go_Player.transform.rotation.y >= -135)
+                ViewCamera.transform.position = this.go_Player.transform.position + new Vector3(5, 7, 0);*/
         }
     }
 

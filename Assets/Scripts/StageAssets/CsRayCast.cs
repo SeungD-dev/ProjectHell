@@ -63,17 +63,17 @@ public class CsRayCast : MonoBehaviour
 			}
             else
             {
-				if (time >= 5f)
+				if (time >= 3f)
 					chasePlayer.goMonster = true;
 				time += Time.deltaTime;
 			}
 		}
 		else
         {
-			if (time >= 5f)
+			if (time >= 3f)
 				chasePlayer.goMonster = true;
 			time += Time.deltaTime;
-		}		
+		}	
 	}
 	private void OnDrawGizmos()
 	{
