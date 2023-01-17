@@ -8,11 +8,9 @@ public class BossAttackMove : MonoBehaviour
     NavMeshAgent agent;
    GameObject player;
    AttackRandomSpawn ars;
-   // Color[] colorChoices;
-    //int colorNum;
-    ColorChange cc;
-    Renderer rend;
-
+    MiniGame2_PlayerHP playerHP;
+   
+  
    
 
     void Awake()
@@ -20,9 +18,8 @@ public class BossAttackMove : MonoBehaviour
         ars = FindObjectOfType<AttackRandomSpawn>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
-        cc = FindObjectOfType<ColorChange>();
-        rend = GetComponent<Renderer>();
-        //this.gameObject.GetComponent<Renderer>().material.color = colorChoices[colorNum];
+        playerHP = FindObjectOfType<MiniGame2_PlayerHP>();
+       
        
         
     }
@@ -30,7 +27,10 @@ public class BossAttackMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         agent.SetDestination(player.transform.position);
+      
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,6 +41,7 @@ public class BossAttackMove : MonoBehaviour
         {
             Destroy(this.gameObject);
             ars.isAttackDestroyed = true;
+            playerHP.DecreaseHP(1);
         }
         var attackPrefab = gameObject.GetComponent<Renderer>();
         var focusLight = other.gameObject.GetComponent<Renderer>();

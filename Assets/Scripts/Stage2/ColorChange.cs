@@ -17,10 +17,20 @@ public class ColorChange : MonoBehaviour
     public Light[] spotLight;
    
     AttackRandomSpawn ars;
-    public int result;
+   
+    List<Vector3> coordinates = new List<Vector3>()
+    {
+        new Vector3(10,0,-4),
+        new Vector3(10,0,4),
+        new Vector3(-8,0,0)
+    };
+   
+ 
 
 
-    GameObject Lf, SL,Lf1,SL1,Lf2,SL2 ,Spotlight1,Spotlight2,Spotlight3;
+
+    GameObject Lf, SL,Lf1,SL1,Lf2,SL2 ,Spotlight1,Spotlight2,Spotlight3,LightField1,LightField2,LightField3;
+    bool rotateOn;
 
     void Start()
     {
@@ -36,6 +46,9 @@ public class ColorChange : MonoBehaviour
         Spotlight1 = GameObject.Find("Spot Light1");
         Spotlight2 = GameObject.Find("Spot Light2");
         Spotlight3 = GameObject.Find("Spot Light3");
+        LightField1 = GameObject.Find("LightField1");
+        LightField2 = GameObject.Find("LightField2");
+        LightField3 = GameObject.Find("LightField3");
         Lf.GetComponent<Renderer>().material.color = Color.black;
         SL.GetComponent<Light>().color = Color.black;
         Lf1.GetComponent<Renderer>().material.color = Color.black;
@@ -64,27 +77,56 @@ public class ColorChange : MonoBehaviour
         {
             
             StartCoroutine(SetColor());
+            LightFieldRotate();
+
+
+
         }
-        /*else
-        {
-            colorTime += Time.deltaTime;
-            if (colorTime > 2)
-            {
-                colorTime = 0.0f;
-                for (int i = 0; i < gameObjects.Length; i++)
-                {
-                    gameObjects[i].GetComponent<Renderer>().material.color = white;
-                    spotLight[i].color = white;
-                }
-            }
-        }*/
+      
+        
 
-
-       
-       
 
 
     }
+
+    void LightFieldRotate()
+    {
+
+        List<Vector3> usedCoordinates = new List<Vector3>();
+
+        for (int i = 0; i < 3; i++)
+        {
+            Vector3 randomCoordinate;
+            do
+            {
+                randomCoordinate = coordinates[Random.Range(0, coordinates.Count)];
+            } while (usedCoordinates.Contains(randomCoordinate));
+            usedCoordinates.Add(randomCoordinate);
+
+            switch (i)
+            {
+                case 0:
+                    LightField1.transform.position = randomCoordinate;
+                    Spotlight1.transform.position = randomCoordinate;
+                    break;
+                case 1:
+                    LightField2.transform.position = randomCoordinate;
+                    Spotlight2.transform.position = randomCoordinate;
+                    break;
+                case 2:
+                    LightField3.transform.position = randomCoordinate;
+                    Spotlight3.transform.position = randomCoordinate;
+                    break;
+            }
+        }
+        usedCoordinates.Clear();
+
+
+
+
+    }
+
+
     public IEnumerator SetColor()
     {
         Spotlight1.SetActive(true);
@@ -112,9 +154,9 @@ public class ColorChange : MonoBehaviour
             spotLight[i].color = ColorManager.colors[ColorManager.randomColorIndex];
             
             ColorManager.usedColors.Add(ColorManager.colors[ColorManager.randomColorIndex]);
-            ColorManager.changedColors.Add(ColorManager.colors[ColorManager.randomColorIndex]);
+            
         }
-        result = ColorManager.randomColorIndex;
+       
 
         Debug.Log("SetColor" + ColorManager.randomColorIndex);
         
