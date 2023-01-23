@@ -29,6 +29,7 @@ public class BossAttackMove : MonoBehaviour
     {
        
         agent.SetDestination(player.transform.position);
+        agent.acceleration = Mathf.Lerp(agent.acceleration, 200f, Time.deltaTime);
       
 
     }

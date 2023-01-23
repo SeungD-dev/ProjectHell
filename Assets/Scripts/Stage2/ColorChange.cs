@@ -107,15 +107,15 @@ public class ColorChange : MonoBehaviour
             {
                 case 0:
                     LightField1.transform.position = randomCoordinate;
-                    Spotlight1.transform.position = randomCoordinate;
+                    Spotlight1.transform.position = new Vector3(-1.4f, 23f,-1.9f) + randomCoordinate;
                     break;
                 case 1:
                     LightField2.transform.position = randomCoordinate;
-                    Spotlight2.transform.position = randomCoordinate;
+                    Spotlight2.transform.position = new Vector3(-1.4f, 23f, -1.9f) + randomCoordinate; 
                     break;
                 case 2:
                     LightField3.transform.position = randomCoordinate;
-                    Spotlight3.transform.position = randomCoordinate;
+                    Spotlight3.transform.position = new Vector3(-1.4f, 23f, -1.9f) + randomCoordinate;
                     break;
             }
         }
