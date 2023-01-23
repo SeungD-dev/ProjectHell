@@ -6,17 +6,24 @@ public class BossRandomAttack : MonoBehaviour
 {
     List<int> cubeList = new List<int>();
     public GameObject[] attackPrefabs;
-    public Transform[] attackPoints;
+    public Transform[] attackPoints_1;
+    public Transform[] attackPoints_2;
+    public Transform[] attackPoints_3;
+    public Transform attackPoints_4;
     public bool attackMode = true;
+    public bool goAttack = true;
+    public bool boss4, boss3, boss2, boss1 = false;
     public int attackNum;
     public int pointNum;
-
+    public int attackShape;
+    
     // Start is called before the first frame update
     void Start()
     {
+        boss4 = true;
         CreateUnDuplicateRandom(0, 4);
         attackNum = Random.Range(0, attackPrefabs.Length);
-        pointNum = Random.Range(0, attackPoints.Length);
+        pointNum = Random.Range(0, attackPoints_1.Length);
         for (int i = 0; i < cubeList.Count; i++)
         {
             Debug.Log(cubeList[i]);
@@ -27,13 +34,46 @@ public class BossRandomAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attackMode == true)
+        if (goAttack == true)
         {
-            for (int i = 0; i < cubeList.Count; i++)
+            attackShape = Random.Range(0, 4);
+            goAttack = false;
+        }
+        if (boss4 == true)
+        {
+            if (attackMode == true)
             {
-                Instantiate(attackPrefabs[cubeList[i]], attackPoints[i].position, Quaternion.identity);
+                for (int i = 0; i < cubeList.Count; i++)
+                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_1[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                attackMode = false;
             }
-            attackMode = false;
+        }
+        else if(boss3 == true)
+        {
+            if (attackMode == true)
+            {
+                for (int i = 0; i < cubeList.Count; i++)
+                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_2[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                attackMode = false;
+            }
+        }
+        else if(boss2 == true)
+        {
+            if (attackMode == true)
+            {
+                for (int i = 0; i < cubeList.Count; i++)
+                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_3[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                attackMode = false;
+            }
+        }
+        else if(boss2 == true)
+        {
+            if (attackMode == true)
+            {
+                for (int i = 0; i < cubeList.Count; i++)
+                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_4.position + new Vector3(0, 1, 0), Quaternion.identity);
+                attackMode = false;
+            }
         }
     }
 

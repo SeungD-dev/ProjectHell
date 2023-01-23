@@ -36,4 +36,12 @@ public class PlayerMove : MonoBehaviour
             ViewCamera.transform.eulerAngles = new Vector3(45, -90, 0);
         }*/
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("BossAttack"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
