@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class BossMove : MonoBehaviour
 {
-    float rightMax; //좌로 이동가능한 (x)최대값
-    float leftMax; //우로 이동가능한 (x)최대값
     float currentPosition; //현재 위치(x) 저장
-    float direction = 3.0f; //이동속도+방향
-    float cRight;
-    float cLeft;
+    float direction = 5.0f; //이동속도+방향
     float time;
     public bool stop = false;
+    public GameObject[] boss;
     Vector3 position;
+    Vector3[] randomPosition = {new Vector3(-13, 1, -6), new Vector3(-13, 1, -2), new Vector3(-13, 1, 2), new Vector3(-13, 1, 6)};
+    BossRandomAttack bossRandomAttack;
 
     void Start()
     {
         position = this.gameObject.transform.position;
-        currentPosition = this.gameObject.transform.position.x;
-        cRight = Random.Range(0.1f, 3);
-        cLeft = Random.Range(0.1f, 3) * -1;
-        rightMax = cRight + this.gameObject.transform.position.z;
-        leftMax = cLeft + this.gameObject.transform.position.z;
+        currentPosition = this.gameObject.transform.position.z;
+        bossRandomAttack = FindObjectOfType<BossRandomAttack>();
     }
 
     // Update is called once per frame
@@ -33,27 +29,83 @@ public class BossMove : MonoBehaviour
         if (!stop)
         {
             currentPosition += Time.deltaTime * direction;
-            if (currentPosition >= rightMax)
-            {
-                direction *= -1;
-                currentPosition = rightMax;
-            }
-            //현재 위치(x)가 우로 이동가능한 (x)최대값보다 크거나 같다면
-            //이동속도+방향에 -1을 곱해 반전을 해주고 현재위치를 우로 이동가능한 (x)최대값으로 설정
-            else if (currentPosition <= leftMax)
-            {
-                direction *= -1;
-                currentPosition = leftMax;
-            }
 
-            //현재 위치(x)가 좌로 이동가능한 (x)최대값보다 크거나 같다면
-            //이동속도+방향에 -1을 곱해 반전을 해주고 현재위치를 좌로 이동가능한 (x)최대값으로 설정
-            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, 1, currentPosition);
-            //"Stone"의 위치를 계산된 현재위치로 처리
+            if (this.gameObject.name == "Boss1")
+            {
+                Debug.Log("작동1");
+                if(currentPosition >= position.z + 12)
+                {
+                    direction *= -1;
+                    currentPosition = position.z + 12;
+                }
+                else if(currentPosition <= position.z)
+                {
+                    direction *= -1;
+                    currentPosition = position.z;
+                }
+            }
+            else if(this.gameObject.name == "Boss2")
+            {
+                Debug.Log("작동2");
+                if (currentPosition >= position.z + 8)
+                {
+                    direction *= -1;
+                    currentPosition = position.z + 8;
+                }
+                else if (currentPosition <= position.z + -4)
+                {
+                    direction *= -1;
+                    currentPosition = position.z + -4;
+                }
+            }
+            else if(this.gameObject.name == "Boss3")
+            {
+                Debug.Log("작동3");
+                if (currentPosition >= position.z + 4)
+                {
+                    direction *= -1;
+                    currentPosition = position.z + 4;
+                }
+                else if (currentPosition <= position.z + -8)
+                {
+                    direction *= -1;
+                    currentPosition = position.z + -8;
+                }
+            }
+            else if(this.gameObject.name == "Boss4")
+            {
+                Debug.Log("작동4");
+                if (currentPosition >= position.z)
+                {
+                    direction *= -1;
+                    currentPosition = position.z;
+                }
+                else if (currentPosition <= position.z + -12)
+                {
+                    direction *= -1;
+                    currentPosition = position.z + -12;
+                }
+            }
+            this.gameObject.transform.position = new Vector3(-13, 1, currentPosition);
         }
         else if (stop == true)
         {
-            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, position, 0.01f);
+            if(this.gameObject.name == "Boss1")
+            {
+                this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, randomPosition[bossRandomAttack.positionList[0]], 0.02f);
+            }
+            else if (this.gameObject.name == "Boss2")
+            {
+                this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, randomPosition[bossRandomAttack.positionList[1]], 0.02f);
+            }
+            else if (this.gameObject.name == "Boss3")
+            {
+                this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, randomPosition[bossRandomAttack.positionList[2]], 0.02f);
+            }
+            else if (this.gameObject.name == "Boss4")
+            {
+                this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, randomPosition[bossRandomAttack.positionList[3]], 0.02f);
+            }
         }
     }
 }

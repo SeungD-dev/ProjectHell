@@ -53,7 +53,7 @@ public class AbsorbAction : MonoBehaviour
         countTime = 0;
         StartCoroutine("AttackCooldown");
         AbsorbUncolorTrasparency();
-        Invoke("onOff", 3f);
+        Invoke("onOff", 1f);
     }
 
     public void onOff()

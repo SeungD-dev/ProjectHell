@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class BossRandomAttack : MonoBehaviour
 {
-    List<int> cubeList = new List<int>();
+    List<int> cubeList1 = new List<int>();
+    List<int> cubeList2 = new List<int>();
+    List<int> cubeList3 = new List<int>();
+    public List<int> positionList = new List<int>();
     public GameObject[] attackPrefabs;
     public Transform[] attackPoints_1;
     public Transform[] attackPoints_2;
@@ -21,14 +24,8 @@ public class BossRandomAttack : MonoBehaviour
     void Start()
     {
         boss4 = true;
-        CreateUnDuplicateRandom(0, 4);
-        attackNum = Random.Range(0, attackPrefabs.Length);
-        pointNum = Random.Range(0, attackPoints_1.Length);
-        for (int i = 0; i < cubeList.Count; i++)
-        {
-            Debug.Log(cubeList[i]);
-            //Instantiate(cube, new Vector3(i, 0, cubeList[i]), Quaternion.identity);
-        }
+        CreateUnDuplicateRandom();
+        positionRandom();
     }
 
     // Update is called once per frame
@@ -39,59 +36,106 @@ public class BossRandomAttack : MonoBehaviour
             attackShape = Random.Range(0, 4);
             goAttack = false;
         }
-        if (boss4 == true)
-        {
-            if (attackMode == true)
+
+        if (attackMode == true)
+        { 
+            if (boss4 == true)
             {
-                for (int i = 0; i < cubeList.Count; i++)
-                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_1[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                //attackNum = Random.Range(0, attackPrefabs.Length);
+                pointNum = Random.Range(0, attackPoints_1.Length);
+                for (int i = 0; i < cubeList1.Count; i++)
+                    Instantiate(attackPrefabs[cubeList1[i]], attackPoints_1[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
+                CreateUnDuplicateRandom();
+                attackMode = false;
+            } else if(boss3 == true)
+            {
+                //attackNum = Random.Range(0, attackPrefabs.Length);
+                pointNum = Random.Range(0, attackPoints_2.Length);
+                for (int i = 0; i < cubeList2.Count; i++)
+                    Instantiate(attackPrefabs[cubeList2[i]], attackPoints_2[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
+                CreateUnDuplicateRandom();
                 attackMode = false;
             }
-        }
-        else if(boss3 == true)
-        {
-            if (attackMode == true)
+            else if (boss2 == true)
             {
-                for (int i = 0; i < cubeList.Count; i++)
-                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_2[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                //attackNum = Random.Range(0, attackPrefabs.Length);
+                pointNum = Random.Range(0, attackPoints_3.Length);
+                for (int i = 0; i < cubeList3.Count; i++)
+                    Instantiate(attackPrefabs[cubeList3[i]], attackPoints_3[i].position + new Vector3(0, 1, 0), Quaternion.identity);
+                cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
+                CreateUnDuplicateRandom();
                 attackMode = false;
             }
-        }
-        else if(boss2 == true)
-        {
-            if (attackMode == true)
+            else if (boss1 == true)
             {
-                for (int i = 0; i < cubeList.Count; i++)
-                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_3[i].position + new Vector3(0, 1, 0), Quaternion.identity);
-                attackMode = false;
-            }
-        }
-        else if(boss2 == true)
-        {
-            if (attackMode == true)
-            {
-                for (int i = 0; i < cubeList.Count; i++)
-                    Instantiate(attackPrefabs[cubeList[i]], attackPoints_4.position + new Vector3(0, 1, 0), Quaternion.identity);
+                Instantiate(attackPrefabs[attackShape], attackPoints_4.position + new Vector3(0, 1, 0), Quaternion.identity);
                 attackMode = false;
             }
         }
     }
 
-    void CreateUnDuplicateRandom(int min, int max)
+    void CreateUnDuplicateRandom()
     {
-        int currentNumber = Random.Range(min, max);
-
-        for (int i = 0; i < max;)
+        int currentNumber1 = Random.Range(0, 4);
+        for (int i = 0; i < 4;)
         {
-            if (cubeList.Contains(currentNumber))
+            if (cubeList1.Contains(currentNumber1))
             {
-                currentNumber = Random.Range(min, max);
+                currentNumber1 = Random.Range(0, 4);
             }
             else
             {
-                cubeList.Add(currentNumber);
+                cubeList1.Add(currentNumber1);
+                i++;
+            }
+        }
+
+        int currentNumber2 = Random.Range(0, 3);
+        for (int i = 0; i < 3;)
+        {
+            if (cubeList2.Contains(currentNumber2))
+            {
+                currentNumber2 = Random.Range(0, 3);
+            }
+            else
+            {
+                cubeList2.Add(currentNumber2);
+                i++;
+            }
+        }
+
+        int currentNumber3 = Random.Range(0, 2);
+        for (int i = 0; i < 2;)
+        {
+            if (cubeList3.Contains(currentNumber3))
+            {
+                currentNumber3 = Random.Range(0, 2);
+            }
+            else
+            {
+                cubeList3.Add(currentNumber3);
+                i++;
+            }
+        }
+    }
+
+    void positionRandom()
+    {
+        int currentNumber = Random.Range(0, 4);
+        for (int i = 0; i < 4;)
+        {
+            if (positionList.Contains(currentNumber))
+            {
+                currentNumber = Random.Range(0, 4);
+            }
+            else
+            {
+                positionList.Add(currentNumber);
                 i++;
             }
         }
     }
 }
+    
