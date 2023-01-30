@@ -8,7 +8,6 @@ public class BossMove : MonoBehaviour
     float direction = 5.0f; //이동속도+방향
     float time;
     public bool stop = false;
-    public GameObject[] boss;
     Vector3 position;
     Vector3[] randomPosition = {new Vector3(-13, 1, -6), new Vector3(-13, 1, -2), new Vector3(-13, 1, 2), new Vector3(-13, 1, 6)};
     BossRandomAttack bossRandomAttack;
@@ -32,7 +31,6 @@ public class BossMove : MonoBehaviour
 
             if (this.gameObject.name == "Boss1")
             {
-                Debug.Log("작동1");
                 if(currentPosition >= position.z + 12)
                 {
                     direction *= -1;
@@ -46,7 +44,6 @@ public class BossMove : MonoBehaviour
             }
             else if(this.gameObject.name == "Boss2")
             {
-                Debug.Log("작동2");
                 if (currentPosition >= position.z + 8)
                 {
                     direction *= -1;
@@ -60,7 +57,6 @@ public class BossMove : MonoBehaviour
             }
             else if(this.gameObject.name == "Boss3")
             {
-                Debug.Log("작동3");
                 if (currentPosition >= position.z + 4)
                 {
                     direction *= -1;
@@ -74,7 +70,6 @@ public class BossMove : MonoBehaviour
             }
             else if(this.gameObject.name == "Boss4")
             {
-                Debug.Log("작동4");
                 if (currentPosition >= position.z)
                 {
                     direction *= -1;
@@ -106,6 +101,16 @@ public class BossMove : MonoBehaviour
             {
                 this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, randomPosition[bossRandomAttack.positionList[3]], 0.02f);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("닿음");
+        if (other.CompareTag("BossAttack")){
+            
+            bossRandomAttack.bossHp -= 1;
+            Destroy(other.gameObject);
         }
     }
 }

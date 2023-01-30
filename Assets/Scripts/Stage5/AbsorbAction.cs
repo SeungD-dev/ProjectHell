@@ -36,15 +36,11 @@ public class AbsorbAction : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         string name = other.gameObject.name;
-        Debug.Log(name);
-        Debug.Log(attackPrefabs[attackNum].name + "(Clone)");
         if(name == attackPrefabs[attackNum].name + "(Clone)")
         {
             Debug.Log("정답");
             Instantiate(attack_Player, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         }
-        else
-            Debug.Log("실패");
         Destroy(other.gameObject);
     }
 
@@ -53,12 +49,6 @@ public class AbsorbAction : MonoBehaviour
         countTime = 0;
         StartCoroutine("AttackCooldown");
         AbsorbUncolorTrasparency();
-        Invoke("onOff", 1f);
-    }
-
-    public void onOff()
-    {
-        bossRandomAttack.goAttack = true;
     }
 
     public void AbsorbColorTransparency()
