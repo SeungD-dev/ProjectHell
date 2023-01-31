@@ -2188,7 +2188,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e384f7f3fbc6b046864543be12ebc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionList1: 
+  positionList2: 
+  positionList3: 
   positionList: 
+  boss:
+  - {fileID: 906027750}
+  - {fileID: 1972349605}
+  - {fileID: 920211465}
+  - {fileID: 760990121}
   attackPrefabs:
   - {fileID: 5583450680124472316, guid: cc84bba809d0c1041a1dba9500ab9510, type: 3}
   - {fileID: 7496926691150424684, guid: 7667327e040b7aa4b8f5420e2c3372fa, type: 3}
@@ -2203,9 +2211,12 @@ MonoBehaviour:
   - {fileID: 735906063}
   - {fileID: 1275232733}
   - {fileID: 1044533502}
+  - {fileID: 447753755}
   attackPoints_3:
   - {fileID: 1044533502}
   - {fileID: 1275232733}
+  - {fileID: 447753755}
+  - {fileID: 735906063}
   attackPoints_4: {fileID: 1275232733}
   attackMode: 1
   boss4: 0
