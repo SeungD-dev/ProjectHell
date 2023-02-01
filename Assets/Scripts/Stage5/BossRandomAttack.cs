@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossRandomAttack : MonoBehaviour
 {
-    BossMove bossMove;
+    BossRandomMoved bossRandomMoved;
 
     List<int> cubeList1 = new List<int>();
     List<int> cubeList2 = new List<int>();
@@ -32,7 +32,7 @@ public class BossRandomAttack : MonoBehaviour
     {
         boss4 = true;
         positionRandom();
-        bossMove = FindObjectOfType<BossMove>();
+        bossRandomMoved = FindObjectOfType<BossRandomMoved>();
     }
 
     // Update is called once per frame
@@ -68,7 +68,7 @@ public class BossRandomAttack : MonoBehaviour
             if(time >= 3)
             {
                 attackShape = Random.Range(0, 4);
-                bossMove.stop = false;
+                //bossRandomMoved.stop = false;
                 positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
                 attackPositioneRandom();
                 CreateUnDuplicateRandom();
