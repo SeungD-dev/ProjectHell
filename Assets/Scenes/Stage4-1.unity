@@ -578,7 +578,6 @@ GameObject:
   - component: {fileID: 760990124}
   - component: {fileID: 760990123}
   - component: {fileID: 760990122}
-  - component: {fileID: 760990126}
   - component: {fileID: 760990127}
   m_Layer: 0
   m_Name: Boss2
@@ -666,19 +665,6 @@ Transform:
   m_Father: {fileID: 2063550763}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &760990126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760990121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4300c43a9b50ab146af81f59f47666bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stop: 0
 --- !u!54 &760990127
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -826,7 +812,6 @@ GameObject:
   - component: {fileID: 906027754}
   - component: {fileID: 906027753}
   - component: {fileID: 906027752}
-  - component: {fileID: 906027756}
   - component: {fileID: 906027757}
   m_Layer: 0
   m_Name: Boss1
@@ -914,19 +899,6 @@ Transform:
   m_Father: {fileID: 2063550763}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &906027756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906027750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4300c43a9b50ab146af81f59f47666bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stop: 0
 --- !u!54 &906027757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -955,7 +927,6 @@ GameObject:
   - component: {fileID: 920211468}
   - component: {fileID: 920211467}
   - component: {fileID: 920211466}
-  - component: {fileID: 920211470}
   - component: {fileID: 920211471}
   m_Layer: 0
   m_Name: Boss4
@@ -1043,19 +1014,6 @@ Transform:
   m_Father: {fileID: 2063550763}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &920211470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920211465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4300c43a9b50ab146af81f59f47666bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stop: 0
 --- !u!54 &920211471
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1938,7 +1896,6 @@ GameObject:
   - component: {fileID: 1972349608}
   - component: {fileID: 1972349607}
   - component: {fileID: 1972349606}
-  - component: {fileID: 1972349610}
   - component: {fileID: 1972349611}
   m_Layer: 0
   m_Name: Boss3
@@ -2026,19 +1983,6 @@ Transform:
   m_Father: {fileID: 2063550763}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1972349610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972349605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4300c43a9b50ab146af81f59f47666bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stop: 0
 --- !u!54 &1972349611
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2169,6 +2113,7 @@ GameObject:
   - component: {fileID: 2063550763}
   - component: {fileID: 2063550762}
   - component: {fileID: 2063550764}
+  - component: {fileID: 2063550765}
   m_Layer: 0
   m_Name: BossFolder
   m_TagString: Untagged
@@ -2258,6 +2203,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 15}
   m_Center: {x: -13, y: 1, z: 0}
+--- !u!114 &2063550765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063550761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfd31d51001a774b93379f70e285895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stop: 0
+  boss:
+  - {fileID: 906027755}
+  - {fileID: 760990125}
+  - {fileID: 1972349609}
+  - {fileID: 920211469}
 --- !u!1 &2081335681
 GameObject:
   m_ObjectHideFlags: 0

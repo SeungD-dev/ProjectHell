@@ -96,17 +96,17 @@ public class BossRandomMoved : MonoBehaviour
             if (bossRandomAttack.boss3 == true)
             {
                 boss[1].transform.position = Vector3.MoveTowards(boss[1].transform.position, bossRandomAttack.attackPoints_2[bossRandomAttack.positionList2[1]].position + new Vector3(0, 1, 0), 0.02f);
-                boss[2].transform.position = Vector3.MoveTowards(boss[0].transform.position, bossRandomAttack.attackPoints_2[0].position + new Vector3(0, 1, 0), 0.02f);
+                boss[2].transform.position = Vector3.MoveTowards(boss[2].transform.position, bossRandomAttack.attackPoints_2[0].position + new Vector3(0, 1, 0), 0.02f);
                 boss[3].transform.position = Vector3.MoveTowards(boss[3].transform.position, bossRandomAttack.attackPoints_2[bossRandomAttack.positionList2[2]].position + new Vector3(0, 1, 0), 0.02f);
             }
             if (bossRandomAttack.boss2 == true)
             {
                 boss[1].transform.position = Vector3.MoveTowards(boss[1].transform.position, bossRandomAttack.attackPoints_3[bossRandomAttack.positionList3[1]].position + new Vector3(0, 1, 0), 0.02f);
-                boss[3].transform.position = Vector3.MoveTowards(boss[0].transform.position, bossRandomAttack.attackPoints_3[0].position + new Vector3(0, 1, 0), 0.02f);
+                boss[3].transform.position = Vector3.MoveTowards(boss[3].transform.position, bossRandomAttack.attackPoints_3[0].position + new Vector3(0, 1, 0), 0.02f);
             }
             if (bossRandomAttack.boss1 == true)
             {
-                boss[1].transform.position = Vector3.MoveTowards(boss[0].transform.position, bossRandomAttack.attackPoints_4.position + new Vector3(0, 1, 0), 0.02f);
+                boss[1].transform.position = Vector3.MoveTowards(boss[1].transform.position, bossRandomAttack.attackPoints_4.position + new Vector3(0, 1, 0), 0.02f);
             }
             time = 0;
         }

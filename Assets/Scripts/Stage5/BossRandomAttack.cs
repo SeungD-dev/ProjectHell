@@ -91,7 +91,6 @@ public class BossRandomAttack : MonoBehaviour
                     Instantiate(attackPrefabs[cubeList2[i]], attackPoints_2[positionList2[i]].position + new Vector3(1, 1, 0), Quaternion.identity);
                 Instantiate(attackPrefabs[attackShape], attackPoints_2[0].position + new Vector3(1, 1, 0), Quaternion.identity);
                 cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
-                positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
                 attackMode = false;
                 time = 0;
             }
@@ -102,14 +101,12 @@ public class BossRandomAttack : MonoBehaviour
                 Instantiate(attackPrefabs[cubeList3[1]], attackPoints_3[positionList3[1]].position + new Vector3(1, 1, 0), Quaternion.identity);
                 Instantiate(attackPrefabs[attackShape], attackPoints_3[0].position + new Vector3(1, 1, 0), Quaternion.identity);
                 cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
-                positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
                 attackMode = false;
                 time = 0;
             }
             else if (boss1 == true)
             {
                 Instantiate(attackPrefabs[attackShape], attackPoints_4.position + new Vector3(1, 1, 0), Quaternion.identity);
-                positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
                 attackMode = false;
                 time = 0;
             }
