@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    TestBossAttack testBossAttack;
+    TestBossMove testBossMove;
     [SerializeField]
     private VirtualJoystick virtualJoystick;
     private float moveSpeed = 10;
     public GameObject ViewCamera = null;
+    public int playerHp = 4;
+    public bool oneDamage = false;
+
+    void Start()
+    {
+        testBossAttack = FindObjectOfType<TestBossAttack>();
+        testBossMove = FindObjectOfType<TestBossMove>();
+    }
 
     void Update()
     {
@@ -41,6 +51,18 @@ public class PlayerMove : MonoBehaviour
     {
         if(other.CompareTag("BossAttack"))
         {
+            playerHp -= 1;
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("BossFailAttack"))
+        {
+            if(oneDamage == false)
+            {
+                playerHp -= 1;
+                testBossMove.stop = false;
+                testBossAttack.attackMode = true;
+                oneDamage = true;
+            }
             Destroy(other.gameObject);
         }
     }

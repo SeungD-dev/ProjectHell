@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class AbsorbAction : MonoBehaviour
 {
-    BossRandomAttack bossRandomAttack;
+    PlayerMove playerMove;
+    TestBossAttack testBossAttack;
     public GameObject AbsorbButton;
     public GameObject absorb;
     public GameObject[] attackPrefabs;
     public GameObject attack_Player;
+    public Transform playerPosition;
     public int attackNum;
     float countTime, absorbTime = 0.1f;
+    public bool crtDo = false;
     // Start is called before the first frame update
     void Start()
     {
-        bossRandomAttack = FindObjectOfType<BossRandomAttack>();
+        playerMove = FindObjectOfType<PlayerMove>();
+        testBossAttack = FindObjectOfType<TestBossAttack>();
         AbsorbButton = GameObject.Find("AbsorbButton");
         absorb = GameObject.Find("Absorb");
     }
@@ -22,9 +26,11 @@ public class AbsorbAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackNum = bossRandomAttack.attackShape;
+        //attackNum = bossRandomAttack.attackShape;
+        attackNum = testBossAttack.crtBossAttack;
 
         countTime += Time.deltaTime;
+        this.gameObject.transform.position = playerPosition.position + new Vector3(-1, 0, 0);
 
         if (countTime >= absorbTime)
         {
@@ -36,12 +42,22 @@ public class AbsorbAction : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         string name = other.gameObject.name;
-        if(name == attackPrefabs[attackNum].name + "(Clone)")
+        if (other.CompareTag("BossAttack"))
         {
-            Debug.Log("정답");
-            Instantiate(attack_Player, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            if (name == attackPrefabs[attackNum].name + "(Clone)")
+            {
+                Debug.Log("정답");
+                crtDo = true;
+                Destroy(other.gameObject);
+                Instantiate(attack_Player, transform.position + new Vector3(-1, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                playerMove.playerHp -= 1;
+                crtDo = false;
+                Destroy(other.gameObject);
+            }
         }
-        Destroy(other.gameObject);
     }
 
     public void goAbsorbButton()

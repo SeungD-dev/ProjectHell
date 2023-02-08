@@ -25,13 +25,12 @@ public class BossRandomAttack : MonoBehaviour
     public int pointNum;
     public int attackShape;
     public int bossHp = 20;
-    float time = 3;
+    public float time;
     
     // Start is called before the first frame update
     void Start()
     {
         boss4 = true;
-        positionRandom();
         bossRandomMoved = FindObjectOfType<BossRandomMoved>();
     }
 
@@ -65,51 +64,54 @@ public class BossRandomAttack : MonoBehaviour
 
         if (attackMode == true)
         {
-            if(time >= 3)
+            //bossRandomMoved.stop = true;
+            attackShape = Random.Range(0, 4);
+            attackPositioneRandom();
+            CreateUnDuplicateRandom();
+
+            if(time >= 1.5f)
             {
-                attackShape = Random.Range(0, 4);
-                //bossRandomMoved.stop = false;
-                positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
-                attackPositioneRandom();
-                CreateUnDuplicateRandom();
+                if (boss4 == true)
+                {
+                    for (int i = 1; i < cubeList1.Count; i++)
+                        Instantiate(attackPrefabs[cubeList1[i]], attackPoints_1[positionList1[i]].position + new Vector3(1, 1, 0), Quaternion.identity);
+                    Instantiate(attackPrefabs[attackShape], attackPoints_1[positionList1[0]].position + new Vector3(1, 1, 0), Quaternion.identity);
+                    cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
+                    positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
+                    attackMode = false;
+                    time = 0;
+                }
+                else if (boss3 == true)
+                {
+                    for (int i = 1; i < cubeList2.Count; i++)
+                        Instantiate(attackPrefabs[cubeList2[i]], attackPoints_2[positionList2[i]].position + new Vector3(1, 1, 0), Quaternion.identity);
+                    Instantiate(attackPrefabs[attackShape], attackPoints_2[0].position + new Vector3(1, 1, 0), Quaternion.identity);
+                    cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
+                    positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
+                    attackMode = false;
+                    time = 0;
+                }
+                else if (boss2 == true)
+                {
+                    Instantiate(attackPrefabs[cubeList3[1]], attackPoints_3[positionList3[1]].position + new Vector3(1, 1, 0), Quaternion.identity);
+                    Instantiate(attackPrefabs[attackShape], attackPoints_3[0].position + new Vector3(1, 1, 0), Quaternion.identity);
+                    cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
+                    positionList1.Clear(); positionList2.Clear(); positionList3.Clear();
+                    attackMode = false;
+                    time = 0;
+                }
+                else if (boss1 == true)
+                {
+                    Instantiate(attackPrefabs[attackShape], attackPoints_4.position + new Vector3(1, 1, 0), Quaternion.identity);
+                    attackMode = false;
+                    time = 0;
+                }
             }
-            if (boss4 == true)
-            {
-                //attackNum = Random.Range(0, attackPrefabs.Length);
-                pointNum = Random.Range(0, attackPoints_1.Length);
-                for (int i = 1; i < cubeList1.Count; i++)
-                    Instantiate(attackPrefabs[cubeList1[i]], attackPoints_1[positionList1[i]].position + new Vector3(1, 1, 0), Quaternion.identity);
-                Instantiate(attackPrefabs[attackShape], attackPoints_1[positionList1[0]].position + new Vector3(1, 1, 0), Quaternion.identity);
-                cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
-                attackMode = false;
-                time = 0;
-            } else if(boss3 == true)
-            {
-                //attackNum = Random.Range(0, attackPrefabs.Length);
-                pointNum = Random.Range(0, attackPoints_2.Length);
-                for (int i = 1; i < cubeList2.Count; i++)
-                    Instantiate(attackPrefabs[cubeList2[i]], attackPoints_2[positionList2[i]].position + new Vector3(1, 1, 0), Quaternion.identity);
-                Instantiate(attackPrefabs[attackShape], attackPoints_2[0].position + new Vector3(1, 1, 0), Quaternion.identity);
-                cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
-                attackMode = false;
-                time = 0;
-            }
-            else if (boss2 == true)
-            {
-                //attackNum = Random.Range(0, attackPrefabs.Length);
-                pointNum = Random.Range(0, attackPoints_3.Length);
-                Instantiate(attackPrefabs[cubeList3[1]], attackPoints_3[positionList3[1]].position + new Vector3(1, 1, 0), Quaternion.identity);
-                Instantiate(attackPrefabs[attackShape], attackPoints_3[0].position + new Vector3(1, 1, 0), Quaternion.identity);
-                cubeList1.Clear(); cubeList2.Clear(); cubeList3.Clear();
-                attackMode = false;
-                time = 0;
-            }
-            else if (boss1 == true)
-            {
-                Instantiate(attackPrefabs[attackShape], attackPoints_4.position + new Vector3(1, 1, 0), Quaternion.identity);
-                attackMode = false;
-                time = 0;
-            }
+        }
+        else if (attackMode == false)
+        {
+            time = 0;
+            //bossRandomMoved.stop = false;
         }
     }
 
@@ -206,23 +208,6 @@ public class BossRandomAttack : MonoBehaviour
             else
             {
                 positionList3.Add(currentNumber3);
-                i++;
-            }
-        }
-    }
-
-    void positionRandom()
-    {
-        int currentNumber = Random.Range(0, 4);
-        for (int i = 0; i < 4;)
-        {
-            if (positionList.Contains(currentNumber))
-            {
-                currentNumber = Random.Range(0, 4);
-            }
-            else
-            {
-                positionList.Add(currentNumber);
                 i++;
             }
         }
