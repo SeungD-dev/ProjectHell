@@ -5,6 +5,21 @@ using UnityEngine;
 public class NoteBreak : MonoBehaviour
 {
     public GameObject player;
+    public GameObject bgm;
+    float time;
+    void Start()
+    {
+        bgm.SetActive(false);
+    }
+
+    void Update()
+    {
+        time += Time.deltaTime;
+        if(time >= 2.3)
+        {
+            bgm.SetActive(true);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
