@@ -6,6 +6,7 @@ public class NoteBreak : MonoBehaviour
 {
     public GameObject player;
     public GameObject bgm;
+    public float setTime = 0.5f;
     float time;
     void Start()
     {
@@ -15,7 +16,7 @@ public class NoteBreak : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= 2.3)
+        if(time >= setTime)
         {
             bgm.SetActive(true);
         }

@@ -9,17 +9,17 @@ public class TagChanger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("fjgkldf");
-        if (other.CompareTag("Note_R"))
+        if (other.CompareTag("Note_CR"))
         {
             other.gameObject.tag = "Note_B";
             other.gameObject.GetComponent<MeshRenderer>().material = mat[2];
         }
-        if (other.CompareTag("Note_G"))
+        if (other.CompareTag("Note_CG"))
         {
             other.gameObject.tag = "Note_R";
             other.gameObject.GetComponent<MeshRenderer>().material = mat[0];
         }
-        if (other.CompareTag("Note_B"))
+        if (other.CompareTag("Note_CB"))
         {
             Debug.Log("¿€µø");
             other.gameObject.tag = "Note_G";
