@@ -19,7 +19,7 @@ public class BossRandomMove_Y : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= 55)
+        if(time >= 55 && time < 99)
         {
             moveTime += Time.deltaTime;
             if (moveTime >= 4f)
@@ -27,7 +27,11 @@ public class BossRandomMove_Y : MonoBehaviour
                 newX = possibleXValues[Random.Range(0, possibleXValues.Length)];
                 moveTime = 0;
             }
-            bossPos.transform.localPosition = Vector3.MoveTowards(bossPos.transform.localPosition, new Vector3(newX, 2.5f, 7), 0.01f);
         }
+        if(time >= 99)
+        {
+            newX = possibleXValues[2];
+        }
+        bossPos.transform.localPosition = Vector3.MoveTowards(bossPos.transform.localPosition, new Vector3(newX, 2.5f, 7), 0.01f);
     }
 }

@@ -11,6 +11,7 @@ public class SwordTrail_Y : MonoBehaviour
     public float duration;
 
     public GameObject[] slash;
+    public float[] possibleXValues = { -1.7f, -0.8f, 0, 0.8f, 1.7f };
 
     public float time = 0;
 
@@ -23,12 +24,21 @@ public class SwordTrail_Y : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= 55)
+        if(time >= 55 && time < 99)
         {
             duration += Time.deltaTime;
             if(duration >= 4f)
             {
                 BossSlash();
+                duration = 0;
+            }
+        }
+        if(time >= 99)
+        {
+            duration += Time.deltaTime;
+            if(duration >= 0.5f)
+            {
+                RandomBossSlash();
                 duration = 0;
             }
         }
@@ -56,9 +66,12 @@ public class SwordTrail_Y : MonoBehaviour
                 prefabToInstantiate = slash[1];
                 Instantiate(prefabToInstantiate, transform.position + new Vector3(0, 0, -0.5f), Quaternion.identity);
             }
-
-            
         }
     }
 
+    void RandomBossSlash()
+    {
+        prefabToInstantiate = slash[1];
+        Instantiate(prefabToInstantiate, new Vector3(possibleXValues[Random.Range(0, possibleXValues.Length)], 0, 7f), Quaternion.identity);
+    }
 }
