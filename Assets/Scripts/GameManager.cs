@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                 xTime += Time.deltaTime;
             }
            
-            if(time >= 10)
+            if(time >= 60)
             {                           
                 if (!on)
                 {
