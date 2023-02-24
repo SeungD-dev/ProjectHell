@@ -46,43 +46,9 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Stage_1")
         {
-            time += Time.deltaTime;                      
+            time += Time.deltaTime;
 
-            if (time < 7f)
-            {
-                tr2.material.color = new Color(255, 0, 255, 1);
-                tr4.material.color = new Color(255, 0, 255, 1);
-            }
-            else
-            {
-                if(xTime < blinktime)
-                {
-                    tr2.material.color = new Color(255, 0, 255, 1 - xTime * 10 + 0.3f);
-                    tr4.material.color = new Color(255, 0, 255, 1 - xTime * 10 + 0.3f);
-                }
-                else if(xTime < waittime + blinktime)
-                {
-
-                }
-                else
-                {
-                    tr2.material.color = new Color(255, 0, 255, (xTime - (waittime + blinktime)) * 10 + 0.3f);
-                    tr4.material.color = new Color(255, 0, 255, (xTime - (waittime + blinktime)) * 10 + 0.3f);
-                    if(xTime > waittime + blinktime * 2)
-                    {
-                        xTime = 0;
-                        waittime *= 0.8f;
-                        if(waittime < 0.02f)
-                        {
-                            time = 0f;
-                            waittime = 0.2f;
-                        }
-                    }
-                }
-                xTime += Time.deltaTime;
-            }
-           
-            if(time >= 60)
+            if(time >= 70)
             {                           
                 if (!on)
                 {
@@ -92,10 +58,10 @@ public class GameManager : MonoBehaviour
                 Tile2.SetActive(false);
                 Tile4.SetActive(false);
             }
-            if(time >= 69 && fadeCount == 0)
+            /*if(time >= 69 && fadeCount == 0)
             {
                 StartCoroutine("FogCoroutine"); //코루틴 함수 호출
-            }
+            }*/
         }
     }
 
