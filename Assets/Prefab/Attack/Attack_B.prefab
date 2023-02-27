@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 34680953296216624}
   - component: {fileID: -3193336053771948255}
   - component: {fileID: 2049985918826556641}
-  - component: {fileID: -3037111828693426226}
   m_Layer: 12
   m_Name: Attack_B
   m_TagString: PlayerAttack
@@ -128,15 +127,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-3037111828693426226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34680953296216630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 609e778bb8ca75943b5cec8c7f252e89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
