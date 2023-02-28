@@ -234,13 +234,13 @@ public class AttackEvent : MonoBehaviour
            
             Absorbmode = true;
         }
-        if(Attackmode == true)
+        /*if(Attackmode == true)
         {
             Debug.Log("발사 준비");
             Shootmode = true;
-        }
+        }*/
 
-        if(Attackmode == true && Shootmode == true)
+        if(Attackmode == true )//&& Shootmode == true)
         {
             
             attackManager.ShootAttack();

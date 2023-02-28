@@ -8,8 +8,8 @@ public class ColorChange : MonoBehaviour
     public GameObject[] gameObjects;  
    
     public Color white = Color.white;
+    BossAttackMove bossAttackMove;
     Renderer rend;
-
 
 
 
@@ -36,6 +36,7 @@ public class ColorChange : MonoBehaviour
     {
         ars = FindObjectOfType<AttackRandomSpawn>();
         rend = GetComponent<Renderer>();
+        bossAttackMove = FindObjectOfType<BossAttackMove>();
 
         Lf = GameObject.Find("LF");
         SL = GameObject.Find("SL");
@@ -83,7 +84,7 @@ public class ColorChange : MonoBehaviour
 
         }
       
-        
+      
 
 
 
@@ -158,7 +159,7 @@ public class ColorChange : MonoBehaviour
         }
        
 
-        Debug.Log("SetColor" + ColorManager.randomColorIndex);
+        //Debug.Log("SetColor" + ColorManager.randomColorIndex);
         
         yield return new WaitForSeconds(2f);
         Lf.SetActive(true);

@@ -15,6 +15,7 @@ public class AttackRandomSpawn : MonoBehaviour
     public GameObject instantPrefab;
     int randomIndex;
     public int randomResult;
+    BossAttackMove bossAttackMove;
 
 
   
@@ -22,6 +23,7 @@ public class AttackRandomSpawn : MonoBehaviour
 
     private void Start()
     {
+        bossAttackMove = FindObjectOfType<BossAttackMove>();
         ColorManager.colors = new Color[] { Color.red, new Color32(255, 141, 0, 255), Color.yellow, Color.green, Color.blue, new Color32(139, 0, 255, 255) };
       
        
@@ -43,6 +45,8 @@ public class AttackRandomSpawn : MonoBehaviour
             isAttackDestroyed = false;
 
         }
+
+       
        
     }
     private void Awake()
@@ -72,7 +76,7 @@ public class AttackRandomSpawn : MonoBehaviour
         randomResult = ColorManager.randomColorIndex;
 
       
-        Debug.Log("randomRespawn" + ColorManager.randomColorIndex);
+        //Debug.Log("randomRespawn" + ColorManager.randomColorIndex);
             
             isAttackDestroyed = false;
       

@@ -28,27 +28,27 @@ public class AttackManager : MonoBehaviour
 
     public void ShootAttack()
     {
-        if(attackEvent.Shootmode == true && attackEvent.r == 1 && attackEvent.Attackmode == true)
+        if(attackEvent.r == 1 && attackEvent.Attackmode == true) //한번 더 눌러서 공격 -> attackEvent.Shootmode == true
         {
             GameObject t_attack = Instantiate(AttackPrefab[0], attackAppear.position, Quaternion.identity);
             t_attack.transform.SetParent(this.transform);
             attackEvent.Attackmode = false;
-            attackEvent.Shootmode = false;
+            //attackEvent.Shootmode = false;
         }
-        if (attackEvent.Shootmode == true && attackEvent.b == 1 && attackEvent.Attackmode == true)
+        if (attackEvent.b == 1 && attackEvent.Attackmode == true)
         {
             GameObject t_attack = Instantiate(AttackPrefab[1], attackAppear.position, Quaternion.identity);
             t_attack.transform.SetParent(this.transform);
             attackEvent.Attackmode = false;
-            attackEvent.Shootmode = false;
+            //attackEvent.Shootmode = false;
 
         }
-        if (attackEvent.Shootmode == true && attackEvent.g == 1 && attackEvent.Attackmode == true)
+        if (attackEvent.g == 1 && attackEvent.Attackmode == true)
         {
             GameObject t_attack = Instantiate(AttackPrefab[2], attackAppear.position, Quaternion.identity);
             t_attack.transform.SetParent(this.transform);
             attackEvent.Attackmode = false;
-            attackEvent.Shootmode = false;
+            //attackEvent.Shootmode = false;
 
         }
 

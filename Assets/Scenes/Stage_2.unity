@@ -34561,7 +34561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6294bd78562d0db4a8f73e1a323077fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 3
+  jumpForce: 4
   player_Pos: {x: 0, y: 0, z: 0}
   ganglim: {fileID: 934214922}
 --- !u!54 &1973964575

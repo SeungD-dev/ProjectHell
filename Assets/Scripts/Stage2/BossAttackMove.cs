@@ -9,14 +9,16 @@ public class BossAttackMove : MonoBehaviour
    GameObject player;
    AttackRandomSpawn ars;
     MiniGame2_PlayerHP playerHP;
-   
-  
+    int ClearCount = 0;
+    ColorChange colorChange;
+    bool isDestroyed = false;
    
 
     void Awake()
     {
         ars = FindObjectOfType<AttackRandomSpawn>();
         agent = GetComponent<NavMeshAgent>();
+        colorChange = FindObjectOfType<ColorChange>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHP = FindObjectOfType<MiniGame2_PlayerHP>();
        
@@ -30,6 +32,23 @@ public class BossAttackMove : MonoBehaviour
        
         agent.SetDestination(player.transform.position);
         agent.acceleration = Mathf.Lerp(agent.acceleration, 200f, Time.deltaTime);
+
+        if(isDestroyed == true)
+        {
+            ClearCount++;
+            Debug.Log("클리어 카운트: " + ClearCount);
+            isDestroyed = false;
+        }
+
+        if(ClearCount == 5)
+        {
+            ars.StopAllCoroutines();
+            colorChange.StopAllCoroutines();
+
+
+        }
+
+
       
 
     }
@@ -49,8 +68,16 @@ public class BossAttackMove : MonoBehaviour
         
         if (attackPrefab.sharedMaterial.color == focusLight.sharedMaterial.color)
         {
+
+            isDestroyed = true;
+            Debug.Log("아아아아ㅏ아아");
+           
             Destroy(this.gameObject);
+           
             ars.isAttackDestroyed = true;
+           
+
+            
         }
        
        
