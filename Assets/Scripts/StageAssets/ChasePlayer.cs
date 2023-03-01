@@ -54,7 +54,7 @@ public class ChasePlayer : MonoBehaviour
             countDie++;
             playerPos.transform.position = new Vector3(36, 1, 0);
             ghost.gameObject.SetActive(true);
-            ghost.color = new Color(0, 0, 0, 255);      
+            ghost.color = new Color(255, 255, 255, 255);      
             time = 0;
             StartCoroutine(FadeInCoroutine());
         }          
@@ -68,7 +68,7 @@ public class ChasePlayer : MonoBehaviour
         {
             fadeCount -= 0.01f;
             yield return new WaitForSeconds(0.01f);
-            ghost.color = new Color(0, 0, 0, fadeCount); //페이드인 반복문
+            ghost.color = new Color(255, 255, 255, fadeCount); //페이드인 반복문
         }
         ghost.gameObject.SetActive(false);
     }
