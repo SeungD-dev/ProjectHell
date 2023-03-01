@@ -8,6 +8,7 @@ public class Anubis_Anim : MonoBehaviour
     GameManager gameManager;
 
     public Animator anim;
+    public Animator boom_anim;
     float time;
     SpriteRenderer sr;
 
@@ -21,6 +22,7 @@ public class Anubis_Anim : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         anim = gameObject.GetComponentInChildren<Animator>();
+        boom_anim = gameObject.GetComponentInChildren<Animator>();
         boom = GameObject.Find("boom");
         sr = boom.GetComponent<SpriteRenderer>();
         sr.color = new Color(255, 255, 255, 255);
@@ -30,24 +32,25 @@ public class Anubis_Anim : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 8.797 && asdf == true)
+        if (time >= 2.3 && asdf == true)
         {
-            anim.SetTrigger("kaboom");
            
-            anim.SetBool("AnubisIdle", false);
-            anim.SetBool("Anubis_IsAttack", true);
+            anim.SetTrigger("AnubisAtk");
            
-           
-           
-           
-           
-        }
-        if (time >= 8.8)
-        {
-            asdf = false;
-            anim.SetBool("Anubis_IsAttack", false);
-            anim.SetBool("AnubisIdle", true);
 
+
+
+
+        }
+        if(time>=2.4 && asdf == true)
+        {
+            boom_anim.SetTrigger("bang");
+        }
+        if (time >= 2.36)
+        {
+            
+            asdf = false;
+           
 
         }
        
