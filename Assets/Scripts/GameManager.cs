@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         Tile2 = GameObject.Find("Tile2");
         Tile4 = GameObject.Find("Tile4");
         Fog = GameObject.Find("Fog");
-        sr = Fog.GetComponent<MeshRenderer>();
+        //sr = Fog.GetComponent<MeshRenderer>();
         tr2 = Tile2.GetComponent<MeshRenderer>();
         tr4 = Tile4.GetComponent<MeshRenderer>();
         cameraShake = FindObjectOfType<CameraShake>();
