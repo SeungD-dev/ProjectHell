@@ -2606,6 +2606,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 146774132}
   audioSource: {fileID: 1559817684}
+  monsterSource: {fileID: 0}
+  pausePanel_st3: {fileID: 0}
+  optionPanel_st3: {fileID: 0}
 --- !u!4 &147066071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: dfbf1bd83b7e8bc42b6408f3c658ba02, type: 3}
@@ -4658,6 +4661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 274112621}
+  boom_anim: {fileID: 0}
 --- !u!95 &274112621
 Animator:
   serializedVersion: 4
@@ -18617,6 +18621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 274112621}
+  boom_anim: {fileID: 0}
 --- !u!95 &1097789977
 Animator:
   serializedVersion: 4
