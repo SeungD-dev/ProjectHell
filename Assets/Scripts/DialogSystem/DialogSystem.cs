@@ -48,7 +48,7 @@ public class DialogSystem : MonoBehaviour
 			isFirst = false;
 		}
 
-		if (Input.GetMouseButton(0))
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			// 텍스트 타이핑 효과를 재생중일때 마우스 왼쪽 클릭하면 타이핑 효과 종료
 			if (isTypingEffect == true)
