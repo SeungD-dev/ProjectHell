@@ -30,7 +30,10 @@ public class PlayerControl : MonoBehaviour
 
     Color HalfA = new Color(1, 1, 1, 0.5f);
     Color FullA = new Color(1, 1, 1, 1);
- 
+
+    public bool flip;
+    public bool jumpCC;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +41,8 @@ public class PlayerControl : MonoBehaviour
         leftBtn = GameObject.Find("LButton");
         rightBtn = GameObject.Find("RButton");
 
-        
+        flip = false;
+        jumpCC = false;
        
         rb = GetComponent<Rigidbody>();
         MoveDir = Vector3.zero;
@@ -85,32 +89,40 @@ public class PlayerControl : MonoBehaviour
 
     public void JumpTouched()
     {
-        if (!jumpAllowed)
+        if (!jumpAllowed && !jumpCC)
         {
             jumpAllowed = true;
-           
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-             
-            gameObject.layer = 7;
 
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+            gameObject.layer = 7;
         }
-       
     }
 
     public void LButtonDown()
     {
-        if(gameObject.transform.position.x > -0.89)
+        if (gameObject.transform.position.x > -0.89 && flip == false)
         {
             leftBtn.GetComponent<Button>().interactable = true;
             transform.Translate(-0.88f, 0.3f, 0);
-        }       
-    }
-    public void RButtonDown()
-    {
-        if (gameObject.transform.position.x < 0.89)
+        }
+        else if (gameObject.transform.position.x < 0.89 && flip == true)
         {
             rightBtn.GetComponent<Button>().interactable = true;
             transform.Translate(0.88f, 0.3f, 0);
+        }
+    }
+    public void RButtonDown()
+    {
+        if (gameObject.transform.position.x < 0.89 && flip == false)
+        {
+            rightBtn.GetComponent<Button>().interactable = true;
+            transform.Translate(0.88f, 0.3f, 0);
+        }
+        else if (gameObject.transform.position.x > -0.89 && flip == true)
+        {
+            leftBtn.GetComponent<Button>().interactable = true;
+            transform.Translate(-0.88f, 0.3f, 0);
         }
     }
 
