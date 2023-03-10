@@ -15769,6 +15769,8 @@ GameObject:
   m_Component:
   - component: {fileID: 934214921}
   - component: {fileID: 934214922}
+  - component: {fileID: 934214923}
+  - component: {fileID: 934214924}
   m_Layer: 0
   m_Name: "\uAC15\uB9BC"
   m_TagString: Untagged
@@ -15843,6 +15845,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &934214923
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934214920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9291b15061c716418cd619b9b57b2a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &934214924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934214920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5aee77ab65998b43a4da2ae25881ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkAnim: {fileID: 934214923}
 --- !u!4 &935661026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: 4e0d4faf393af4243b3a142e3fbb7281, type: 3}
@@ -31612,7 +31647,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804223923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbb2a303df2ae1e48962cc85d57fc7be, type: 3}
   m_Name: 
@@ -35006,6 +35041,8 @@ MonoBehaviour:
   jumpForce: 4
   player_Pos: {x: 0, y: 0, z: 0}
   ganglim: {fileID: 934214922}
+  flip: 0
+  jumpCC: 0
 --- !u!54 &1973964575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35904,7 +35941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2021083194}
-  boom_anim: {fileID: 0}
+  boom_anim: {fileID: 1097789977}
 --- !u!65 &2021083196
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class AttackEvent : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class AttackEvent : MonoBehaviour
     PlayerControl playerControl;
     AttackManager attackManager;
 
+   
     
 
 
@@ -36,6 +38,7 @@ public class AttackEvent : MonoBehaviour
 
         playerControl = FindObjectOfType<PlayerControl>();
         attackManager = FindObjectOfType<AttackManager>();
+      
     }
 
     // Update is called once per frame
@@ -228,6 +231,7 @@ public class AttackEvent : MonoBehaviour
         countTime = 0;
         StartCoroutine("AttackCooldown");
         AbsorbUncolorTrasparency();
+        
 
         if(Attackmode == false)
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] float jumpForce;
@@ -34,6 +35,8 @@ public class PlayerControl : MonoBehaviour
     public bool flip;
     public bool jumpCC;
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +55,7 @@ public class PlayerControl : MonoBehaviour
 
         Renderer rd = this.GetComponent<MeshRenderer>();
         Material[] mat = rd.sharedMaterials;
+        
  
     }
 

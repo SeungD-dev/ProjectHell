@@ -34569,6 +34569,8 @@ MonoBehaviour:
   jumpForce: 4
   player_Pos: {x: 0, y: 0, z: 0}
   ganglim: {fileID: 934214922}
+  flip: 0
+  jumpCC: 0
 --- !u!54 &1973964575
 Rigidbody:
   m_ObjectHideFlags: 0
