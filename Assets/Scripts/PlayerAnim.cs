@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.EventSystems;
 
 public class PlayerAnim : MonoBehaviour
 {
     public Animator atkAnim;
+ 
     AttackEvent attackEvent;
 
 
@@ -19,6 +21,17 @@ public class PlayerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("startAtk : " + attackEvent.startAtk);
+
+
+        if(attackEvent.startAtk == true)
+        {
+            atkAnim.SetBool("playerAttack", true);
+        }
+        else
+        {
+            atkAnim.SetBool("playerAttack", false);
+        }
     }
+    
 }

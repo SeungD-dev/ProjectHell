@@ -12,7 +12,7 @@ public class AttackEvent : MonoBehaviour
 
     private float countTime;
 
-    public bool  Absorbmode, Attackmode = false,Shootmode = false;
+    public bool  Absorbmode, Attackmode = false,Shootmode = false , startAtk;
 
     private float absorbTime = 0.1f;
 
@@ -25,6 +25,8 @@ public class AttackEvent : MonoBehaviour
 
     PlayerControl playerControl;
     AttackManager attackManager;
+
+   
 
    
     
@@ -53,6 +55,7 @@ public class AttackEvent : MonoBehaviour
             AbsorbColorTransparency();
 
         }
+       
 
     }
 
@@ -228,9 +231,17 @@ public class AttackEvent : MonoBehaviour
 
     public void AbsorbButtonDown()
     {
+        if (absorbBtn.activeInHierarchy)
+        {
+            startAtk = true;
+        }
+        else
+            startAtk = false;
+        
         countTime = 0;
         StartCoroutine("AttackCooldown");
         AbsorbUncolorTrasparency();
+      
         
 
         if(Attackmode == false)
@@ -277,9 +288,11 @@ public class AttackEvent : MonoBehaviour
 
     IEnumerator AttackCooldown()
     {
+       
         absorbBtn.SetActive(false);
         yield return new WaitForSeconds(0.7f);
         absorbBtn.SetActive(true);
+
     }
 
    
