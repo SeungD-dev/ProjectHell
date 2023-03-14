@@ -26,11 +26,11 @@ public class PlayerAnim : MonoBehaviour
 
         if(attackEvent.startAtk == true)
         {
-            atkAnim.SetBool("playerAttack", true);
+            atkAnim.SetTrigger("playerAttack");
         }
-        else
+        if(attackEvent.startAtk == false)
         {
-            atkAnim.SetBool("playerAttack", false);
+            atkAnim.SetTrigger("playerIdle");
         }
     }
     

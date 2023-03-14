@@ -24,6 +24,7 @@ public class PlayerControl : MonoBehaviour
     PlayerHP playerhp;
 
     bool isHurt;
+    bool isSound = true;
     private float fTickTime;
     private float fDestroyTime = 5f;
 
@@ -34,6 +35,8 @@ public class PlayerControl : MonoBehaviour
 
     public bool flip;
     public bool jumpCC;
+
+    public AudioSource playerhitSound;
 
   
 
@@ -151,6 +154,9 @@ public class PlayerControl : MonoBehaviour
                 fTickTime = 0f;
                 StartCoroutine(HurtCooldown());
                 StartCoroutine(GanglimHurtdown());
+                PlayerHitSound();
+                StartCoroutine(SoundRoutine());
+
             }          
             Debug.Log(playerhp.player_currentHP);
         }
@@ -172,11 +178,26 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    public void PlayerHitSound()
+    {
+        if (isSound)
+        {
+            isSound = false;
+            playerhitSound.Play();
+        }
+    }
+
     IEnumerator HurtCooldown()
     {
         yield return new WaitForSeconds(1f);
         Debug.Log("½ÇÇà");
         isHurt = false;
+    }
+
+    IEnumerator SoundRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        isSound = true;
     }
     IEnumerator GanglimHurtdown()
     {

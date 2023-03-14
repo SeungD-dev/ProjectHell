@@ -55,7 +55,10 @@ public class AttackEvent : MonoBehaviour
             AbsorbColorTransparency();
 
         }
-       
+       if(absorbBtn.activeInHierarchy == false)
+        {
+            startAtk = false;
+        }
 
     }
 
@@ -231,12 +234,12 @@ public class AttackEvent : MonoBehaviour
 
     public void AbsorbButtonDown()
     {
-        if (absorbBtn.activeInHierarchy)
+        if (absorbBtn.activeInHierarchy == true)
         {
             startAtk = true;
         }
-        else
-            startAtk = false;
+        
+        
         
         countTime = 0;
         StartCoroutine("AttackCooldown");
@@ -280,7 +283,7 @@ public class AttackEvent : MonoBehaviour
 
     public void AbsorbUncolorTrasparency()
     {
-        GetComponent<MeshRenderer>().materials[0].color = new Color(255, 0, 0, 1f);
+        GetComponent<MeshRenderer>().materials[0].color = new Color(0, 0, 0, 0f);
         //absorptionSprite.color = new Color(0, 0, 0, 1f);
         absorption.GetComponent<SphereCollider>().enabled = true;
 

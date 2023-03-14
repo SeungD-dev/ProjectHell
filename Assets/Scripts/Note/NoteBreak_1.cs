@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteBreak : MonoBehaviour
+public class NoteBreak_1 : MonoBehaviour
 {
     public GameObject player;
-    public GameObject bgm;
+    
     public float setTime = 0.5f;
     float time;
     void Start()
     {
-        bgm.SetActive(false);
+        
     }
 
     void Update()
     {
-        time += Time.deltaTime;
-        if(time >= setTime)
-        {
-            bgm.SetActive(true);
-        }
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,7 +26,7 @@ public class NoteBreak : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        
+
         if (other.CompareTag("Player"))
         {
             player.transform.position = new Vector3(0, 0.2f, -2.8f);
