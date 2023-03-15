@@ -13,10 +13,11 @@ public class Anubis_Anim : MonoBehaviour
     SpriteRenderer sr;
 
     GameObject boom;
-    public AudioSource anubis_roar, hitGround;
+    public AudioSource audioSource;
+    //public AudioClip anubis_roar, hitGround;
 
-    bool asdf = true, boomSound = false;
-
+    public bool asdf = true, boomSound = false;
+    public GameObject anubis_roar, hitGround;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,8 @@ public class Anubis_Anim : MonoBehaviour
         boom = GameObject.Find("boom");
         sr = boom.GetComponent<SpriteRenderer>();
         sr.color = new Color(255, 255, 255, 255);
+        anubis_roar.SetActive(false);
+        hitGround.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,31 +38,34 @@ public class Anubis_Anim : MonoBehaviour
         time += Time.deltaTime;
         if (time >= 2.3 && asdf == true)
         {
-           
             anim.SetTrigger("AnubisAtk");
-            anubis_roar.Play();
-            
-          
-
-
-
-
+            anubis_roar.SetActive(true);
+            //PlaySound("roar");
         }
-        if(time == 2.5)
+        if(time >= 3.5)
         {
-            hitGround.Play();
+            Debug.Log("dsa");
+            hitGround.SetActive(true);
+            //PlaySound("hitGround");
         }
 
         if (time >= 2.4)
         {
-           
             asdf = false;
-           
-
         }
-       
-       
-       
-        
     }
+
+    /*void PlaySound(string action)
+    {
+        switch (action)
+        {
+            case "roar":
+                audioSource.clip = anubis_roar;
+                break;
+            case "hitGround":
+                audioSource.clip = hitGround;
+                break;
+        }
+        audioSource.Play();
+    }*/
 }
