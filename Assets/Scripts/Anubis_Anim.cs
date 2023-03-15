@@ -36,20 +36,20 @@ public class Anubis_Anim : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 2.3 && asdf == true)
+        if (time >= 68.8 && asdf == true)
         {
             anim.SetTrigger("AnubisAtk");
             anubis_roar.SetActive(true);
             //PlaySound("roar");
         }
-        if(time >= 3.5)
+        if(time >= 70)
         {
             Debug.Log("dsa");
             hitGround.SetActive(true);
             //PlaySound("hitGround");
         }
 
-        if (time >= 2.4)
+        if (time >= 69)
         {
             asdf = false;
         }
