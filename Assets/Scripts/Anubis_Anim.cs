@@ -13,8 +13,9 @@ public class Anubis_Anim : MonoBehaviour
     SpriteRenderer sr;
 
     GameObject boom;
+    public AudioSource anubis_roar, hitGround;
 
-    bool asdf = true;
+    bool asdf = true, boomSound = false;
 
 
     // Start is called before the first frame update
@@ -36,23 +37,27 @@ public class Anubis_Anim : MonoBehaviour
         {
            
             anim.SetTrigger("AnubisAtk");
-           
-
-
-
-
-        }
-        if(time>=2.4 && asdf == true)
-        {
-            boom_anim.SetTrigger("bang");
-        }
-        if (time >= 2.36)
-        {
+            anubis_roar.Play();
             
+          
+
+
+
+
+        }
+        if(time == 2.5)
+        {
+            hitGround.Play();
+        }
+
+        if (time >= 2.4)
+        {
+           
             asdf = false;
            
 
         }
+       
        
        
         

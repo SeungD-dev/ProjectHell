@@ -7,7 +7,7 @@ public class AttackEvent : MonoBehaviour
 {
     public GameObject absorption;
     public GameObject absorbBtn;
-    public SpriteRenderer absorptionSprite;
+ 
     
 
     private float countTime;
@@ -27,6 +27,7 @@ public class AttackEvent : MonoBehaviour
     AttackManager attackManager;
 
    
+   
 
    
     
@@ -40,6 +41,7 @@ public class AttackEvent : MonoBehaviour
 
         playerControl = FindObjectOfType<PlayerControl>();
         attackManager = FindObjectOfType<AttackManager>();
+      
       
     }
 
@@ -55,11 +57,7 @@ public class AttackEvent : MonoBehaviour
             AbsorbColorTransparency();
 
         }
-       if(absorbBtn.activeInHierarchy == false)
-        {
-            startAtk = false;
-        }
-
+       
     }
 
     private void OnTriggerEnter(Collider col)
@@ -234,11 +232,7 @@ public class AttackEvent : MonoBehaviour
 
     public void AbsorbButtonDown()
     {
-        if (absorbBtn.activeInHierarchy == true)
-        {
-            startAtk = true;
-        }
-        
+       
         
         
         countTime = 0;

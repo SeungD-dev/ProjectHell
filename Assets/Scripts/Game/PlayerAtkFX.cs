@@ -18,10 +18,12 @@ public class PlayerAtkFX : MonoBehaviour
    
     void Update()
     {
-        if(attackEvent.startAtk == true)
-        {
-            atkFX.SetTrigger("atkFX");
-        }
        
+       
+    }
+
+    public void AbsorbButtonDown()
+    {
+        atkFX.SetTrigger("atkFX");
     }
 }

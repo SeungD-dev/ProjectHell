@@ -21,17 +21,16 @@ public class PlayerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("startAtk : " + attackEvent.startAtk);
+        
 
 
-        if(attackEvent.startAtk == true)
-        {
-            atkAnim.SetTrigger("playerAttack");
-        }
-        if(attackEvent.startAtk == false)
-        {
-            atkAnim.SetTrigger("playerIdle");
-        }
+
+    }
+
+    public void AbsorbButtonDown()
+    {
+        atkAnim.SetTrigger("playerAttack");
+        
     }
     
 }
