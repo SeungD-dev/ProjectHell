@@ -30932,7 +30932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   absorption: {fileID: 1717610646}
   absorbBtn: {fileID: 1117328644}
-  SwordSound: {fileID: 0}
+  SwordSound: {fileID: 764209925}
   Absorbmode: 0
   Attackmode: 0
   Shootmode: 0

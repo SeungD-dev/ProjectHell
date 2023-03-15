@@ -116,6 +116,7 @@ public class AttackEvent : MonoBehaviour
                     Destroy(col.gameObject);
                     Attackmode = true;
                     Debug.Log("공격모드 활성화");
+                   
                     SwordSound.Play();
                     asb = asbColor.red;
                     bc = ballColor.red;
@@ -156,6 +157,7 @@ public class AttackEvent : MonoBehaviour
                     Destroy(col.gameObject);
                     Attackmode = true;
                     Debug.Log("공격모드 활성화");
+                  
                     SwordSound.Play();
                     asb = asbColor.blue;
                     bc = ballColor.blue;
@@ -197,6 +199,7 @@ public class AttackEvent : MonoBehaviour
                     Destroy(col.gameObject);
                     Attackmode = true;
                     Debug.Log("공격모드 활성화");
+                   
                     SwordSound.Play();
                     asb = asbColor.green;
                     bc = ballColor.green;
@@ -258,11 +261,12 @@ public class AttackEvent : MonoBehaviour
 
         if(Attackmode == true )//&& Shootmode == true)
         {
-            
-            attackManager.ShootAttack();
-           
+
+
+            Attackmode = false;
             Absorbmode = false;
             asb = asbColor.normal;
+            bc = ballColor.normal;
             r = 0;
             g = 0;
             b = 0;
