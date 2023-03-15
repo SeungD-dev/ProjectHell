@@ -37193,7 +37193,7 @@ MonoBehaviour:
   img_AnubisHit: {fileID: 21300000, guid: 9c3e40ca9cf8b3f4bb19e609a1bbff19, type: 3}
   img_AnubisNormal: {fileID: 21300000, guid: db93f8cd09803e04ab259e04bd9f0ff4, type: 3}
   img_AnubisDead: {fileID: 21300000, guid: 23e3e85471f21b54295dbcfd16c95aea, type: 3}
-  img_AnubisLow: {fileID: 0}
+  img_AnubisLow: {fileID: 21300000, guid: 82ed6bac28b532b43a72bb8d203a9838, type: 3}
   thisImg: {fileID: 0}
   anubisHitSound: {fileID: 514354929}
   anubisDeadSound: {fileID: 684683087}

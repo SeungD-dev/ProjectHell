@@ -71,8 +71,8 @@ public class AttackEvent : MonoBehaviour
                 if (col.gameObject.CompareTag("Note_R") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
-                    asb = asbColor.red;
-                    bc = ballColor.red;
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
                     AbsorbColorTransparency();
                     Debug.Log("흡수됨");
                     Absorbmode = false;
@@ -118,8 +118,8 @@ public class AttackEvent : MonoBehaviour
                     Debug.Log("공격모드 활성화");
                    
                     SwordSound.Play();
-                    asb = asbColor.red;
-                    bc = ballColor.red;
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
                     r = 1;
                     b = 0;
                     g = 0;
@@ -159,8 +159,8 @@ public class AttackEvent : MonoBehaviour
                     Debug.Log("공격모드 활성화");
                   
                     SwordSound.Play();
-                    asb = asbColor.blue;
-                    bc = ballColor.blue;
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
                     r = 0;
                     b = 1;
                     g = 0;
@@ -201,8 +201,8 @@ public class AttackEvent : MonoBehaviour
                     Debug.Log("공격모드 활성화");
                    
                     SwordSound.Play();
-                    asb = asbColor.green;
-                    bc = ballColor.green;
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
                     r = 0;
                     g = 1;
                     b = 0;

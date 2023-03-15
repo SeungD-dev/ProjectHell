@@ -34,7 +34,7 @@ public class AttackManager : MonoBehaviour
             t_attack.transform.SetParent(this.transform);
             attackEvent.Attackmode = false;
             //attackEvent.Shootmode = false;
-            attackEvent.r = 0;
+            
         }
         if (attackEvent.b == 1 && attackEvent.Attackmode == true)
         {
@@ -42,7 +42,7 @@ public class AttackManager : MonoBehaviour
             t_attack.transform.SetParent(this.transform);
             attackEvent.Attackmode = false;
             //attackEvent.Shootmode = false;
-            attackEvent.b = 0;
+            
 
         }
         if (attackEvent.g == 1 && attackEvent.Attackmode == true)
@@ -51,7 +51,7 @@ public class AttackManager : MonoBehaviour
             t_attack.transform.SetParent(this.transform);
             attackEvent.Attackmode = false;
             //attackEvent.Shootmode = false;
-            attackEvent.g = 0;
+           
         }
 
     }
