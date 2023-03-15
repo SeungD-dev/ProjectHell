@@ -71,8 +71,8 @@ public class AttackEvent : MonoBehaviour
                 if (col.gameObject.CompareTag("Note_R") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
+                    asb = asbColor.red;
+                    bc = ballColor.red;
                     AbsorbColorTransparency();
                     Debug.Log("ศํผ๖ตส");
                     Absorbmode = false;

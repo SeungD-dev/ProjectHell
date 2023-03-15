@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Anubis_Status : MonoBehaviour
 {
-    private int AnubisHP = 5;
-    private float AnubisHPtime = 90;
+    public int AnubisHP = 5;
+    public float AnubisHPtime = 90;
     public Sprite img_AnubisHit, img_AnubisNormal,img_AnubisDead,img_AnubisLow;
     public SpriteRenderer thisImg;
     public AudioSource anubisHitSound, anubisDeadSound;
+
+    public bool isHit = false;
     
     void Start()
     {
+        
         thisImg = GetComponent<SpriteRenderer>();
     }
 
@@ -41,7 +44,7 @@ public class Anubis_Status : MonoBehaviour
                 AnubisHP -= 1;
                 StartCoroutine(BossHitImage());
                 Debug.Log("아누비스 체력 : " + AnubisHP);
-                
+                isHit = true;
                 if (AnubisHP != 0)
                     anubisHitSound.Play();
                 else
@@ -53,6 +56,7 @@ public class Anubis_Status : MonoBehaviour
                 Destroy(other.gameObject);
                 AnubisHP -= 1;
                 StartCoroutine(BossHitImageLowHP());
+                isHit = true;
                 Debug.Log("아누비스 체력 : " + AnubisHP);
 
                 if (AnubisHP != 0)

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            if(time >= 70) //Default : time >= 70
+            if(time >= 25) //Default : time >= 70
             {                           
                 if (!on)
                 {
