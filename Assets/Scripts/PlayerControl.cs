@@ -102,7 +102,7 @@ public class PlayerControl : MonoBehaviour
 
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-            gameObject.layer = 7;
+            //gameObject.layer = 7;
         }
     }
 

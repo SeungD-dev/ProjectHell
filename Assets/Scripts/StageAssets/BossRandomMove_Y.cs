@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossRandomMove_Y : MonoBehaviour
 {
-    public float[] possibleXValues = { -1.7f, -0.8f, 0, 0.8f, 1.7f };
+    public float[] possibleXValues = { -1.76f, -0.88f, 0, 0.88f, 1.76f };
     public GameObject bossPos;
     public float newX;
     public float moveTime;
@@ -12,7 +12,7 @@ public class BossRandomMove_Y : MonoBehaviour
 
     void Start()
     {
-        newX = possibleXValues[Random.Range(0, possibleXValues.Length)];
+        //newX = possibleXValues[Random.Range(0, possibleXValues.Length)];
     }
 
     // Update is called once per frame
