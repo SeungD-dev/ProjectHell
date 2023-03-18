@@ -6,8 +6,10 @@ public class Anubis_Status : MonoBehaviour
 {
     public int AnubisHP = 5;
     public float AnubisHPtime = 90;
-    public Sprite img_AnubisHit, img_AnubisNormal,img_AnubisDead,img_AnubisLow;
-    public SpriteRenderer thisImg;
+    public Sprite[] sprites;
+    int sprite_index;
+   
+    public SpriteRenderer spriteRenderer;
     public AudioSource anubisHitSound, anubisDeadSound;
 
     public bool isHit = false;
@@ -15,7 +17,8 @@ public class Anubis_Status : MonoBehaviour
     void Start()
     {
         
-        thisImg = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        sprite_index = 0;
     }
 
    
@@ -42,7 +45,7 @@ public class Anubis_Status : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 AnubisHP -= 1;
-                StartCoroutine(BossHitImage());
+                //StartCoroutine(BossHitImage());
                 Debug.Log("아누비스 체력 : " + AnubisHP);
                 isHit = true;
                 if (AnubisHP != 0)
@@ -55,7 +58,7 @@ public class Anubis_Status : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 AnubisHP -= 1;
-                StartCoroutine(BossHitImageLowHP());
+                //StartCoroutine(BossHitImageLowHP());
                 isHit = true;
                 Debug.Log("아누비스 체력 : " + AnubisHP);
 
@@ -66,7 +69,7 @@ public class Anubis_Status : MonoBehaviour
             }
             if(AnubisHP == 0)
             {
-                thisImg.sprite = img_AnubisDead;
+                //spriteRenderer.sprite = sprites[sprite_index];
                 Destroy(other.gameObject);
 
                 if (AnubisHP != 0)
@@ -79,15 +82,20 @@ public class Anubis_Status : MonoBehaviour
 
     IEnumerator BossHitImage()
     {
-        thisImg.sprite = img_AnubisHit;
+        sprite_index = 1;
+        spriteRenderer.sprite = sprites[sprite_index];
         yield return new WaitForSeconds(0.8f);
-        thisImg.sprite = img_AnubisNormal;
+        sprite_index = 0;
+        spriteRenderer.sprite = sprites[sprite_index];
     }
 
     IEnumerator BossHitImageLowHP()
     {
-        thisImg.sprite = img_AnubisHit;
+        sprite_index = 1;
+        spriteRenderer.sprite = sprites[sprite_index];
         yield return new WaitForSecondsRealtime(0.8f);
-        thisImg.sprite = img_AnubisLow;
+        sprite_index = 2;
+        spriteRenderer.sprite = sprites[sprite_index];
+        
     }
 }

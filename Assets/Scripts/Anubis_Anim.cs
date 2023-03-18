@@ -8,12 +8,12 @@ public class Anubis_Anim : MonoBehaviour
     GameManager gameManager;
 
     public Animator anim;
-    public Animator boom_anim;
-    //public Animator anubis_hit,anubis_idle,anubis_low;
+   
+   
     float time;
-    SpriteRenderer sr;
+   
 
-    GameObject boom;
+   
     public AudioSource audioSource;
     //public AudioClip anubis_roar, hitGround;
 
@@ -27,13 +27,13 @@ public class Anubis_Anim : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         anim = gameObject.GetComponentInChildren<Animator>();
-        boom_anim = gameObject.GetComponentInChildren<Animator>();
-        boom = GameObject.Find("boom");
-        sr = boom.GetComponent<SpriteRenderer>();
-        sr.color = new Color(255, 255, 255, 255);
+       
+       
+       
         anubis_roar.SetActive(false);
         hitGround.SetActive(false);
         anubis_Status = FindObjectOfType<Anubis_Status>();
+        anim.SetBool("AnubisLow", false);
     }
 
     // Update is called once per frame
@@ -50,6 +50,7 @@ public class Anubis_Anim : MonoBehaviour
         {
             Debug.Log("dsa");
             hitGround.SetActive(true);
+          
             //PlaySound("hitGround");
         }
 
@@ -57,10 +58,11 @@ public class Anubis_Anim : MonoBehaviour
         {
             asdf = false;
         }
+        //Debug.Log("¾Æ´©ºñ½º Èý"+ anubis_Status.isHit);
 
-        /*if(anubis_Status.isHit == true)
+        if(anubis_Status.isHit == true)
         {
-            anubis_hit.SetTrigger("AnubisHit");
+            anim.SetTrigger("AnubisHit");
         
             anubis_Status.isHit = false;
 
@@ -69,14 +71,14 @@ public class Anubis_Anim : MonoBehaviour
 
         if(anubis_Status.AnubisHP >= 3 && anubis_Status.isHit == true)
         {
-            anubis_hit.SetTrigger("AnubisHit");
-            anubis_low.SetBool("AnubisLow", true);
+            anim.SetTrigger("AnubisHit");
+            anim.SetBool("AnubisLow", true);
             anubis_Status.isHit = false;
         }
         if (anubis_Status.isHit == false)
         {
-            anubis_idle.SetTrigger("AnubisIdle");
-        }*/
+            anim.SetTrigger("AnubisIdle");
+        }
     }
 
     /*void PlaySound(string action)
