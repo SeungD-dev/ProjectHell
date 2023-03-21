@@ -7,14 +7,19 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     //public Image fadeOutPanel; //검은화면 컴포넌트
+    public GameObject StagePanel;
     public GameObject Stage1_Panel;
+    public GameObject Stage2_Panel;
+    public GameObject Stage3_Panel;
 
     void Start()
     {
         Stage1_Panel.SetActive(false);
+        Stage2_Panel.SetActive(false);
+        Stage3_Panel.SetActive(false);
     }
 
-    public void LoadingButton() //버튼클릭시 호출
+    /*public void LoadingButton() //버튼클릭시 호출
     {
         //fadeOutPanel.gameObject.SetActive(true); //fadeOutPanel 활성화
         StartCoroutine("FadeOutCoroutine"); //코루틴 함수 호출
@@ -24,26 +29,84 @@ public class SceneChange : MonoBehaviour
     public void LoadingSceneChange() //씬 전환 함수
     {
         SceneManager.LoadScene("LoadingScene"); //LodingScene씬으로 전환
-    }
+    }*/
+
+
 
     public void Stage_1Button() //버튼클릭시 호출
     {
-        //fadeOutPanel.gameObject.SetActive(true); //fadeOutPanel 활성화
+        /*//fadeOutPanel.gameObject.SetActive(true); //fadeOutPanel 활성화
         StartCoroutine("FadeOutCoroutine"); //코루틴 함수 호출
-        Invoke("Stage_1SceneChange", 0.3f); //0.3f 후 Change실행
+        Invoke("Stage_1SceneChange", 0.3f); //0.3f 후 Change실행*/
+        StagePanel.SetActive(false);
+        Stage1_Panel.SetActive(true);
     }
 
-    public void Stage_1SceneChange()
+    public void Stage1_BackButton()
+    {
+        Stage1_Panel.SetActive(false);
+        StagePanel.SetActive(true);
+    }
+    public void Stage2_Button() //버튼클릭시 호출
+    {
+        StagePanel.SetActive(false);
+        Stage2_Panel.SetActive(true);
+    }
+
+    public void Stage2_BackButton()
+    {
+        Stage2_Panel.SetActive(false);
+        StagePanel.SetActive(true);
+    }
+
+    public void Stage3_Button() //버튼클릭시 호출
+    {
+        StagePanel.SetActive(false);
+        Stage3_Panel.SetActive(true);
+    }
+
+    public void Stage3_BackButton()
+    {
+        Stage3_Panel.SetActive(false);
+        StagePanel.SetActive(true);
+    }
+
+
+
+    public void Stage1_SceneChange()
     {
         SceneManager.LoadScene("Stage_1");
     }
 
+    public void Stage1_MiniScene()
+    {
+        SceneManager.LoadScene("Stage_1-1");
+    }
+    public void Stage2_SceneChange()
+    {
+        SceneManager.LoadScene("Stage_2");
+    }
+
+    public void Stage2_MiniScene()
+    {
+        SceneManager.LoadScene("Stage_2-1");
+    }
+    public void Stage3_SceneChange()
+    {
+        SceneManager.LoadScene("Stage_3");
+    }
+
+    public void Stage3_MiniScene()
+    {
+        SceneManager.LoadScene("MazeStage");
+    }
+
+
     public void StageButton() //버튼클릭시 호출
     {
-        /*//fadeOutPanel.gameObject.SetActive(true); //fadeOutPanel 활성화
+        //fadeOutPanel.gameObject.SetActive(true); //fadeOutPanel 활성화
         StartCoroutine("FadeOutCoroutine"); //코루틴 함수 호출
-        Invoke("StageChange", 0.3f); //0.3f 후 Change실행*/
-        Stage1_Panel.SetActive(true);
+        Invoke("StageChange", 0.3f); //0.3f 후 Change실행
     }
 
     public void StageChange() //씬 전환 함수
