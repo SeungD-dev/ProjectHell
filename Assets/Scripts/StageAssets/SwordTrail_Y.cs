@@ -65,7 +65,7 @@ public class SwordTrail_Y : MonoBehaviour
             {
                 prefabToInstantiate = slash[1];
                 //Instantiate(prefabToInstantiate, transform.position + new Vector3(0, -2.4f, -0.5f), prefabToInstantiate.transform.rotation);
-                Instantiate(prefabToInstantiate, new Vector3(brm.newX, -0.24f, 6.5f), prefabToInstantiate.transform.rotation);
+                Instantiate(prefabToInstantiate, new Vector3(brm.newX+ -0.225f, -0.24f, 6.5f), prefabToInstantiate.transform.rotation);
             }
         }
     }
@@ -73,6 +73,6 @@ public class SwordTrail_Y : MonoBehaviour
     void RandomBossSlash()
     {
         prefabToInstantiate = slash[1];
-        Instantiate(prefabToInstantiate, new Vector3(possibleXValues[Random.Range(0, possibleXValues.Length)], 0.1f, 7f), prefabToInstantiate.transform.rotation);
+        Instantiate(prefabToInstantiate, new Vector3(possibleXValues[Random.Range(0, possibleXValues.Length)] + -0.225f, 0, 7f), prefabToInstantiate.transform.rotation);
     }
 }

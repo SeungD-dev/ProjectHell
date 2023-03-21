@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     //public Image fadeOutPanel; //검은화면 컴포넌트
+    public GameObject Stage1_Panel;
+
+    void Start()
+    {
+        Stage1_Panel.SetActive(false);
+    }
 
     public void LoadingButton() //버튼클릭시 호출
     {
@@ -34,9 +40,10 @@ public class SceneChange : MonoBehaviour
 
     public void StageButton() //버튼클릭시 호출
     {
-        //fadeOutPanel.gameObject.SetActive(true); //fadeOutPanel 활성화
+        /*//fadeOutPanel.gameObject.SetActive(true); //fadeOutPanel 활성화
         StartCoroutine("FadeOutCoroutine"); //코루틴 함수 호출
-        Invoke("StageChange", 0.3f); //0.3f 후 Change실행
+        Invoke("StageChange", 0.3f); //0.3f 후 Change실행*/
+        Stage1_Panel.SetActive(true);
     }
 
     public void StageChange() //씬 전환 함수

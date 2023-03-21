@@ -4661,7 +4661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 274112621}
-  boom_anim: {fileID: 0}
   audioSource: {fileID: 0}
   asdf: 1
   boomSound: 0
@@ -17225,7 +17224,7 @@ MonoBehaviour:
   duration: 5
   slash:
   - {fileID: 7351717229710443770, guid: a0d9e6867057f944097f7ea88b14ec14, type: 3}
-  - {fileID: 2376587905913858044, guid: 1225b00e593171240afc85ea6542a9c0, type: 3}
+  - {fileID: 2196665828978943546, guid: 28226164f0bdd7a4c95cbd1e79f453a0, type: 3}
   possibleXValues:
   - -1.7
   - -0.8
@@ -18794,7 +18793,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 274112621}
-  boom_anim: {fileID: 0}
   audioSource: {fileID: 0}
   asdf: 1
   boomSound: 0
