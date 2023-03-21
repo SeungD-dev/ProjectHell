@@ -25649,6 +25649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642034b3d71fc1f4d928d852b502af71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stage1_Panel: {fileID: 0}
 --- !u!114 &1461217808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27339,7 +27340,7 @@ GameObject:
   - component: {fileID: 1559817686}
   - component: {fileID: 1559817684}
   m_Layer: 0
-  m_Name: AudioSource
+  m_Name: Stage1_BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30431,6 +30432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642034b3d71fc1f4d928d852b502af71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stage1_Panel: {fileID: 0}
 --- !u!114 &1690871740
 MonoBehaviour:
   m_ObjectHideFlags: 0

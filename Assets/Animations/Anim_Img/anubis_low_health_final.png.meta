@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: d057f2357a47b0844a357b6931735962
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: anubis_low_health_final_0
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 655
+        width: 667
+        height: 673
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53bf351299690d44b33ea8e2f81175e
+      internalID: 607831051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anubis_low_health_final_3
+      rect:
+        serializedVersion: 2
+        x: 2953
+        y: 668
+        width: 650
+        height: 660
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78cb50157fc58b44817de8140d9c685
+      internalID: 1216701907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anubis_low_health_final_1
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 657
+        width: 683
+        height: 662
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e504f22c0767d554cb827519fb2cbf84
+      internalID: -2072469467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anubis_low_health_final_2
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 653
+        width: 643
+        height: 661
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f446e463d61a5734fa5ee43f7ffc7e9d
+      internalID: -947629038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 64dba68f35ac14b48a1fc2b8ebe9d6b8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      anubis_low_health_final_4: -859778946
+      anubis_low_health_final_52: 1264265655
+      anubis_low_health_final_69: 2035102787
+      anubis_low_health_final_66: 1170161490
+      anubis_low_health_final_9: -1837317155
+      anubis_low_health_final_3: 1216701907
+      anubis_low_health_final_70: -192649007
+      anubis_low_health_final_78: -339927787
+      anubis_low_health_final_30: 1696165490
+      anubis_low_health_final_58: -1960133961
+      anubis_low_health_final_53: 1483677199
+      anubis_low_health_final_64: -1589147682
+      anubis_low_health_final_50: -2080340891
+      anubis_low_health_final_37: -1945603255
+      anubis_low_health_final_39: -1011822804
+      anubis_low_health_final_57: 545254112
+      anubis_low_health_final_51: -1536528241
+      anubis_low_health_final_55: -1347089883
+      anubis_low_health_final_68: 202804804
+      anubis_low_health_final_36: 218848003
+      anubis_low_health_final_67: 728567385
+      anubis_low_health_final_45: -2007780341
+      anubis_low_health_final_18: 224586598
+      anubis_low_health_final_19: -1186505230
+      anubis_low_health_final_65: -1177057463
+      anubis_low_health_final_29: 2128486410
+      anubis_low_health_final_12: -292997257
+      anubis_low_health_final_17: 1748289159
+      anubis_low_health_final_54: 665551618
+      anubis_low_health_final_61: 1957079420
+      anubis_low_health_final_76: -757569375
+      anubis_low_health_final_56: 2076516243
+      anubis_low_health_final_24: -1862182935
+      anubis_low_health_final_75: -428985179
+      anubis_low_health_final_26: -714602830
+      anubis_low_health_final_35: 827755558
+      anubis_low_health_final_22: 373166517
+      anubis_low_health_final_73: -908785399
+      anubis_low_health_final_48: -1051051045
+      anubis_low_health_final_14: -1103817456
+      anubis_low_health_final_71: 607576657
+      anubis_low_health_final_59: -2074146728
+      anubis_low_health_final_32: 1253137248
+      anubis_low_health_final_1: -2072469467
+      anubis_low_health_final_40: 1014489330
+      anubis_low_health_final_5: 800463497
+      anubis_low_health_final_0: 607831051
+      anubis_low_health_final_33: 569761801
+      anubis_low_health_final_20: -1822979212
+      anubis_low_health_final_25: -1907277538
+      anubis_low_health_final_15: 1586673899
+      anubis_low_health_final_41: 116395094
+      anubis_low_health_final_47: 1479574327
+      anubis_low_health_final_72: 1209303498
+      anubis_low_health_final_21: -1391161756
+      anubis_low_health_final_46: 254190041
+      anubis_low_health_final_77: -333157630
+      anubis_low_health_final_10: -1723134677
+      anubis_low_health_final_27: -1672251548
+      anubis_low_health_final_31: -1607638709
+      anubis_low_health_final_38: -1381914709
+      anubis_low_health_final_49: -575076848
+      anubis_low_health_final_34: 1394780586
+      anubis_low_health_final_16: -1701960198
+      anubis_low_health_final_62: 2047809626
+      anubis_low_health_final_2: -947629038
+      anubis_low_health_final_6: 1185485673
+      anubis_low_health_final_28: 1130375735
+      anubis_low_health_final_43: -1701331528
+      anubis_low_health_final_60: -1547180997
+      anubis_low_health_final_42: 1672192882
+      anubis_low_health_final_63: 488393915
+      anubis_low_health_final_74: 119871195
+      anubis_low_health_final_7: 852478568
+      anubis_low_health_final_23: -257573813
+      anubis_low_health_final_44: -185476852
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
