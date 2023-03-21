@@ -3568,7 +3568,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 274112621}
-  boom_anim: {fileID: 0}
+  audioSource: {fileID: 0}
+  asdf: 1
+  boomSound: 0
+  anubis_roar: {fileID: 0}
+  hitGround: {fileID: 0}
 --- !u!95 &274112621
 Animator:
   serializedVersion: 4
@@ -7732,7 +7736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &671341390
 Transform:
   m_ObjectHideFlags: 0
@@ -11740,7 +11744,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 274112621}
-  boom_anim: {fileID: 0}
+  audioSource: {fileID: 0}
+  asdf: 1
+  boomSound: 0
+  anubis_roar: {fileID: 0}
+  hitGround: {fileID: 0}
 --- !u!95 &1097789977
 Animator:
   serializedVersion: 4
@@ -15796,6 +15804,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642034b3d71fc1f4d928d852b502af71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StagePanel: {fileID: 0}
+  Stage1_Panel: {fileID: 0}
+  Stage2_Panel: {fileID: 0}
+  Stage3_Panel: {fileID: 0}
 --- !u!114 &1461217808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17811,6 +17823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642034b3d71fc1f4d928d852b502af71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StagePanel: {fileID: 0}
+  Stage1_Panel: {fileID: 0}
+  Stage2_Panel: {fileID: 0}
+  Stage3_Panel: {fileID: 0}
 --- !u!114 &1690871740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18375,10 +18391,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   absorption: {fileID: 1717610646}
   absorbBtn: {fileID: 1117328644}
-  absorptionSprite: {fileID: 0}
+  SwordSound: {fileID: 0}
   Absorbmode: 0
   Attackmode: 0
   Shootmode: 0
+  startAtk: 0
   bc: 0
   r: 0
   g: 0
@@ -22351,6 +22368,7 @@ MonoBehaviour:
   ganglim: {fileID: 934214922}
   flip: 0
   jumpCC: 0
+  playerhitSound: {fileID: 0}
 --- !u!54 &1973964575
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23034,7 +23052,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2021083194}
-  boom_anim: {fileID: 0}
+  audioSource: {fileID: 0}
+  asdf: 1
+  boomSound: 0
+  anubis_roar: {fileID: 0}
+  hitGround: {fileID: 0}
 --- !u!65 &2021083196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23060,6 +23082,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217a4032242091245bd97e4345f70f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnubisHP: 5
+  AnubisHPtime: 90
+  sprites: []
+  spriteRenderer: {fileID: 0}
+  anubisHitSound: {fileID: 0}
+  anubisDeadSound: {fileID: 0}
+  isHit: 0
 --- !u!1 &2023567939
 GameObject:
   m_ObjectHideFlags: 0
