@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 88338cc95d40fb842be7412e69072755
+guid: a13b07f68e504ef4082a413849c9ceb5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -130,64 +130,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: final_0
+      name: attack_2
       rect:
         serializedVersion: 2
-        x: 1663
-        y: 2775
-        width: 600
+        x: 890
+        y: 461
+        width: 450
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5de31dc45e4fb60459917b41db612fdc
-      internalID: 912894656
+      spriteID: 382333671acd1644aaf455d917f436ba
+      internalID: 1356784997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_3
+      name: attack_3
       rect:
         serializedVersion: 2
-        x: 2614
-        y: 2778
-        width: 600
+        x: 1250
+        y: 454
+        width: 700
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e50b26dd6250c4544be0e01632143c16
-      internalID: 536777959
+      spriteID: 6038e2187b54ca043b9d4c95e4172ec3
+      internalID: 490961872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: final_11
+      name: attack_1
       rect:
         serializedVersion: 2
-        x: 3580
-        y: 2754
-        width: 600
+        x: 361
+        y: 454
+        width: 450
         height: 500
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693af4c18b94f4d42b20be7cf32e8f37
-      internalID: 1384092307
+      spriteID: d9c4e83931cc4334c9795d618556f1a7
+      internalID: 293720254
       vertices: []
       indices: 
       edges: []
@@ -195,7 +195,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 900f73c262783914ea959cc06692b539
     internalID: 0
     vertices: []
     indices: 
@@ -203,34 +203,73 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      final_16: 1040256791
-      final_23: 225504609
-      final_15: 115713273
-      final_27: -1895725567
-      final_0: 912894656
-      final_3: 536777959
-      final_21: 54324213
-      final_26: 1313868641
-      final_10: -1756680768
-      final_13: -468221748
-      final_1: 1930707222
-      final_24: 713215445
-      final_11: 1384092307
-      final_20: 1802844386
-      final_9: 385032028
-      final_25: 611175045
-      final_4: 978580187
-      final_12: 1833721800
-      final_22: 660251772
-      final_19: 1930104211
-      final_18: 1619511580
-      final_6: -633434839
-      final_5: -424853395
-      final_14: 1387890513
-      final_8: 864030716
-      final_7: -200809848
-      final_2: 1288489653
-      final_17: 1847791008
+      up (1)_13: 1282294788
+      up (1)_7: 1064585037
+      up (1)_48: 633935568
+      up (1)_31: -2133794793
+      attack_2: 1356784997
+      up (1)_41: -285018603
+      up (1)_16: -1775233651
+      up (1)_0: 1392309262
+      up (1)_46: 297450490
+      up (1)_35: 1169602487
+      up (1)_5: 1422149371
+      up (1)_22: 1788428928
+      up (1)_60: -211822808
+      up (1)_1: 2126190074
+      up (1)_20: 1160980692
+      up (1)_27: -1548095807
+      up (1)_51: -636993922
+      up (1)_25: 1376267652
+      up (1)_18: 951289277
+      up (1)_53: 1627186618
+      up (1)_21: 1451407605
+      up (1)_24: -1632869032
+      up (1)_44: 1431671665
+      up (1)_52: 157199188
+      up (1)_10: 1199662932
+      up (1)_45: 1590868442
+      attack_3: 490961872
+      up (1)_14: -283207902
+      up (1)_36: -2087054643
+      up (1)_34: 288889305
+      up (1)_54: 1561429544
+      up (1)_30: -1544829461
+      up (1)_28: 955765667
+      up (1)_29: 664032763
+      up (1)_56: 1171892047
+      up (1)_55: 1176733905
+      up (1)_2: -1461016564
+      up (1)_49: 1855697146
+      up (1)_33: -934355097
+      up (1)_38: 90612142
+      up (1)_26: -245457907
+      up (1)_23: -1430469746
+      up (1)_65: 455946990
+      up (1)_47: 248960936
+      up (1)_32: 2144482844
+      up (1)_61: 1214855637
+      up (1)_50: -1517039222
+      up (1)_37: 1724343001
+      attack_1: 293720254
+      up (1)_19: -1940957804
+      up (1)_4: -821581873
+      up (1)_58: 1317225104
+      up (1)_63: 440592119
+      up (1)_40: -2139107112
+      up (1)_64: 1356973180
+      up (1)_59: 1588692454
+      up (1)_6: -414580507
+      up (1)_43: -1021491276
+      up (1)_57: 1665191255
+      up (1)_66: 1979858773
+      up (1)_3: 815091417
+      up (1)_17: -3221692
+      up (1)_9: 1886881283
+      up (1)_11: 1247952017
+      up (1)_42: 162659351
+      up (1)_62: -837301281
+      up (1)_39: 401191814
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
