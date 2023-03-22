@@ -19,6 +19,7 @@ public class Anubis_Anim : MonoBehaviour
 
     public bool asdf = true, boomSound = false;
     public GameObject anubis_roar, hitGround;
+    bool isLowHP = false;
 
     Anubis_Status anubis_Status;
 
@@ -60,26 +61,52 @@ public class Anubis_Anim : MonoBehaviour
         }
         //Debug.Log("¾Æ´©ºñ½º Èý"+ anubis_Status.isHit);
 
-        if(anubis_Status.isHit == true)
-        {
-            anim.SetTrigger("AnubisHit");
-        
-            anubis_Status.isHit = false;
+     
 
-        }
+       
+            AnimationUpdate();
+     
        
 
-        if(anubis_Status.AnubisHP >= 3 && anubis_Status.isHit == true)
+       
+    }
+    void AnimationUpdate()
+    {
+        if (anubis_Status.isHit == true)
         {
             anim.SetTrigger("AnubisHit");
-            anim.SetBool("AnubisLow", true);
+
             anubis_Status.isHit = false;
+
         }
-        if (anubis_Status.isHit == false)
+        if(anubis_Status.AnubisHP >= 3)
+        {
+            anim.SetBool("AnubisIdleFull", true);
+            anim.SetBool("AnubisLowIdle", false);
+        }
+        if(anubis_Status.AnubisHP <= 3)
+        {
+            anim.SetBool("AnubisIdleFull", false);
+            anim.SetBool("AnubisLowIdle", true);
+        }
+
+
+        /*if (anubis_Status.AnubisHP <= 3 && anubis_Status.isHit == true)
+        {
+            anim.SetTrigger("AnubisHit");
+            //anim.SetBool("AnubisLowIdle", true);
+            anubis_Status.isHit = false;
+        }*/
+        if (anubis_Status.isHit == false && anim.GetBool("AnubisIdleFull") == true)
         {
             anim.SetTrigger("AnubisIdle");
         }
+        if(anubis_Status.isHit == false && anim.GetBool("AnubisLowIdle") == true)
+        {
+            anim.SetTrigger("AnubisLow");
+        }
     }
+   
 
     /*void PlaySound(string action)
     {
