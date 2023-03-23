@@ -22,11 +22,18 @@ public class Dialog_Stage1 : MonoBehaviour
     // Update is called once per frame
     private void Awake()
     {
-		DisableObjects();
-        
-    }
+		if (dialogStart_Stage1.startDialog01==true)
+			UpdateDialog1();
+		
 
-	private void DisableObjects()
+	}
+    /*private void Update()
+    {
+		if (dialogStart_Stage1.startDialog02 == true)
+			UpdateDialog1();
+	}*/
+
+    private void DisableObjects()
     {
 		// 모든 대화 관련 게임 오브젝트 비활성화
 
@@ -59,16 +66,16 @@ public class Dialog_Stage1 : MonoBehaviour
 			
 
 			// 자동 재생(dialogStart_Stage1.startDialog=true)으로 설정되어 있으면 첫 번째 대사 재생
-			if (dialogStart_Stage1.startDialog) SetNextDialog1();
+			if (dialogStart_Stage1.startDialog01==true) SetNextDialog1();
 
 			isFirst1 = false;
 		}
 
-		if (Input.touchCount > 0)
+		if ( Input.GetKeyDown(KeyCode.Space))//Input.touchCount > 0 ||
 		{
-			Touch touch = Input.GetTouch(0);
-			if (touch.phase == TouchPhase.Began)
-			{
+			//Touch touch = Input.GetTouch(0);
+			//if (touch.phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.Space))
+			//{
 				// 텍스트 타이핑 효과를 재생중일때 터치하면 타이핑 효과 종료
 				if (isTypingEffect1 == true)
 				{
@@ -101,7 +108,7 @@ public class Dialog_Stage1 : MonoBehaviour
 
 					return true;
 				}
-			}
+			//}
 		}
 
 		return false;
@@ -124,7 +131,7 @@ public class Dialog_Stage1 : MonoBehaviour
 		speakers[currentSpeakerIndex1].textName1.text = dialogs1[currentDialogIndex1].name;
 		// 현재 화자의 대사 텍스트 설정
 		//speakers[currentSpeakerIndex].textDialogue.text = dialogs[currentDialogIndex].dialogue;
-		StartCoroutine("OnTypingText");
+		StartCoroutine("OnTypingText1");
 	}
 
 	private void SetActiveObjects(Speaker speaker, bool visible)

@@ -24,11 +24,11 @@ public class BoomFX : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 68.8)
+        if (time >= 73.8)
         {
             startFX = true;
         }
-        if(time >= 70 && startFX == true)
+        if(time >= 75 && startFX == true)
         {
             anim.SetTrigger("bang");
             startFX = false;
