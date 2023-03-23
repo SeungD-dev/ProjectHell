@@ -11,10 +11,10 @@ public class SwordTrail_Y : MonoBehaviour
     public float duration;
 
     public GameObject[] slash;
+    public Transform boss;
     public float[] possibleXValues = { -1.76f, -0.88f, 0, 0.88f, 1.76f };
 
     public float time = 0;
-
     void Start()
     {
         brm = FindObjectOfType<BossRandomMove_Y>();
@@ -42,11 +42,7 @@ public class SwordTrail_Y : MonoBehaviour
                 duration = 0;
             }
         }
-        if (this.gameObject.tag == "SwordTrail")
-        {
-            this.gameObject.transform.localPosition += Vector3.back * slashSpeed * Time.deltaTime;
-        }
-        else if (this.gameObject.tag == "SwordTrail_Vertical")
+        if (this.gameObject.tag == "SwordTrail" || this.gameObject.tag == "SwordTrail_Vertical")
         {
             this.gameObject.transform.localPosition += Vector3.back * slashSpeed * Time.deltaTime;
         }
