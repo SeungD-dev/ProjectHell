@@ -12,13 +12,15 @@ public class DialogStart_Stage1 : MonoBehaviour
     [SerializeField]
     private Dialog_Stage1 dialog02;
 
-	public bool startDialog = false;
+	
+	public bool startDialog01 = false, startDialog02 = false;
 	private IEnumerator Start()
 	{
-		
+		startDialog01 = true;
 
 		// 첫 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialog01.UpdateDialog1());
+		
 
 		// 대사 분기 사이에 원하는 행동을 추가할 수 있다.
 
@@ -29,10 +31,10 @@ public class DialogStart_Stage1 : MonoBehaviour
 		{
 			//textCountdown.text = count.ToString();
 			count--;
-			if(count == 0)
+			/*if(count == 0)
             {
-				startDialog = true;
-            }
+				startDialog02 = true;
+            }*/
 
 			yield return new WaitForSeconds(1);
 		}
