@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss2_Status : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class Boss2_Status : MonoBehaviour
         currentHp = maxHp;
     }
 
-    // Update is called once per frame
     void Update()
+    // Update is called once per frame
     {
-        
+       
     }
+
+ 
 
     private void OnTriggerEnter(Collider other)
     {

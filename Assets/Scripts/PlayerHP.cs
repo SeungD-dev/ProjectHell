@@ -19,7 +19,7 @@ public class PlayerHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //ColorTransparency();
+        ColorTransparency();
         playerControl = FindObjectOfType<PlayerControl>();
         sr =GetComponent<SpriteRenderer>();
         Debug.Log(this.gameObject.name);
@@ -33,8 +33,8 @@ public class PlayerHP : MonoBehaviour
         {
             
             Debug.Log("사망");
-            ExitGame();
-            //Invoke("GameOver", 1f); 게임오버화면
+            //ExitGame();
+            Invoke("GameOver", 1f); //게임오버화면
         }
 
 
@@ -42,7 +42,7 @@ public class PlayerHP : MonoBehaviour
 
     public void GameOver()
     {
-        // SceneManager.LoadScene(게임오버 씬);
+         SceneManager.LoadScene("Stage1_Fail");
     }
 
     public void DecreaseHP(int p_num)
@@ -50,7 +50,7 @@ public class PlayerHP : MonoBehaviour
         if(player_currentHP >= 0)
         {
             player_currentHP -= p_num;
-            //ShowHPImage();
+            ShowHPImage();
         }
         if(player_currentHP == 2)
         {
@@ -72,7 +72,7 @@ public class PlayerHP : MonoBehaviour
             player_currentHP += p_num;
         else
             player_currentHP = player_MaxHP; //최대체력을 넘을 수 없도록
-        //ShowHPImage();
+        ShowHPImage();
         if(player_currentHP == player_MaxHP)
         {
             hpImage[0].color = new Color(255, 255, 255, 255);
@@ -89,7 +89,7 @@ public class PlayerHP : MonoBehaviour
 
     }
 
-    /*void ShowHPImage()
+    void ShowHPImage()
     {
         for (int i = 0; i < hpImage.Length; i++)
         {
@@ -99,7 +99,7 @@ public class PlayerHP : MonoBehaviour
                 hpImage[i].gameObject.SetActive(false);
         }
     }
-    /*public void ColorTransparency() //체력바 투명도 0
+    public void ColorTransparency() //체력바 투명도 0
     {
         for (int i = 0; i < hpImage.Length; i++)
         {
@@ -108,7 +108,7 @@ public class PlayerHP : MonoBehaviour
             hpImage[i].color = color;
         }
     }
-    /*public void UnColorTransparency() //체력바 투명도 100
+    public void UnColorTransparency() //체력바 투명도 100
     {
         for (int i = 0; i < hpImage.Length; i++)
         {
@@ -116,7 +116,7 @@ public class PlayerHP : MonoBehaviour
             color.a = 1.0f;
             hpImage[i].color = color;
         }
-    }*/
+    }
 
     IEnumerator ShowHp()
     {

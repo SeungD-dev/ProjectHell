@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Anubis_Status : MonoBehaviour
 {
@@ -29,12 +30,20 @@ public class Anubis_Status : MonoBehaviour
         if(AnubisHP <= 0)
         {
             Debug.Log("아누비스 죽음");
+            LoadScene();
+            
         }
         if(AnubisHPtime <= 0)
         {
             Debug.Log("아누비스 죽음");
+            LoadScene();
         }
        
+    }
+
+    void LoadScene()
+    {
+        SceneManager.LoadScene("Stage1_Clear");
     }
 
     private void OnTriggerEnter(Collider other)
