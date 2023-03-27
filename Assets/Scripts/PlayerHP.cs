@@ -11,8 +11,8 @@ public class PlayerHP : MonoBehaviour
     public SpriteRenderer[] hpImage = null;
     PlayerControl playerControl;
     SpriteRenderer sr;
-    
-    
+    Scene scene;
+
 
 
 
@@ -23,7 +23,7 @@ public class PlayerHP : MonoBehaviour
         playerControl = FindObjectOfType<PlayerControl>();
         sr =GetComponent<SpriteRenderer>();
         Debug.Log(this.gameObject.name);
-       
+        scene = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class PlayerHP : MonoBehaviour
             //ExitGame();
             Invoke("GameOver", 1f); //게임오버화면
         }
-
+        Debug.Log(scene.name);
 
 
     }
