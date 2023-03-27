@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage2/Stage_2.unity
     guid: a2328b2723086964898597c34c4298c5
   - enabled: 1
-    path: Assets/Scenes/Stage_3.unity
+    path: Assets/Scenes/Stage3/Stage_3.unity
     guid: 21c7d5c1941806446a6f23b70ea9af5e
   - enabled: 1
     path: Assets/Scenes/Stage1/Stage1_Fail.unity
