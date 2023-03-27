@@ -78,29 +78,15 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("Stage_1");
     }
 
-    public void Stage1_MiniScene()
-    {
-        SceneManager.LoadScene("Stage_1-1");
-    }
     public void Stage2_SceneChange()
     {
         SceneManager.LoadScene("Stage_2");
     }
 
-    public void Stage2_MiniScene()
-    {
-        SceneManager.LoadScene("Stage_2-1");
-    }
     public void Stage3_SceneChange()
     {
         SceneManager.LoadScene("Stage_3");
     }
-
-    public void Stage3_MiniScene()
-    {
-        SceneManager.LoadScene("MazeStage");
-    }
-
 
     public void StageButton() //버튼클릭시 호출
     {
