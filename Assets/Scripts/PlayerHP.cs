@@ -19,6 +19,7 @@ public class PlayerHP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //DontDestroyOnLoad(gameObject);
         ColorTransparency();
         playerControl = FindObjectOfType<PlayerControl>();
         sr =GetComponent<SpriteRenderer>();
@@ -34,16 +35,17 @@ public class PlayerHP : MonoBehaviour
             
             Debug.Log("사망");
             //ExitGame();
+            GameResultButton.fail = scene.name;
             Invoke("GameOver", 1f); //게임오버화면
         }
-        Debug.Log(scene.name);
+        //Debug.Log(scene.name);
 
 
     }
 
     public void GameOver()
     {
-         SceneManager.LoadScene("Stage1_Fail");
+         SceneManager.LoadScene("Stage1_Clear");
     }
 
     public void DecreaseHP(int p_num)

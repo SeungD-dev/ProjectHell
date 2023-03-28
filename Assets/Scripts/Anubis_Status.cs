@@ -14,12 +14,15 @@ public class Anubis_Status : MonoBehaviour
     public AudioSource anubisHitSound, anubisDeadSound;
 
     public bool isHit = false;
-    
+
+    Scene scene;
+
     void Start()
     {
         
         spriteRenderer = GetComponent<SpriteRenderer>();
         sprite_index = 0;
+        scene = SceneManager.GetActiveScene();
     }
 
    
@@ -30,12 +33,14 @@ public class Anubis_Status : MonoBehaviour
         if(AnubisHP <= 0)
         {
             Debug.Log("아누비스 죽음");
+            GameResultButton.clear = scene.name;
             LoadScene();
             
         }
         if(AnubisHPtime <= 0)
         {
             Debug.Log("아누비스 죽음");
+            GameResultButton.clear = scene.name;
             LoadScene();
         }
        
