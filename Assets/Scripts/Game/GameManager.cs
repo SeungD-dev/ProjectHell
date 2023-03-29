@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         tr4 = Tile4.GetComponent<MeshRenderer>();
         cameraShake = FindObjectOfType<CameraShake>();
         pauseButton = FindObjectOfType<PauseButton>();
-
+        Time.timeScale = 1;
         optionPanel = GameObject.Find("OptionPanel");
         optionPanel.gameObject.SetActive(false);
 

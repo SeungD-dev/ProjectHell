@@ -116,6 +116,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: e7f4c87c10b4a9544ab67b293d2185f7, type: 2}
   - {fileID: 2100000, guid: 0adf26fb449fcb048980857497f803b8, type: 2}
   - {fileID: 2100000, guid: 01699bd95a4ee5f48a1d3d829269d58b, type: 2}
+  sprites:
+  - {fileID: 21300000, guid: 4e792c62f23408e478749c99ac009c6e, type: 3}
+  - {fileID: 21300000, guid: 2001f8916c469c148b93a4e064a54837, type: 3}
+  - {fileID: 21300000, guid: 46268c01ca96f244fa413066d1ca4dc8, type: 3}
 --- !u!54 &7791380139753288760
 Rigidbody:
   m_ObjectHideFlags: 0

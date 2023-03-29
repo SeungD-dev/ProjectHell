@@ -7,6 +7,7 @@ public class LineActive_3 : MonoBehaviour
     PlayerControl playerControl;
     public float time;
     public GameObject bind;
+    public GameObject noteChanger;
     public SpriteRenderer black;
     bool on = false;
     bool off = false;
@@ -14,6 +15,7 @@ public class LineActive_3 : MonoBehaviour
     {
         playerControl = FindObjectOfType<PlayerControl>();
         bind.SetActive(false);
+        noteChanger.SetActive(false);
         GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(false);
@@ -26,9 +28,8 @@ public class LineActive_3 : MonoBehaviour
         if (time >= 0)
         {
             GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(true);
-            GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(true);
         }
-        if(time >= 10 && !on)
+        /*if(time >= 10 && !on)
         {
             StartCoroutine(FadeInCoroutine());
             on = true;
@@ -37,10 +38,11 @@ public class LineActive_3 : MonoBehaviour
         {
             StartCoroutine (FadeOutCoroutine());
             off = true;
-        }
+        }*/
         if (time >= 38.5)
         {
             GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(true);
+            GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(true);
             bind.SetActive(true);
             playerControl.flip = true;
             playerControl.jumpCC = true;
@@ -52,6 +54,12 @@ public class LineActive_3 : MonoBehaviour
             bind.SetActive(false);
             playerControl.flip = false;
             playerControl.jumpCC = false;
+        }
+        if(time>= 59.5 && !on)
+        {
+            noteChanger.SetActive(true);
+            StartCoroutine(FadeInCoroutine());
+            on = true;
         }
     }
 
