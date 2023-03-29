@@ -4410,7 +4410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &241174617
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9025,7 +9025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475692583}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -3.72, y: -4.29, z: 6.5}
+  m_LocalPosition: {x: -3.79, y: -4.29, z: 6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11603,8 +11603,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17238,8 +17238,8 @@ MonoBehaviour:
   dialogs1:
   - speakerIndex: 0
     name: "\uC544\uB204\uBE44\uC2A4"
-    dialog: "\uB2E4\uC2DC \uD0DC\uC5B4\uB09C \uAC83 \uCC98\uB7FC \uC870\uADF8\uB9CC\uD574\uC84C\uAD6C\uB098!
-      \n\uD06C\uD558\uD558 "
+    dialog: "\uAC10\uD788 \uB098\uC5D0\uAC8C \uB364\uBE44\uB2E4\uB2C8 \uAC10\uB2F9\uD560
+      \uC218 \uC788\uACA0\uB0D0!!\n\uD06C\uD558\uD558!!"
   dialogStart_Stage1: {fileID: 1320137454}
 --- !u!1001 &929807473
 PrefabInstance:
@@ -22957,7 +22957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1219984753
 RectTransform:
   m_ObjectHideFlags: 0

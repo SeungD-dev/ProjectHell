@@ -8,6 +8,10 @@ public class Dialog_Stage2 : MonoBehaviour
 {
     [SerializeField]
     private Speaker[] speakers; //대화에 참여하는 캐릭터들의 UI 배열
+
+	/*[SerializeField]
+	private GameObject[] gameObjects;*/
+
     [SerializeField]
     private DialogData[] dialogs1; // 현재 분기의 대사 목록 배열
     [SerializeField]
@@ -49,6 +53,10 @@ public class Dialog_Stage2 : MonoBehaviour
             //캐릭터 이미지 보이게
             speakers[i].spriteRenderer2.gameObject.SetActive(true);
         }
+		/*for(int i =0; i<gameObjects.Length; i++)
+        {
+
+        }*/
     }
 	public bool UpdateDialog2()
 	{
@@ -140,6 +148,12 @@ public class Dialog_Stage2 : MonoBehaviour
 		color.a = visible == true ? 1 : 0.2f;
 		speaker.spriteRenderer2.color = color;
 	}
+	
+	/*private void SetActiveGame(GameObject gameobject, bool visible)
+    {
+		gameobject.
+    }*/
+
 	private IEnumerator OnTypingText2()
 	{
 		int index = 0;
