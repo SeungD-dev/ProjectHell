@@ -8356,9 +8356,6 @@ MonoBehaviour:
     name: "\uC774\uC790\uB098\uBBF8"
     dialog: "\uC774\uACF3\uC740 \uC544\uBB34\uB098 \uBC1C\uC744 \uB4E4\uC77C \uACF3\uC774
       \uC544\uB2C8\uB2E4!!!"
-  - speakerIndex: 1
-    name: "\uAC15\uB9BC"
-    dialog: "\uC5B4\uCA4C\uB77C\uACE0 \uB4A4\uC838\uB77C!!"
   dialogStart_Stage2: {fileID: 228665918}
 --- !u!4 &441731305 stripped
 Transform:
@@ -23628,7 +23625,7 @@ MonoBehaviour:
   - speakerIndex: 0
     name: "\uC774\uC790\uB098\uBBF8"
     dialog: "\uB098\uC758 \uAC80\uAE30\uB97C \uB9DE\uACE0\uB3C4 \uC0B4 \uC218 \uC788\uC744
-      \uAC83 \uAC19\uC73C\uB0D0!"
+      \uAC83 \uAC19\uC73C\uB0D0!!"
   dialogStart_Stage2: {fileID: 228665918}
 --- !u!1 &1310099698
 GameObject:
@@ -24340,7 +24337,7 @@ RectTransform:
   m_GameObject: {fileID: 1343129543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.61, y: 2, z: 1}
+  m_LocalScale: {x: 3.835625, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1315140118}
@@ -24406,8 +24403,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -29784,7 +29781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698875048}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -2.21, y: 1.26, z: 0}
+  m_LocalPosition: {x: -2.23, y: 1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38960,7 +38957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118008414}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 2.02, y: 0.18, z: 0.68}
+  m_LocalPosition: {x: 9.09, y: 0.18, z: 0.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
