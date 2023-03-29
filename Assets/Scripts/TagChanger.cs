@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 public class TagChanger : MonoBehaviour
 {
     public Material[] mat = new Material[4];
-    public Sprite[] sprites = new Sprite[3];
+    public Sprite[] sprites = new Sprite[6];
+    LineActive_3 lineActive;
+
+    private void Start()
+    {
+        lineActive = FindObjectOfType<LineActive_3>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,17 +35,72 @@ public class TagChanger : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Stage_3")
         {
-            if (other.CompareTag("Note_R"))
+            if (lineActive.fade)
             {
-                other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[0];
+                if (other.CompareTag("Note_R"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[0];
+                }
+                if (other.CompareTag("Note_G"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[1];
+                }
+                if (other.CompareTag("Note_B"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[2];
+                }
             }
-            if (other.CompareTag("Note_G"))
+            if (!lineActive.fade)
             {
-                other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[1];
+                if (other.CompareTag("Note_R"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[3];
+                }
+                if (other.CompareTag("Note_G"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[4];
+                }
+                if (other.CompareTag("Note_B"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[5];
+                }
             }
-            if (other.CompareTag("Note_B"))
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (SceneManager.GetActiveScene().name == "Stage_3")
+        {
+            if (lineActive.fade)
             {
-                other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[2];
+                if (other.CompareTag("Note_R"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[0];
+                }
+                if (other.CompareTag("Note_G"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[1];
+                }
+                if (other.CompareTag("Note_B"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[2];
+                }
+            }
+            if (!lineActive.fade)
+            {
+                if (other.CompareTag("Note_R"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[3];
+                }
+                if (other.CompareTag("Note_G"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[4];
+                }
+                if (other.CompareTag("Note_B"))
+                {
+                    other.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprites[5];
+                }
             }
         }
     }
