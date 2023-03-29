@@ -7,15 +7,15 @@ public class LineActive_3 : MonoBehaviour
     PlayerControl playerControl;
     public float time;
     public GameObject bind;
-    public GameObject noteChanger;
+    public GameObject tiles;
     public SpriteRenderer black;
-    bool on = false;
-    bool off = false;
+    public bool on = false;
+    public bool off = false;
+    public bool fade = false;
     private void Start()
     {
         playerControl = FindObjectOfType<PlayerControl>();
         bind.SetActive(false);
-        noteChanger.SetActive(false);
         GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(false);
@@ -46,7 +46,6 @@ public class LineActive_3 : MonoBehaviour
             bind.SetActive(true);
             playerControl.flip = true;
             playerControl.jumpCC = true;
-            GameObject.Find("Line").transform.Find("Line4").gameObject.SetActive(true);
             GameObject.Find("Line").transform.Find("Line5").gameObject.SetActive(true);
         }
         if(time>= 48.5)
@@ -57,9 +56,26 @@ public class LineActive_3 : MonoBehaviour
         }
         if(time>= 59.5 && !on)
         {
-            noteChanger.SetActive(true);
             StartCoroutine(FadeInCoroutine());
             on = true;
+        }
+        if (time >= 71.2)
+        {
+            GameObject.Find("Line").transform.Find("Line4").gameObject.SetActive(true);
+        }
+        if (time >= 79 && !off)
+        {
+            StartCoroutine(FadeOutCoroutine());
+            off = true;
+        }
+
+        if (fade)
+        {
+            tiles.SetActive(false);
+        }
+        else
+        {
+            tiles.SetActive(true);
         }
     }
 
@@ -72,7 +88,12 @@ public class LineActive_3 : MonoBehaviour
             fadeCount += 0.01f;
             yield return new WaitForSeconds(0.01f);
             black.color = new Color(255, 255, 255, fadeCount); //페이드인 반복문
+            if (fadeCount >= 0.9)
+            {
+                fade = true;
+            }
         }
+        
     }
 
     IEnumerator FadeOutCoroutine() //패널의 알파값 조절 ( fadeIn ) 
@@ -84,6 +105,10 @@ public class LineActive_3 : MonoBehaviour
             fadeCount -= 0.01f;
             yield return new WaitForSeconds(0.01f);
             black.color = new Color(255, 255, 255, fadeCount); //페이드인 반복문
+            if (fadeCount <= 0.1)
+            {
+                fade = false;
+            }
         }
     }
 }
