@@ -71,7 +71,7 @@ public class Dialog_Stage1 : MonoBehaviour
 			isFirst1 = false;
 		}
 
-		if ( Input.GetKeyDown(KeyCode.Space))//Input.touchCount > 0 ||
+		if (Input.GetKeyDown(KeyCode.Mouse0))//Input.touchCount > 0 ||
 		{
 			//Touch touch = Input.GetTouch(0);
 			//if (touch.phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.Space))
