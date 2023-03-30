@@ -38747,7 +38747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnubisHP: 10
-  AnubisHPtime: 90
+  AnubisHPtime: 128
   sprites:
   - {fileID: 21300000, guid: db93f8cd09803e04ab259e04bd9f0ff4, type: 3}
   - {fileID: 21300000, guid: 9c3e40ca9cf8b3f4bb19e609a1bbff19, type: 3}
@@ -38755,6 +38755,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   anubisHitSound: {fileID: 514354929}
   anubisDeadSound: {fileID: 684683087}
+  Line: {fileID: 1804223923}
   isHit: 0
 --- !u!82 &2021083198
 AudioSource:

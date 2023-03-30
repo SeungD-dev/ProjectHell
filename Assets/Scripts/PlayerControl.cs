@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour
 
     bool jumpAllowed = true;
     bool isJumping = false;
-
+    bool isJump = false;
     private Vector3 MoveDir;
 
     PlayerHP playerhp;
@@ -101,14 +101,14 @@ public class PlayerControl : MonoBehaviour
             jumpAllowed = true;
 
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-
+            isJump = true;
             //gameObject.layer = 7;
         }
     }
 
     public void LButtonDown()
     {
-        if (gameObject.transform.position.x > -0.89 && flip == false)
+        if (gameObject.transform.position.x > -0.89 && flip == false && isJump == false)
         {
             leftBtn.GetComponent<Button>().interactable = true;
             transform.Translate(-0.88f, 0.3f, 0);
@@ -118,10 +118,15 @@ public class PlayerControl : MonoBehaviour
             rightBtn.GetComponent<Button>().interactable = true;
             transform.Translate(0.88f, 0.3f, 0);
         }
+        else if (gameObject.transform.position.x > -0.89 && flip == false && isJump == true)
+        {
+            leftBtn.GetComponent<Button>().interactable = true;
+            transform.Translate(-0.88f, 0, 0);
+        }
     }
     public void RButtonDown()
     {
-        if (gameObject.transform.position.x < 0.89 && flip == false)
+        if (gameObject.transform.position.x < 0.89 && flip == false && isJump == false)
         {
             rightBtn.GetComponent<Button>().interactable = true;
             transform.Translate(0.88f, 0.3f, 0);
@@ -131,6 +136,11 @@ public class PlayerControl : MonoBehaviour
             leftBtn.GetComponent<Button>().interactable = true;
             transform.Translate(-0.88f, 0.3f, 0);
         }
+        else if(gameObject.transform.position.x < 0.89 && flip == false && isJump == true)
+        {
+            rightBtn.GetComponent<Button>().interactable = true;
+            transform.Translate(0.88f, 0, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -139,6 +149,7 @@ public class PlayerControl : MonoBehaviour
         {
             gameObject.layer = 6;
             jumpAllowed = false;
+            isJump = false;
         }
     }
 

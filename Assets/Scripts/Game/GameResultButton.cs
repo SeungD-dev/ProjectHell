@@ -53,26 +53,56 @@ public class GameResultButton : MonoBehaviour
 
     public void GoTitle_Btn()
     {
+        Stage1_Clear.SetActive(false);
+        Stage1_Fail.SetActive(false);
+        Stage2_Clear.SetActive(false);
+        Stage2_Fail.SetActive(false);
+        Stage3_Clear.SetActive(false);
+        Stage3_Fail.SetActive(false);
         SceneManager.LoadScene("MainScene");
     }
 
     public void SelectMap_Btn()
     {
+        Stage1_Clear.SetActive(false);
+        Stage1_Fail.SetActive(false);
+        Stage2_Clear.SetActive(false);
+        Stage2_Fail.SetActive(false);
+        Stage3_Clear.SetActive(false);
+        Stage3_Fail.SetActive(false);
         SceneManager.LoadScene("StageScene");
     }
 
     public void RetryStage1_Btn()
     {
+        Stage1_Clear.SetActive(false);
+        Stage1_Fail.SetActive(false);
+        Stage2_Clear.SetActive(false);
+        Stage2_Fail.SetActive(false);
+        Stage3_Clear.SetActive(false);
+        Stage3_Fail.SetActive(false);
         SceneManager.LoadScene("Stage_1");
     }
 
     public void RetryStage2_Btn()
     {
+        Stage1_Clear.SetActive(false);
+        Stage1_Fail.SetActive(false);
+        Stage2_Clear.SetActive(false);
+        Stage2_Fail.SetActive(false);
+        Stage3_Clear.SetActive(false);
+        Stage3_Fail.SetActive(false);
         SceneManager.LoadScene("Stage_2");
     }
 
     public void RetryStage3_Btn()
     {
+        Stage1_Clear.SetActive(false);
+        Stage1_Fail.SetActive(false);
+        Stage2_Clear.SetActive(false);
+        Stage2_Fail.SetActive(false);
+        Stage3_Clear.SetActive(false);
+        Stage3_Fail.SetActive(false);
         SceneManager.LoadScene("Stage_3");
     }
 }
