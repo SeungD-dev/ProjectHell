@@ -1,0 +1,406 @@
+fileFormatVersion: 2
+guid: 9e35239134f699248abf27a6ff0942ca
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss3_atkanim_3
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b18d602ae7631d4ab3409d1e74461a0
+      internalID: -840144714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_4
+      rect:
+        serializedVersion: 2
+        x: 2735
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c74e1fa50cb6dd4da220dd6bce86723
+      internalID: -697517139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_5
+      rect:
+        serializedVersion: 2
+        x: 3303
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def3ffe2fb424944f9ef6b77329ff920
+      internalID: -1199866098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_hit
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 156
+        width: 476
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5297fc0e429fd4ba4e12f6569df611
+      internalID: -1166298034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_2
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d80330503975de4ea37bc3405f8b54f
+      internalID: 1517113864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_6
+      rect:
+        serializedVersion: 2
+        x: 4021
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257150cfb60bb764fb37afc377346cc5
+      internalID: 1432941245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_7
+      rect:
+        serializedVersion: 2
+        x: 4666
+        y: 71
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb361cbe6f966542b7ea6ea24706ab0
+      internalID: -430969853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_1
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540dfa9d2804b404ca42d28780b642f8
+      internalID: -1373206905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_8
+      rect:
+        serializedVersion: 2
+        x: 5389
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d282f80fe76ea064e920f5e650aeb380
+      internalID: 952484308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3_atkanim_9
+      rect:
+        serializedVersion: 2
+        x: 6050
+        y: 60
+        width: 500
+        height: 600
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b1916108aa918469d1661e82aa8f59
+      internalID: -724921814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8d8747bba10575b4dbb5620501cf3baa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      boss3_atkanim_55: -1526687118
+      boss3_atkanim_19: -91502550
+      boss3_atkanim_51: 222952245
+      boss3_atkanim_11: 1180396531
+      boss3_atkanim_3: -840144714
+      boss3_atkanim_50: 392790746
+      boss3_atkanim_28: 1742388437
+      boss3_atkanim_42: 300861133
+      boss3_atkanim_5: -1199866098
+      boss3_atkanim_10: -603211340
+      boss3_atkanim_38: 1532279393
+      boss3_atkanim_4: -697517139
+      boss3_atkanim_7: -430969853
+      boss3_atkanim_52: -372403689
+      boss3_atkanim_40: 897560217
+      boss3_hit: -1166298034
+      boss3_atkanim_27: -848737135
+      boss3_atkanim_33: -1548796676
+      boss3_atkanim_35: 1878703393
+      boss3_atkanim_54: 101259716
+      boss3_atkanim_1: -1373206905
+      boss3_atkanim_32: -1877538481
+      boss3_atkanim_53: -924628360
+      boss3_atkanim_8: 952484308
+      boss3_atkanim_48: 1253064783
+      boss3_atkanim_49: 406826948
+      boss3_atkanim_12: 716698612
+      boss3_atkanim_37: -1164831957
+      boss3_atkanim_44: 1479842755
+      boss3_atkanim_16: 769381628
+      boss3_atkanim_17: 1477081331
+      boss3_atkanim_41: -42116772
+      boss3_atkanim_46: 770797153
+      boss3_atkanim_9: -724921814
+      boss3_atkanim_20: 996923916
+      boss3_atkanim_6: 1432941245
+      boss3_atkanim_29: -1953148534
+      boss3_atkanim_31: 241887009
+      boss3_atkanim_21: 907877189
+      boss3_atkanim_2: 1517113864
+      boss3_atkanim_22: -1034495690
+      boss3_atkanim_24: -736799649
+      boss3_atkanim_30: -2078938737
+      boss3_atkanim_47: 1862426631
+      boss3_atkanim_45: 639101373
+      boss3_atkanim_39: -2078376885
+      boss3_atkanim_36: -123246966
+      boss3_atkanim_43: 1269750721
+      boss3_atkanim_26: 2100615475
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

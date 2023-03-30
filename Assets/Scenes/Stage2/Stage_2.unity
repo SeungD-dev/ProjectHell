@@ -17940,6 +17940,7 @@ GameObject:
   - component: {fileID: 1030576421}
   - component: {fileID: 1030576420}
   - component: {fileID: 1030576419}
+  - component: {fileID: 1030576426}
   m_Layer: 0
   m_Name: BOSS
   m_TagString: Boss
@@ -18091,6 +18092,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030576426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030576418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74795ab901377da42a5e94ae49c5ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 15
+  currentHp: 0
+  boss2_HPtime: 90
 --- !u!1001 &1031474655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25821,7 +25837,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

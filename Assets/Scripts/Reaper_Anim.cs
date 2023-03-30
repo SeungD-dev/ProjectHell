@@ -9,10 +9,14 @@ public class Reaper_Anim : MonoBehaviour
 
     Boss3_Status boss3_Status;
 
+    float time;
+    public AudioSource audioSource;
+
     
     void Start()
     {
         anim = gameObject.GetComponentInChildren<Animator>();
+        boss3_Status = FindObjectOfType<Boss3_Status>();
     }
 
     void Update()
@@ -22,20 +26,29 @@ public class Reaper_Anim : MonoBehaviour
 
     void AnimationUpdate()
     {
+        if (boss3_Status.isHit == true)
+        {
+            anim.SetTrigger("Boss3Hit");
+            boss3_Status.isHit = false;
+        }
         if(boss3_Status.currentHp >= 3)
         {
-            anim.SetBool("ReaperIdleFull", true);
-            anim.SetBool("ReaperIdleLow", false);
+            anim.SetBool("Boss3IdleFull", true);
+            anim.SetBool("Boss3IdleLow", false);
         }
         if (boss3_Status.currentHp <= 3)
         {
-            anim.SetBool("ReaperIdleFull", false);
-            anim.SetBool("ReaperIdleLow", true);
+            anim.SetBool("Boss3IdleFull", false);
+            anim.SetBool("Boss3IdleLow", true);
         }
 
-        if (anim.GetBool("ReaperIdleFull") == true)
+        if (boss3_Status.isHit==false &&   anim.GetBool("Boss3IdleFull") == true)
         {
-            anim.SetTrigger("ReaperIdle");
+            anim.SetTrigger("Boss3Idle");
+        }
+        if(boss3_Status.isHit == false && anim.GetBool("Boss3IdleLow") == true)
+        {
+            anim.SetTrigger("Boss3IdleLow");
         }
        
     }

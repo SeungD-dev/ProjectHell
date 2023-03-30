@@ -29,7 +29,7 @@ public class Boss3_Status : MonoBehaviour
         {
             currentHp -= 1;
             Destroy(other.gameObject);
-            //isHit = true;
+            isHit = true;
         }
     }
 }
