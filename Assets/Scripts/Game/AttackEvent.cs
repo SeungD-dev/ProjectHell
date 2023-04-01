@@ -8,8 +8,6 @@ public class AttackEvent : MonoBehaviour
     public GameObject absorption;
     public GameObject absorbBtn;
     public AudioSource SwordSound;
- 
-    
 
     private float countTime;
 
@@ -27,13 +25,6 @@ public class AttackEvent : MonoBehaviour
     PlayerControl playerControl;
     AttackManager attackManager;
 
-   
-   
-
-   
-    
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -42,273 +33,181 @@ public class AttackEvent : MonoBehaviour
 
         playerControl = FindObjectOfType<PlayerControl>();
         attackManager = FindObjectOfType<AttackManager>();
-      
-      
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.localPosition = playerControl.player_Pos + new Vector3(0, 0.4f, -2.5f);
         transform.localPosition = playerControl.player_Pos + new Vector3(0, +0.16f, +0.33f);
         countTime += Time.deltaTime;
 
         if(countTime >= absorbTime)
         {
-            AbsorbColorTransparency();
-
+            absorption.GetComponent<SphereCollider>().enabled = false;
         }
-       
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        if (gameObject.activeInHierarchy)
+
+        if (asb == asbColor.normal)
         {
-            if (asb == asbColor.normal)
+            bc = ballColor.normal;
+            if (col.gameObject.CompareTag("Note_R") && Absorbmode == true)
             {
-                bc = ballColor.normal;
-                if (col.gameObject.CompareTag("Note_R") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    asb = asbColor.red;
-                    bc = ballColor.red;
-                    AbsorbColorTransparency();
-                    Debug.Log("흡수됨");
-                    Absorbmode = false;
-                }
-                if (col.gameObject.CompareTag("Note_B") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    asb = asbColor.blue;
-                    bc = ballColor.blue;
-                    AbsorbColorTransparency();
-                    Debug.Log("흡수됨");
-                    Absorbmode = false;
-
-                }
-                if (col.gameObject.CompareTag("Note_G") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    asb = asbColor.green;
-                    bc = ballColor.green;
-                    AbsorbColorTransparency();
-                    Debug.Log("흡수됨");
-                    Absorbmode = false;
-
-                }
-                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 1; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 1; g = 0; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 0; b = 1;
-                }
-            }
-
-            //첫 흡수가 빨간색일 때
-            if (asb == asbColor.red)
-            {
+                AttackNormal(col);
+                asb = asbColor.red;
                 bc = ballColor.red;
-                if (asb == asbColor.red && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    Debug.Log("공격모드 활성화");
-                   
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 1;
-                    b = 0;
-                    g = 0;
-                }
-                else if (asb == asbColor.red && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = false;
-
-                    asb = asbColor.blue;
-                    bc = ballColor.blue;
-                }
-                else if (asb == asbColor.red && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = false;
-
-                    asb = asbColor.green;
-                    bc = ballColor.green;
-                }
-                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 1; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 1; g = 0; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 0; b = 1;
-                }
             }
-            //첫 흡수가 파란색일 때
-            else if (asb == asbColor.blue)
+            if (col.gameObject.CompareTag("Note_B") && Absorbmode == true)
             {
+                AttackNormal(col);
+                asb = asbColor.blue;
                 bc = ballColor.blue;
-                if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    Debug.Log("공격모드 활성화");
-                  
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0;
-                    b = 1;
-                    g = 0;
-                }
-                else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = false;
-
-                    asb = asbColor.red;
-                    bc = ballColor.red;
-                }
-                else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = false;
-
-                    asb = asbColor.green;
-                    bc = ballColor.green;
-                }
-                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 1; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 1; g = 0; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 0; b = 1;
-                }
             }
-
-            //첫 흡수가 초록색일 때
-            else if (asb == asbColor.green)
+            if (col.gameObject.CompareTag("Note_G") && Absorbmode == true)
             {
+                AttackNormal(col);
+                asb = asbColor.green;
                 bc = ballColor.green;
-                if (asb == asbColor.green && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    Debug.Log("공격모드 활성화");
-                   
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0;
-                    g = 1;
-                    b = 0;
-                }
-                else if (asb == asbColor.green && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = false;
+            }
+            if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 1; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 1; g = 0; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 0; b = 1;
+            }
+        }
+        //첫 흡수가 빨간색일 때
+        if (asb == asbColor.red)
+        {
+            bc = ballColor.red;
+            if (asb == asbColor.red && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 1; b = 0; g = 0;
+            }
+            else if (asb == asbColor.red && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
+            {
+                Destroy(col.gameObject);
+                Attackmode = false;
 
-                    asb = asbColor.red;
-                    bc = ballColor.red;
-                }
-                else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = false;
+                asb = asbColor.blue;
+                bc = ballColor.blue;
+            }
+            else if (asb == asbColor.red && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
+            {
+                Destroy(col.gameObject);
+                Attackmode = false;
 
-                    asb = asbColor.blue;
-                    bc = ballColor.blue;
-                }
-                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 1; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 1; g = 0; b = 0;
-                }
-                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
-                {
-                    Destroy(col.gameObject);
-                    Attackmode = true;
-                    SwordSound.Play();
-                    asb = asbColor.normal;
-                    bc = ballColor.normal;
-                    r = 0; g = 0; b = 1;
-                }
+                asb = asbColor.green;
+                bc = ballColor.green;
+            }
+            if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 1; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 1; g = 0; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 0; b = 1;
+            }
+        }
+        //첫 흡수가 파란색일 때
+        else if (asb == asbColor.blue)
+        {
+            bc = ballColor.blue;
+            if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; b = 1; g = 0;
+            }
+            else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
+            {
+                Destroy(col.gameObject);
+                Attackmode = false;
+
+                asb = asbColor.red;
+                bc = ballColor.red;
+            }
+            else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
+            {
+                Destroy(col.gameObject);
+                Attackmode = false;
+
+                asb = asbColor.green;
+                bc = ballColor.green;
+            }
+            if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 1; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 1; g = 0; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 0; b = 1;
+            }
+        }
+        //첫 흡수가 초록색일 때
+        else if (asb == asbColor.green)
+        {
+            bc = ballColor.green;
+            if (asb == asbColor.green && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 1; b = 0;
+            }
+            else if (asb == asbColor.green && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
+            {
+                Destroy(col.gameObject);
+                Attackmode = false;
+
+                asb = asbColor.red;
+                bc = ballColor.red;
+            }
+            else if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
+            {
+                Destroy(col.gameObject);
+                Attackmode = false;
+
+                asb = asbColor.blue;
+                bc = ballColor.blue;
+            }
+            if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 1; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 1; g = 0; b = 0;
+            }
+            if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+            {
+                AttackOk(col);
+                r = 0; g = 0; b = 1;
             }
         }
     }
@@ -318,9 +217,9 @@ public class AttackEvent : MonoBehaviour
     {
         countTime = 0;
         StartCoroutine("AttackCooldown");
-        AbsorbUncolorTrasparency();
+        absorption.GetComponent<SphereCollider>().enabled = true;
 
-        if(Attackmode == false)
+        if (Attackmode == false)
         {
             Absorbmode = true;
         }
@@ -342,19 +241,20 @@ public class AttackEvent : MonoBehaviour
         }
     }
 
-    public void AbsorbColorTransparency()
+    void AttackNormal(Collider col)
     {
-        GetComponent<MeshRenderer>().materials[0].color = new Color(0, 0, 0, 0f);
-        //absorptionSprite.color = new Color(0, 100, 100, 0f);
+        Destroy(col.gameObject);
         absorption.GetComponent<SphereCollider>().enabled = false;
+        Absorbmode = false;
     }
 
-    public void AbsorbUncolorTrasparency()
+    void AttackOk(Collider col)
     {
-        GetComponent<MeshRenderer>().materials[0].color = new Color(0, 0, 0, 0f);
-        //absorptionSprite.color = new Color(0, 0, 0, 1f);
-        absorption.GetComponent<SphereCollider>().enabled = true;
-
+        Destroy(col.gameObject);
+        Attackmode = true;
+        SwordSound.Play();
+        asb = asbColor.normal;
+        bc = ballColor.normal;
     }
 
     IEnumerator AttackCooldown()
