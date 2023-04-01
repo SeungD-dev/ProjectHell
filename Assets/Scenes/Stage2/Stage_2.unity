@@ -4025,7 +4025,7 @@ MonoBehaviour:
   dialog01: {fileID: 437890005}
   dialog02: {fileID: 1309861660}
   startDialog01: 0
-  startDialog02: 0
+  startDialog02: 1
 --- !u!4 &234654873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: dfbf1bd83b7e8bc42b6408f3c658ba02, type: 3}
@@ -8515,6 +8515,9 @@ MonoBehaviour:
     textName2: {fileID: 1863045314}
     textDialog2: {fileID: 1794634916}
     objectArrow2: {fileID: 972602656}
+  objects:
+  - tileNote: {fileID: 1804223923}
+    noteBreak: {fileID: 1175919881}
   dialogs1:
   - speakerIndex: 0
     name: "\uC774\uC790\uB098\uBBF8"
@@ -23968,6 +23971,7 @@ MonoBehaviour:
     textName2: {fileID: 1863045314}
     textDialog2: {fileID: 1794634916}
     objectArrow2: {fileID: 972602656}
+  objects: []
   dialogs1:
   - speakerIndex: 0
     name: "\uC774\uC790\uB098\uBBF8"
@@ -24137,7 +24141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 244.9347}
+  m_AnchoredPosition: {x: 0, y: 244.93472}
   m_SizeDelta: {x: 1080, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1326388740

@@ -33,10 +33,10 @@ public class DialogStart_Stage2 : MonoBehaviour
 		{
 			//textCountdown.text = count.ToString();
 			count--;
-			/*if(count == 0)
+			if(count == 0)
             {
 				startDialog02 = true;
-            }*/
+            }
 
 			yield return new WaitForSeconds(1);
 		}

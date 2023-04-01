@@ -9,8 +9,11 @@ public class Dialog_Stage2 : MonoBehaviour
     [SerializeField]
     private Speaker[] speakers; //대화에 참여하는 캐릭터들의 UI 배열
 
-	/*[SerializeField]
-	private GameObject[] gameObjects;*/
+	[SerializeField]
+	private GameObejct[] objects;
+
+
+
 
     [SerializeField]
     private DialogData[] dialogs1; // 현재 분기의 대사 목록 배열
@@ -21,8 +24,8 @@ public class Dialog_Stage2 : MonoBehaviour
     private int currentDialogIndex2 = -1; // 현재 대사 순번
     private int currentSpeakerIndex2 = 0; // 현재 말을 하는 화자(Speaker)의 speakers 배열 순번
     private float typingSpeed2 = 0.1f;           // 텍스트 타이핑 효과의 재생 속도
-    private bool isTypingEffect2 = false;        // 텍스트 타이핑 효과를 재생중인지
-
+    private bool isTypingEffect2 = false;       // 텍스트 타이핑 효과를 재생중인지
+	private bool isGameStarted = false;
     // Update is called once per frame
     private void Awake()
     {
@@ -31,18 +34,11 @@ public class Dialog_Stage2 : MonoBehaviour
 
 
     }
-
-    private void DisableObjects()
+    private void Update()
     {
-        // 모든 대화 관련 게임 오브젝트 비활성화
-
-        for (int i = 0; i < speakers.Length; ++i)
-        {
-            SetActiveObjects(speakers[i], false);
-            //캐릭터 이미지도 안 보이게
-            speakers[i].spriteRenderer2.gameObject.SetActive(false);
-        }
+        
     }
+
 
     private void Setup2()
     {
@@ -53,10 +49,10 @@ public class Dialog_Stage2 : MonoBehaviour
             //캐릭터 이미지 보이게
             speakers[i].spriteRenderer2.gameObject.SetActive(true);
         }
-		/*for(int i =0; i<gameObjects.Length; i++)
+		for(int i =0; i<objects.Length; i++)
         {
-
-        }*/
+			SetActiveGame(objects[i], false);
+        }
     }
 	public bool UpdateDialog2()
 	{
@@ -73,7 +69,7 @@ public class Dialog_Stage2 : MonoBehaviour
 			isFirst2 = false;
 		}
 
-		if (Input.GetKeyDown(KeyCode.Mouse0))//Input.touchCount > 0 ||
+		if (Input.GetKeyDown(KeyCode.Mouse0) && isTypingEffect2 == false)//Input.touchCount > 0 ||
 		{
 			//Touch touch = Input.GetTouch(0);
 			//if (touch.phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.Space))
@@ -107,14 +103,34 @@ public class Dialog_Stage2 : MonoBehaviour
 					// SetActiveObjects()에 캐릭터 이미지를 보이지 않게 하는 부분이 없기 때문에 별도로 호출
 					speakers[i].spriteRenderer2.gameObject.SetActive(false);
 				}
+				
+				for (int i = 0; i < objects.Length; i++)
+				{
+					if(isTypingEffect2 == true)
+                    {
+					
+						SetActiveGame(objects[i], false);
+						
 
-				return true;
+
+					}
+					else if(isTypingEffect2 == false)
+                    {
+						SetActiveGame(objects[i], true);
+						isGameStarted = true;
+						
+						
+					}
+					
+				}
 			}
-			//}
+			
 		}
 
 		return false;
 	}
+
+
 	private void SetNextDialog2()
 	{
 		// 이전 화자의 대화 관련 오브젝트 비활성화
@@ -149,10 +165,15 @@ public class Dialog_Stage2 : MonoBehaviour
 		speaker.spriteRenderer2.color = color;
 	}
 	
-	/*private void SetActiveGame(GameObject gameobject, bool visible)
+	private void SetActiveGame(GameObejct gameobject, bool visible)
     {
-		gameobject.
-    }*/
+		gameobject.tileNote.gameObject.SetActive(visible);
+		gameobject.noteBreak.gameObject.SetActive(visible);
+     
+		
+		
+		
+    }
 
 	private IEnumerator OnTypingText2()
 	{
@@ -192,7 +213,18 @@ public class Dialog_Stage2 : MonoBehaviour
 		public string name2; // 캐릭터 이름
 		[TextArea(3, 5)]
 		public string dialog2; // 대사
-	}
+    }
+    [System.Serializable]
+    public struct GameObejct
+    {
+		public GameObject tileNote;
+		public GameObject noteBreak;
+	
+		
+    }
+
+
+
 
 
 }
