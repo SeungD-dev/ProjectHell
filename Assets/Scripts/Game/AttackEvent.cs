@@ -76,7 +76,6 @@ public class AttackEvent : MonoBehaviour
                     AbsorbColorTransparency();
                     Debug.Log("Èí¼öµÊ");
                     Absorbmode = false;
-
                 }
                 if (col.gameObject.CompareTag("Note_B") && Absorbmode == true)
                 {
@@ -98,12 +97,32 @@ public class AttackEvent : MonoBehaviour
                     Absorbmode = false;
 
                 }
-                if (col.gameObject.CompareTag("Note_Fake"))
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
-                    playerControl.Hurt();
-                    AbsorbColorTransparency();
-                    Absorbmode = false;
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 1; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 1; g = 0; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 0; b = 1;
                 }
             }
 
@@ -140,12 +159,32 @@ public class AttackEvent : MonoBehaviour
                     asb = asbColor.green;
                     bc = ballColor.green;
                 }
-                else if (col.gameObject.CompareTag("Note_Fake"))
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
-                    playerControl.Hurt();
-                    AbsorbColorTransparency();
-                    Absorbmode = false;
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 1; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 1; g = 0; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 0; b = 1;
                 }
             }
             //Ã¹ Èí¼ö°¡ ÆÄ¶õ»öÀÏ ¶§
@@ -181,12 +220,32 @@ public class AttackEvent : MonoBehaviour
                     asb = asbColor.green;
                     bc = ballColor.green;
                 }
-                else if (col.gameObject.CompareTag("Note_Fake"))
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
-                    playerControl.Hurt();
-                    AbsorbColorTransparency();
-                    Absorbmode = false;
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 1; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 1; g = 0; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 0; b = 1;
                 }
             }
 
@@ -223,34 +282,46 @@ public class AttackEvent : MonoBehaviour
                     asb = asbColor.blue;
                     bc = ballColor.blue;
                 }
-                else if (col.gameObject.CompareTag("Note_Fake"))
+                if (col.gameObject.CompareTag("Note_BG") && Absorbmode == true)
                 {
                     Destroy(col.gameObject);
-                    playerControl.Hurt();
-                    AbsorbColorTransparency();
-                    Absorbmode = false;
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 1; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BR") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 1; g = 0; b = 0;
+                }
+                if (col.gameObject.CompareTag("Note_BB") && Absorbmode == true)
+                {
+                    Destroy(col.gameObject);
+                    Attackmode = true;
+                    SwordSound.Play();
+                    asb = asbColor.normal;
+                    bc = ballColor.normal;
+                    r = 0; g = 0; b = 1;
                 }
             }
-
         }
-
     }
     
 
     public void AbsorbButtonDown()
     {
-       
-        
-        
         countTime = 0;
         StartCoroutine("AttackCooldown");
         AbsorbUncolorTrasparency();
-      
-        
 
         if(Attackmode == false)
         {
-           
             Absorbmode = true;
         }
         /*if(Attackmode == true)
@@ -261,8 +332,6 @@ public class AttackEvent : MonoBehaviour
 
         if(Attackmode == true )//&& Shootmode == true)
         {
-
-
             Attackmode = false;
             Absorbmode = false;
             asb = asbColor.normal;
@@ -270,10 +339,7 @@ public class AttackEvent : MonoBehaviour
             r = 0;
             g = 0;
             b = 0;
-            
         }
-
-       
     }
 
     public void AbsorbColorTransparency()
@@ -293,13 +359,8 @@ public class AttackEvent : MonoBehaviour
 
     IEnumerator AttackCooldown()
     {
-       
         absorbBtn.SetActive(false);
         yield return new WaitForSeconds(0.7f);
         absorbBtn.SetActive(true);
-
     }
-
-   
-
 }

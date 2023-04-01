@@ -19,6 +19,7 @@ public class GameResultButton : MonoBehaviour
         Stage3_Clear.SetActive(false);
         Stage3_Fail.SetActive(false);
         Debug.Log(fail);
+        Debug.Log(clear);
     }
 
     // Update is called once per frame
