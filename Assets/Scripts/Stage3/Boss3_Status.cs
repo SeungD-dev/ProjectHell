@@ -9,14 +9,17 @@ public class Boss3_Status : MonoBehaviour
     public int currentHp;
     public float boss3_HPtime = 90;
 
-    public bool isHit = false;
+    public bool isHit = false, isHit_AtkTime1 = false;
     public GameObject Line;
     Scene scene;
+
+    Reaper_Anim ra;
     // Start is called before the first frame update
     void Start()
     {
         currentHp = maxHp;
         scene = SceneManager.GetActiveScene();
+        ra = FindObjectOfType<Reaper_Anim>();
     }
 
     void Update()
@@ -51,6 +54,13 @@ public class Boss3_Status : MonoBehaviour
             currentHp -= 1;
             Destroy(other.gameObject);
             isHit = true;
+        }
+        //첫 번째 기믹 모션 중 피격
+        if (other.CompareTag("PlayerAttack") && ra.AtkTime1 == true)
+        {
+            currentHp -= 1;
+            Destroy(other.gameObject);
+            isHit_AtkTime1 = true;
         }
     }
 }

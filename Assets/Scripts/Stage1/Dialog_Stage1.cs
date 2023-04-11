@@ -82,7 +82,7 @@ public class Dialog_Stage1 : MonoBehaviour
 					isTypingEffect1 = false;
 
 					// 타이핑 효과를 중지하고, 현재 대사 전체를 출력한다
-					StopCoroutine("OnTypingText");
+					StopCoroutine("OnTypingText1");
 					speakers[currentSpeakerIndex1].textDialog1.text = dialogs1[currentDialogIndex1].dialog;
 					// 대사가 완료되었을 때 출력되는 커서 활성화
 					speakers[currentSpeakerIndex1].objectArrow1.SetActive(true);

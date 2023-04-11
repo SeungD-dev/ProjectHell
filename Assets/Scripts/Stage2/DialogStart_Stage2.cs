@@ -13,6 +13,7 @@ public class DialogStart_Stage2 : MonoBehaviour
     private Dialog_Stage2 dialog02;
     public bool startDialog01 = false, startDialog02 = false;
 
+
 	GameManager gameManager;
 	private IEnumerator Start()
 	{
@@ -33,10 +34,11 @@ public class DialogStart_Stage2 : MonoBehaviour
 		{
 			//textCountdown.text = count.ToString();
 			count--;
-			if(count == 0)
+			/*if(count == 0)
             {
+				startDialog01 = false;
 				startDialog02 = true;
-            }
+            }*/
 
 			yield return new WaitForSeconds(1);
 		}

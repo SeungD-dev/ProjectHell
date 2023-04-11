@@ -39,7 +39,7 @@ public class LineActive_3 : MonoBehaviour
             StartCoroutine (FadeOutCoroutine());
             off = true;
         }*/
-        if (time >= 38.5)
+        if (time >= 38.5) //강림이 발묶기
         {
             GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(true);
             GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(true);
@@ -54,7 +54,7 @@ public class LineActive_3 : MonoBehaviour
             playerControl.flip = false;
             playerControl.jumpCC = false;
         }
-        if(time>= 59.5 && !on)
+        if(time>= 59.5 && !on) //암전
         {
             StartCoroutine(FadeInCoroutine());
             on = true;

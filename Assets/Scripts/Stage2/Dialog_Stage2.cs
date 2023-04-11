@@ -12,11 +12,11 @@ public class Dialog_Stage2 : MonoBehaviour
 	[SerializeField]
 	private GameObejct[] objects;
 
-
+	public GameObject bgm;
 
 
     [SerializeField]
-    private DialogData[] dialogs1; // 현재 분기의 대사 목록 배열
+    private DialogData2[] dialogs2; // 현재 분기의 대사 목록 배열
     [SerializeField]
 
     DialogStart_Stage2 dialogStart_Stage2;
@@ -31,17 +31,23 @@ public class Dialog_Stage2 : MonoBehaviour
     {
         if (dialogStart_Stage2.startDialog01 == true)
             UpdateDialog2();
-
+		//if (dialogStart_Stage2.startDialog02 == true && dialogStart_Stage2.startDialog01 == false)
+			//UpdateDialog2();
+			
+			
 
     }
     private void Update()
     {
-        
-    }
+		PlayBGM();
+		
+				
+	}
 
 
     private void Setup2()
     {
+		
         //모든 대화 관련 게임 오브젝트 비활성화
         for (int i = 0; i < speakers.Length; ++i)
         {
@@ -62,13 +68,19 @@ public class Dialog_Stage2 : MonoBehaviour
 			// 초기화. 캐릭터 이미지는 활성화하고, 대사 관련 UI는 모두 비활성화
 			Setup2();
 
-
+	
 			// 자동 재생(dialogStart_Stage2.startDialog=true)으로 설정되어 있으면 첫 번째 대사 재생
 			if (dialogStart_Stage2.startDialog01 == true) SetNextDialog2();
 
 			isFirst2 = false;
 		}
 
+		/*if(dialogStart_Stage2.startDialog02 == true && dialogStart_Stage2.startDialog01 == false)
+        {
+			SetNextDialog2();
+        }*/
+
+		
 		if (Input.GetKeyDown(KeyCode.Mouse0) && isTypingEffect2 == false)//Input.touchCount > 0 ||
 		{
 			//Touch touch = Input.GetTouch(0);
@@ -80,8 +92,8 @@ public class Dialog_Stage2 : MonoBehaviour
 				isTypingEffect2 = false;
 
 				// 타이핑 효과를 중지하고, 현재 대사 전체를 출력한다
-				StopCoroutine("OnTypingText");
-				speakers[currentSpeakerIndex2].textDialog2.text = dialogs1[currentDialogIndex2].dialog;
+				StopCoroutine("OnTypingText2");
+				speakers[currentSpeakerIndex2].textDialog2.text = dialogs2[currentDialogIndex2].dialog2;
 				// 대사가 완료되었을 때 출력되는 커서 활성화
 				speakers[currentSpeakerIndex2].objectArrow2.SetActive(true);
 
@@ -89,7 +101,7 @@ public class Dialog_Stage2 : MonoBehaviour
 			}
 
 			// 대사가 남아있을 경우 다음 대사 진행
-			if (dialogs1.Length > currentDialogIndex2 + 1)
+			if (dialogs2.Length > currentDialogIndex2 + 1)
 			{
 				SetNextDialog2();
 			}
@@ -103,6 +115,7 @@ public class Dialog_Stage2 : MonoBehaviour
 					// SetActiveObjects()에 캐릭터 이미지를 보이지 않게 하는 부분이 없기 때문에 별도로 호출
 					speakers[i].spriteRenderer2.gameObject.SetActive(false);
 				}
+				isGameStarted = true;
 				
 				for (int i = 0; i < objects.Length; i++)
 				{
@@ -120,6 +133,7 @@ public class Dialog_Stage2 : MonoBehaviour
 						isGameStarted = true;
 						
 						
+						
 					}
 					
 				}
@@ -130,6 +144,19 @@ public class Dialog_Stage2 : MonoBehaviour
 		return false;
 	}
 
+	public void PlayBGM()
+    {
+		if (isGameStarted == true)
+		{
+			bgm.SetActive(true);
+			Debug.Log("브금 실행");
+		}
+		else
+		{
+			bgm.SetActive(false);
+			Debug.Log("브금 정지");
+		}
+	}
 
 	private void SetNextDialog2()
 	{
@@ -140,12 +167,12 @@ public class Dialog_Stage2 : MonoBehaviour
 		currentDialogIndex2++;
 
 		// 현재 화자 순번 설정
-		currentSpeakerIndex2 = dialogs1[currentDialogIndex2].speakerIndex;
+		currentSpeakerIndex2 = dialogs2[currentDialogIndex2].speakerIndex2;
 
 		// 현재 화자의 대화 관련 오브젝트 활성화
 		SetActiveObjects(speakers[currentSpeakerIndex2], true);
 		// 현재 화자 이름 텍스트 설정
-		speakers[currentSpeakerIndex2].textName2.text = dialogs1[currentDialogIndex2].name;
+		speakers[currentSpeakerIndex2].textName2.text = dialogs2[currentDialogIndex2].name2;
 		// 현재 화자의 대사 텍스트 설정
 		//speakers[currentSpeakerIndex].textDialogue.text = dialogs[currentDialogIndex].dialogue;
 		StartCoroutine("OnTypingText2");
@@ -169,7 +196,7 @@ public class Dialog_Stage2 : MonoBehaviour
     {
 		gameobject.tileNote.gameObject.SetActive(visible);
 		gameobject.noteBreak.gameObject.SetActive(visible);
-     
+	
 		
 		
 		
@@ -182,9 +209,9 @@ public class Dialog_Stage2 : MonoBehaviour
 		isTypingEffect2 = true;
 
 		// 텍스트를 한글자씩 타이핑치듯 재생
-		while (index < dialogs1[currentDialogIndex2].dialog.Length)
+		while (index < dialogs2[currentDialogIndex2].dialog2.Length)
 		{
-			speakers[currentSpeakerIndex2].textDialog2.text = dialogs1[currentDialogIndex2].dialog.Substring(0, index);
+			speakers[currentSpeakerIndex2].textDialog2.text = dialogs2[currentDialogIndex2].dialog2.Substring(0, index);
 
 			index++;
 
@@ -207,7 +234,7 @@ public class Dialog_Stage2 : MonoBehaviour
 	}
 
 	[System.Serializable]
-	public struct DialogData1
+	public struct DialogData2
 	{
 		public int speakerIndex2; // 이름과 대사를 출력할 현재 DialogSystem의 speakers 배열 순번
 		public string name2; // 캐릭터 이름
