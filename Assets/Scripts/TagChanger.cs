@@ -16,7 +16,6 @@ public class TagChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("fjgkldf");
         if (other.CompareTag("Note_CR"))
         {
             other.gameObject.tag = "Note_B";

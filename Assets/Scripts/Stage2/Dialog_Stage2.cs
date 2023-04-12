@@ -9,13 +9,10 @@ public class Dialog_Stage2 : MonoBehaviour
     [SerializeField]
     private Speaker[] speakers; //대화에 참여하는 캐릭터들의 UI 배열
 
+	public GameObject line;
+	public AudioSource bgm;
+	
 	[SerializeField]
-	private GameObejct[] objects;
-
-	public GameObject bgm;
-
-
-    [SerializeField]
     private DialogData2[] dialogs2; // 현재 분기의 대사 목록 배열
     [SerializeField]
 
@@ -25,29 +22,20 @@ public class Dialog_Stage2 : MonoBehaviour
     private int currentSpeakerIndex2 = 0; // 현재 말을 하는 화자(Speaker)의 speakers 배열 순번
     private float typingSpeed2 = 0.1f;           // 텍스트 타이핑 효과의 재생 속도
     private bool isTypingEffect2 = false;       // 텍스트 타이핑 효과를 재생중인지
-	private bool isGameStarted = false;
+	public bool isGameStarted = false;
     // Update is called once per frame
     private void Awake()
     {
-        if (dialogStart_Stage2.startDialog01 == true)
-            UpdateDialog2();
+		if (dialogStart_Stage2.startDialog01 == true)
+		{
+			UpdateDialog2();
+		}
 		//if (dialogStart_Stage2.startDialog02 == true && dialogStart_Stage2.startDialog01 == false)
-			//UpdateDialog2();
-			
-			
-
-    }
-    private void Update()
-    {
-		PlayBGM();
-		
-				
+		//UpdateDialog2();
 	}
-
 
     private void Setup2()
     {
-		
         //모든 대화 관련 게임 오브젝트 비활성화
         for (int i = 0; i < speakers.Length; ++i)
         {
@@ -55,10 +43,8 @@ public class Dialog_Stage2 : MonoBehaviour
             //캐릭터 이미지 보이게
             speakers[i].spriteRenderer2.gameObject.SetActive(true);
         }
-		for(int i =0; i<objects.Length; i++)
-        {
-			SetActiveGame(objects[i], false);
-        }
+		//line.SetActive(false);
+		//gameManager.Pause();
     }
 	public bool UpdateDialog2()
 	{
@@ -67,7 +53,6 @@ public class Dialog_Stage2 : MonoBehaviour
 		{
 			// 초기화. 캐릭터 이미지는 활성화하고, 대사 관련 UI는 모두 비활성화
 			Setup2();
-
 	
 			// 자동 재생(dialogStart_Stage2.startDialog=true)으로 설정되어 있으면 첫 번째 대사 재생
 			if (dialogStart_Stage2.startDialog01 == true) SetNextDialog2();
@@ -79,9 +64,8 @@ public class Dialog_Stage2 : MonoBehaviour
         {
 			SetNextDialog2();
         }*/
-
 		
-		if (Input.GetKeyDown(KeyCode.Mouse0) && isTypingEffect2 == false)//Input.touchCount > 0 ||
+		if (Input.GetKeyDown(KeyCode.Mouse0) && isGameStarted == false)//Input.touchCount > 0 ||
 		{
 			//Touch touch = Input.GetTouch(0);
 			//if (touch.phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.Space))
@@ -115,47 +99,24 @@ public class Dialog_Stage2 : MonoBehaviour
 					// SetActiveObjects()에 캐릭터 이미지를 보이지 않게 하는 부분이 없기 때문에 별도로 호출
 					speakers[i].spriteRenderer2.gameObject.SetActive(false);
 				}
-				isGameStarted = true;
+				//line.SetActive(true);
+				//bgm.Play();
 				
-				for (int i = 0; i < objects.Length; i++)
+				isGameStarted = true;
+				/*
+				if (isTypingEffect2 == true)
 				{
-					if(isTypingEffect2 == true)
-                    {
-					
-						SetActiveGame(objects[i], false);
-						
-
-
-					}
-					else if(isTypingEffect2 == false)
-                    {
-						SetActiveGame(objects[i], true);
-						isGameStarted = true;
-						
-						
-						
-					}
-					
+					line.SetActive(false);
 				}
+				else if (isTypingEffect2 == false)
+				{
+					line.SetActive(true);
+					isGameStarted = true;
+				}*/
+				return true;
 			}
-			
 		}
-
 		return false;
-	}
-
-	public void PlayBGM()
-    {
-		if (isGameStarted == true)
-		{
-			bgm.SetActive(true);
-			Debug.Log("브금 실행");
-		}
-		else
-		{
-			bgm.SetActive(false);
-			Debug.Log("브금 정지");
-		}
 	}
 
 	private void SetNextDialog2()
@@ -191,16 +152,6 @@ public class Dialog_Stage2 : MonoBehaviour
 		color.a = visible == true ? 1 : 0.2f;
 		speaker.spriteRenderer2.color = color;
 	}
-	
-	private void SetActiveGame(GameObejct gameobject, bool visible)
-    {
-		gameobject.tileNote.gameObject.SetActive(visible);
-		gameobject.noteBreak.gameObject.SetActive(visible);
-	
-		
-		
-		
-    }
 
 	private IEnumerator OnTypingText2()
 	{
@@ -246,12 +197,5 @@ public class Dialog_Stage2 : MonoBehaviour
     {
 		public GameObject tileNote;
 		public GameObject noteBreak;
-	
-		
     }
-
-
-
-
-
 }

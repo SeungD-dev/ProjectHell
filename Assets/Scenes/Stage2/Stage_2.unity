@@ -4026,6 +4026,8 @@ MonoBehaviour:
   dialog02: {fileID: 1309861660}
   startDialog01: 0
   startDialog02: 1
+  line: {fileID: 1804223923}
+  audioSource: {fileID: 1559817684}
 --- !u!4 &234654873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: dfbf1bd83b7e8bc42b6408f3c658ba02, type: 3}
@@ -8391,16 +8393,15 @@ MonoBehaviour:
     textName2: {fileID: 1863045314}
     textDialog2: {fileID: 1794634916}
     objectArrow2: {fileID: 972602656}
-  objects:
-  - tileNote: {fileID: 1804223923}
-    noteBreak: {fileID: 1175919881}
-  bgm: {fileID: 1559817683}
+  line: {fileID: 1804223923}
+  bgm: {fileID: 1559817684}
   dialogs2:
   - speakerIndex2: 0
     name2: "\uC774\uC790\uB098\uBBF8"
     dialog2: "\uC774\uACF3\uC740 \uC544\uBB34\uB098 \uBC1C\uC744 \uB4E4\uC77C \uACF3\uC774
       \uC544\uB2C8\uB2E4!!! "
   dialogStart_Stage2: {fileID: 228665918}
+  isGameStarted: 0
 --- !u!4 &441731305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: dfbf1bd83b7e8bc42b6408f3c658ba02, type: 3}
@@ -17378,8 +17379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e282f36c593124191d433c41e0c926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_MaxHP: 3
-  player_currentHP: 3
+  player_MaxHP: 100
+  player_currentHP: 100
   hpImage:
   - {fileID: 1348483419}
   - {fileID: 288745189}
@@ -17998,6 +17999,7 @@ MonoBehaviour:
   - 0.8
   - 1.7
   time: 0
+  timeStop: 1
 --- !u!114 &1030576420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18020,6 +18022,7 @@ MonoBehaviour:
   newX: 0
   moveTime: 0
   time: 0
+  timeStop: 1
 --- !u!54 &1030576421
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21149,7 +21152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db58b9b39d6945941ac6b5352fe4825e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setTime: 0.8
 --- !u!54 &1175919887
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23706,14 +23708,15 @@ MonoBehaviour:
     textName2: {fileID: 1863045314}
     textDialog2: {fileID: 1794634916}
     objectArrow2: {fileID: 972602656}
-  objects: []
-  bgm: {fileID: 1559817683}
+  line: {fileID: 1804223923}
+  bgm: {fileID: 1559817684}
   dialogs2:
   - speakerIndex2: 0
     name2: "\uC774\uC790\uB098\uBBF8"
     dialog2: "\uB098\uC758 \uAC80\uAE30\uB97C \uB9DE\uACE0\uB3C4 \uBC84\uD2F8 \uC218
       \uC788\uC744 \uAC83 \uAC19\uC73C\uB0D0!! "
   dialogStart_Stage2: {fileID: 228665918}
+  isGameStarted: 0
 --- !u!1 &1310099698
 GameObject:
   m_ObjectHideFlags: 0
@@ -32280,6 +32283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45fe2f4692b0da74ca5e3be22d2ae9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
+  timeStop: 0
 --- !u!1001 &1804255977
 PrefabInstance:
   m_ObjectHideFlags: 0

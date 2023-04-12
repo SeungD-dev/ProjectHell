@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class LineActive_2 : MonoBehaviour
 {
-    private float time;
+    public float time;
+    public bool timeStop;
     private void Start()
     {
+        timeStop = true;
         GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(false);
@@ -15,6 +17,10 @@ public class LineActive_2 : MonoBehaviour
     }
     void Update()
     {
+        /*if (!timeStop)
+        {
+            time += Time.deltaTime;
+        }*/
         time += Time.deltaTime;
         if (time >= 0.5)
         {

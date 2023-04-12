@@ -110,7 +110,7 @@ public class Dialog_Stage1 : MonoBehaviour
 				}
 			//}
 		}
-
+		Debug.Log("Å×½ºÆ®");
 		return false;
 	}
 

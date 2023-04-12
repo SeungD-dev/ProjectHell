@@ -21,7 +21,6 @@ public class Boss2_Status : MonoBehaviour
     // Update is called once per frame
     {
         boss2_HPtime -= Time.deltaTime;
-        Debug.Log(scene.name);
         if (currentHp <= 0)
         {
             Line.SetActive(false);

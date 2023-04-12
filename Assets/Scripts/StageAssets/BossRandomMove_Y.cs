@@ -10,6 +10,7 @@ public class BossRandomMove_Y : MonoBehaviour
     public float moveTime;
     public float time = 0;
 
+    public bool timeStop = true;
     void Start()
     {
         //newX = possibleXValues[Random.Range(0, possibleXValues.Length)];
@@ -18,8 +19,11 @@ public class BossRandomMove_Y : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if(time >= 55 && time < 99)
+        if (!timeStop)
+        {
+            time += Time.deltaTime;
+        }
+        if (time >= 55 && time < 99)
         {
             moveTime += Time.deltaTime;
             if (moveTime >= 4f)

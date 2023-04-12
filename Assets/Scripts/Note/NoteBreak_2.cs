@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class NoteBreak_2 : MonoBehaviour
 {
-    //public GameObject bgm;
-    public float setTime = 0.5f;
-    float time;
     void Start()
     {
         //bgm.SetActive(false); 
@@ -14,7 +11,6 @@ public class NoteBreak_2 : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
         /*if(time >= setTime)
         {
             bgm.SetActive(true);

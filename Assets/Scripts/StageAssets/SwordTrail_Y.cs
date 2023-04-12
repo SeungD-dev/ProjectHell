@@ -15,6 +15,8 @@ public class SwordTrail_Y : MonoBehaviour
     public float[] possibleXValues = { -1.76f, -0.88f, 0, 0.88f, 1.76f };
 
     public float time = 0;
+
+    public bool timeStop = true;
     void Start()
     {
         brm = FindObjectOfType<BossRandomMove_Y>();
@@ -23,8 +25,11 @@ public class SwordTrail_Y : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
-        if(time >= 55 && time < 99)
+        if (!timeStop)
+        {
+            time += Time.deltaTime;
+        }
+        if (time >= 55 && time < 99)
         {
             duration += Time.deltaTime;
             if(duration >= 4f)
