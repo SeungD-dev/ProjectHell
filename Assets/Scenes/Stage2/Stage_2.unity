@@ -15502,6 +15502,8 @@ MonoBehaviour:
   currentHp: 0
   boss2_HPtime: 90
   Line: {fileID: 0}
+  isHit: 0
+  isHit_ph2: 0
 --- !u!1001 &891333104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18134,8 +18136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 15
   currentHp: 0
-  boss2_HPtime: 114
+  boss2_HPtime: 160
   Line: {fileID: 1804223923}
+  isHit: 0
+  isHit_ph2: 0
 --- !u!1001 &1031474655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26329,12 +26333,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 165917846, guid: 70a866079e657fd42b84a5bb56ed5754, type: 3}
+  m_Sprite: {fileID: 1915282630, guid: 70a866079e657fd42b84a5bb56ed5754, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.68, y: 7.68}
+  m_Size: {x: 3.5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

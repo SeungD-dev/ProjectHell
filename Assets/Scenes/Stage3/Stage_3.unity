@@ -19591,8 +19591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db58b9b39d6945941ac6b5352fe4825e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: {fileID: 0}
-  setTime: 0.5
 --- !u!65 &1115137369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20931,8 +20929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db58b9b39d6945941ac6b5352fe4825e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: {fileID: 1559817683}
-  setTime: 1
 --- !u!54 &1175919887
 Rigidbody:
   m_ObjectHideFlags: 0

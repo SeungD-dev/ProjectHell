@@ -7,8 +7,9 @@ public class Boss2_Status : MonoBehaviour
 {
     public int maxHp = 15;
     public int currentHp;
-    public float boss2_HPtime = 90;
+    public float boss2_HPtime = 120;
     public GameObject Line;
+    public bool isHit , isHit_ph2;
     Scene scene;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class Boss2_Status : MonoBehaviour
             Destroy(GameObject.FindWithTag("SwordTrail_Vertical"));
             GameResultButton.clear = scene.name;
             Debug.Log(scene.name);
-            Invoke("LoadScene", 1f);
+            Invoke("LoadScene", 2f);
         }
         if (boss2_HPtime <= 0)
         {
@@ -36,7 +37,7 @@ public class Boss2_Status : MonoBehaviour
             Destroy(GameObject.FindWithTag("SwordTrail"));
             Destroy(GameObject.FindWithTag("SwordTrail_Vertical"));
             GameResultButton.clear = scene.name;
-            Invoke("LoadScene", 1f);
+            Invoke("LoadScene", 2f);
         }
     }
 
@@ -51,6 +52,7 @@ public class Boss2_Status : MonoBehaviour
         {
             currentHp -= 1;
             Destroy(other.gameObject);
+            isHit = true;
         }
     }
 }

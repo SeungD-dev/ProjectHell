@@ -148,6 +148,10 @@ public class Reaper_Anim : MonoBehaviour
         {
             anim.SetTrigger("Boss3Low");
         }
+        if(boss3_Status.currentHp == 0)
+        {
+            anim.SetTrigger("Boss3_Death");
+        }
 
     }
 }

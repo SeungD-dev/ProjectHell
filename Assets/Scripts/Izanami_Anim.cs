@@ -12,7 +12,7 @@ public class Izanami_Anim : MonoBehaviour
     float time;
 
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         anim = gameObject.GetComponentInChildren<Animator>();
@@ -20,7 +20,7 @@ public class Izanami_Anim : MonoBehaviour
         brm = FindObjectOfType<BossRandomMove_Y>();
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         time += Time.deltaTime;
@@ -30,6 +30,8 @@ public class Izanami_Anim : MonoBehaviour
 
     void AnimationUpdate()
     {
+
+        //보스 검기 애니메이션
         if (time >= 10) //10
         {
             anim.SetBool("Boss2_IsAtk1", true);
@@ -50,6 +52,18 @@ public class Izanami_Anim : MonoBehaviour
         {
             anim.SetTrigger("Boss2Idle");
         }
+
+        //보스 각성 애니메이션
+        if (time >= 99)
+        {
+            anim.SetBool("Boss2_isIdle2", true);
+            anim.SetTrigger("Boss2_Transform");
+        }
+        if (time >= 99.93)
+        {
+            anim.SetTrigger("Boss2_Idle2");
+        }
+
         
         if (time >= 56.2)
         {
@@ -62,6 +76,31 @@ public class Izanami_Anim : MonoBehaviour
                 if(anim.GetBool("Boss2_IsAtk2")==true)
                 anim.SetTrigger("Boss_Atk2");
             }
+        }
+
+        //각성 전 보스 히트
+        if(boss2_Status.isHit == true && anim.GetBool("Boss2_isIdle1")==true && anim.GetBool("Boss2_isIdle2") == false)
+        {
+            anim.SetTrigger("Boss2_Hit1");
+            boss2_Status.isHit = false;
+        }
+
+        //보스 체력 많을 때 Idle
+        if (boss2_Status.currentHp >= 5)
+        {
+            anim.SetBool("Boss2_isIdle1", true);
+            anim.SetBool("Boss2_Low", false);
+        }
+        if(boss2_Status.isHit == false && anim.GetBool("Boss2_isIdle1") == true)
+        {
+            anim.SetTrigger("Boss2_isIdle1");
+        }
+
+
+        //보스 사망 애니메이션
+        if(boss2_Status.currentHp == 0)
+        {
+            anim.SetTrigger("Boss2_Death");
         }
 
     }
