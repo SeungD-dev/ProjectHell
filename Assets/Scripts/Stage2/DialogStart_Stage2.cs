@@ -34,6 +34,7 @@ public class DialogStart_Stage2 : MonoBehaviour
 		startDialog01 = true;
 		audioSource.Pause();
 		line.SetActive(false); bossRandomMove.timeStop = true; swordTrail.timeStop = true;
+		
 		// 첫 번째 대사 분기 시작
 
 		yield return new WaitUntil(() => dialog01.UpdateDialog2());

@@ -11,10 +11,9 @@ public class Izanami_Anim : MonoBehaviour
 
 
     float time;
+        float duration = 3.5f;
 
-    private bool isAtk1 = false, isAtk2 = false, AttackTime = false;
-    bool attackPlayedThisMove = false, hasAttacked = false;
-    bool hasPlayedAtk1 = false;
+   
 
     void Start()
     {
@@ -30,7 +29,7 @@ public class Izanami_Anim : MonoBehaviour
         AnimationUpdate();
 
 
-        StartCoroutine(PositionAnimUpdate());
+        PositionAnimUpdate();
 
     }
 
@@ -76,36 +75,44 @@ public class Izanami_Anim : MonoBehaviour
 
     }
 
-    IEnumerator PositionAnimUpdate()
+    void PositionAnimUpdate()
     {
         switch (brm.newX)
         {
             case 0f:
-                if (time >= 56f && AttackTime == true && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
+                if (time >= 56f && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
                 {
-                    anim.SetTrigger("Boss2_Atk1");
-                    yield return new WaitForSeconds(1f);
+                    duration += Time.deltaTime;
+                    if(duration >= 4f)
+                    {
+                        anim.SetTrigger("Boss2_Atk1");
+                        duration = 0f;
+                    }
+                    
+                    //yield return new WaitForSeconds(1f);
                     anim.SetTrigger("Boss2Idle");
-                    isAtk1 = false;
+                  
                 }
                 break;
             case -1.76f:
             case -0.88f:
             case 0.88f:
             case 1.76f:
-                if (time >= 56f && AttackTime == true && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
+                if (time >= 56f && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
                 {
-                    anim.SetTrigger("Boss2_Atk2");
-                    yield return new WaitForSeconds(1f);
+                    duration += Time.deltaTime;
+                    if (duration >= 4f)
+                    {
+                        anim.SetTrigger("Boss2_Atk2");
+                        duration = 0f;
+                    }
+                  
+                    //yield return new WaitForSeconds(1f);
                     anim.SetTrigger("Boss2Idle");
                 }
                 break;
             default:
-                if (anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
-                {
-                    yield return new WaitForSeconds(4f);
-
-                }
+               
                 break;
         }
 
