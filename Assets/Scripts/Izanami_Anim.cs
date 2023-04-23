@@ -9,10 +9,13 @@ public class Izanami_Anim : MonoBehaviour
     Boss2_Status boss2_Status;
     BossRandomMove_Y brm;
 
+
     float time;
 
-    bool goIdle= false;
-   
+    private bool isAtk1 = false, isAtk2 = false, AttackTime = false;
+    bool attackPlayedThisMove = false, hasAttacked = false;
+    bool hasPlayedAtk1 = false;
+
     void Start()
     {
         anim = gameObject.GetComponentInChildren<Animator>();
@@ -20,31 +23,19 @@ public class Izanami_Anim : MonoBehaviour
         brm = FindObjectOfType<BossRandomMove_Y>();
     }
 
-  
+
     void Update()
     {
         time += Time.deltaTime;
-        PositionAnimUpdate();
         AnimationUpdate();
+
+
+        StartCoroutine(PositionAnimUpdate());
+
     }
 
     void AnimationUpdate()
     {
-
-        //보스 검기 애니메이션
-        if (time >= 10) //10
-        {
-            anim.SetBool("Boss2_IsAtk1", true);
-        }
-        if (time >= 54.8) //55.8
-        {
-            anim.SetTrigger("Boss2_Atk1");
-        }
-        if (time >= 56.1) //56
-        {
-            anim.SetBool("Boss2_IsAtk1", false);
-        }
-       
 
         //보스 각성 애니메이션
         if (time >= 99)
@@ -56,9 +47,9 @@ public class Izanami_Anim : MonoBehaviour
         {
             anim.SetTrigger("Boss2_Idle2");
         }
-        
+
         //각성 전 보스 히트
-        if(boss2_Status.isHit == true && anim.GetBool("Boss2_isIdle1")==true && anim.GetBool("Boss2_isIdle2") == false)
+        if (boss2_Status.isHit == true && anim.GetBool("Boss2_isIdle1") == true && anim.GetBool("Boss2_isIdle2") == false)
         {
             anim.SetTrigger("Boss2_Hit1");
             boss2_Status.isHit = false;
@@ -70,67 +61,57 @@ public class Izanami_Anim : MonoBehaviour
             anim.SetBool("Boss2_isIdle1", true);
             anim.SetBool("Boss2_Low", false);
         }
-        if(boss2_Status.isHit == false && anim.GetBool("Boss2_isIdle1") == true)
+        if (boss2_Status.isHit == false && anim.GetBool("Boss2_isIdle1") == true)
         {
             anim.SetTrigger("Boss2Idle");
         }
 
 
         //보스 사망 애니메이션
-        if(boss2_Status.currentHp == 0)
+        if (boss2_Status.currentHp == 0)
         {
             anim.SetTrigger("Boss2_Death");
         }
 
+
     }
 
-    void PositionAnimUpdate()
+    IEnumerator PositionAnimUpdate()
     {
-        if(time >= 56.3)
+        switch (brm.newX)
         {
-            if (brm.newX == 0f)
-            {
-                anim.SetBool("Boss2_IsAtk1",true);
-                anim.SetTrigger("Boss2_Atk1");
-                anim.SetBool("Boss2_IsAtk2", false);
-              
-            }
-            if (brm.newX == -1.76f || brm.newX == -0.88f || brm.newX == 0.88f || brm.newX == 1.76f)
-            {
-                anim.SetBool("Boss2_IsAtk1", false);
-                anim.SetBool("Boss2_IsAtk2", true);
-                anim.SetTrigger("Boss2_Atk2");
-               
-               
-            }
-        }
-        if (time >= 56.33)
-        {
-            if (anim.GetBool("Boss2_IsAtk1") == true)
-            {
-                anim.SetTrigger("Boss2_Atk1");
-                
-                anim.SetBool("Boss2_IsAtk1", false);
-                goIdle = true;
-            }
+            case 0f:
+                if (time >= 56f && AttackTime == true && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
+                {
+                    anim.SetTrigger("Boss2_Atk1");
+                    yield return new WaitForSeconds(1f);
+                    anim.SetTrigger("Boss2Idle");
+                    isAtk1 = false;
+                }
+                break;
+            case -1.76f:
+            case -0.88f:
+            case 0.88f:
+            case 1.76f:
+                if (time >= 56f && AttackTime == true && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
+                {
+                    anim.SetTrigger("Boss2_Atk2");
+                    yield return new WaitForSeconds(1f);
+                    anim.SetTrigger("Boss2Idle");
+                }
+                break;
+            default:
+                if (anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
+                {
+                    yield return new WaitForSeconds(4f);
 
-            if (anim.GetBool("Boss2_IsAtk2") == true)
-            {
-                anim.SetTrigger("Boss_Atk2");
-                anim.SetBool("Boss2_IsAtk2", false);
-                goIdle = true;
-            }
-            
+                }
+                break;
         }
-        if (anim.GetBool("Boss2_IsAtk1") == false && goIdle ==true)
-        {
-            anim.SetTrigger("Boss2Idle");
-            goIdle = false;
-        }
-        if (anim.GetBool("Boss2_IsAtk2") == false && goIdle == true)
-        {
-            anim.SetTrigger("Boss2Idle");
-            goIdle = false;
-        }
+
     }
 }
+
+
+        
+
