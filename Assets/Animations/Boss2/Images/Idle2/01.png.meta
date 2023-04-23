@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8854cb79c9e23e54a8bcd5d632e44cbf
+guid: b3677704b5af0e54cb8ededde4f19263
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -130,10 +130,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss2_idle2-1
+      name: boss2_Idle2_01
       rect:
         serializedVersion: 2
-        x: 159
+        x: 165
         y: 356
         width: 651
         height: 682
@@ -144,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f690876fe8c40b942b7b192f769d65ac
-      internalID: -1918900648
+      spriteID: 33b5501f1b73daf41acb459bb97317cc
+      internalID: 526288024
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8a54312440836f747b160bec9e21ab10
+    spriteID: e91ee8d95d3e7e6489bc4a6425d60a98
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss2_idle2-1: -1918900648
+      boss2_Idle2_01: 526288024
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

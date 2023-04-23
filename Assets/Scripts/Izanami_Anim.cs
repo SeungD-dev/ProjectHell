@@ -11,7 +11,7 @@ public class Izanami_Anim : MonoBehaviour
 
     float time;
 
-
+    bool goIdle= false;
    
     void Start()
     {
@@ -44,14 +44,7 @@ public class Izanami_Anim : MonoBehaviour
         {
             anim.SetBool("Boss2_IsAtk1", false);
         }
-        if (anim.GetBool("Boss2_IsAtk1") == false)
-        {
-            anim.SetTrigger("Boss2Idle");
-        }
-        if(anim.GetBool("Boss2_IsAtk2") == false)
-        {
-            anim.SetTrigger("Boss2Idle");
-        }
+       
 
         //보스 각성 애니메이션
         if (time >= 99)
@@ -63,21 +56,7 @@ public class Izanami_Anim : MonoBehaviour
         {
             anim.SetTrigger("Boss2_Idle2");
         }
-
         
-        if (time >= 56.2)
-        {
-            if(brm.newX == 0f && anim.GetBool("Boss2_IsAtk1") == true)
-            {
-                anim.SetTrigger("Boss2_Atk1");
-            }
-            else if(brm.newX == -1.76f || brm.newX == -0.88f || brm.newX == 0.88f || brm.newX == 1.76f)
-            {
-                if(anim.GetBool("Boss2_IsAtk2")==true)
-                anim.SetTrigger("Boss_Atk2");
-            }
-        }
-
         //각성 전 보스 히트
         if(boss2_Status.isHit == true && anim.GetBool("Boss2_isIdle1")==true && anim.GetBool("Boss2_isIdle2") == false)
         {
@@ -93,7 +72,7 @@ public class Izanami_Anim : MonoBehaviour
         }
         if(boss2_Status.isHit == false && anim.GetBool("Boss2_isIdle1") == true)
         {
-            anim.SetTrigger("Boss2_isIdle1");
+            anim.SetTrigger("Boss2Idle");
         }
 
 
@@ -107,18 +86,51 @@ public class Izanami_Anim : MonoBehaviour
 
     void PositionAnimUpdate()
     {
-        if(time >= 56.2)
+        if(time >= 56.3)
         {
             if (brm.newX == 0f)
             {
                 anim.SetBool("Boss2_IsAtk1",true);
+                anim.SetTrigger("Boss2_Atk1");
                 anim.SetBool("Boss2_IsAtk2", false);
+              
             }
-            else if (brm.newX == -1.76f || brm.newX == -0.88f || brm.newX == 0.88f || brm.newX == 1.76f)
+            if (brm.newX == -1.76f || brm.newX == -0.88f || brm.newX == 0.88f || brm.newX == 1.76f)
             {
                 anim.SetBool("Boss2_IsAtk1", false);
                 anim.SetBool("Boss2_IsAtk2", true);
+                anim.SetTrigger("Boss2_Atk2");
+               
+               
             }
+        }
+        if (time >= 56.33)
+        {
+            if (anim.GetBool("Boss2_IsAtk1") == true)
+            {
+                anim.SetTrigger("Boss2_Atk1");
+                
+                anim.SetBool("Boss2_IsAtk1", false);
+                goIdle = true;
+            }
+
+            if (anim.GetBool("Boss2_IsAtk2") == true)
+            {
+                anim.SetTrigger("Boss_Atk2");
+                anim.SetBool("Boss2_IsAtk2", false);
+                goIdle = true;
+            }
+            
+        }
+        if (anim.GetBool("Boss2_IsAtk1") == false && goIdle ==true)
+        {
+            anim.SetTrigger("Boss2Idle");
+            goIdle = false;
+        }
+        if (anim.GetBool("Boss2_IsAtk2") == false && goIdle == true)
+        {
+            anim.SetTrigger("Boss2Idle");
+            goIdle = false;
         }
     }
 }
