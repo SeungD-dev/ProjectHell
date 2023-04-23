@@ -10,12 +10,15 @@ public class Boss2_Status : MonoBehaviour
     public float boss2_HPtime = 120;
     public GameObject Line;
     public bool isHit , isHit_ph2;
+    public AudioClip[] ad;
+    AudioSource audio;
     Scene scene;
     // Start is called before the first frame update
     void Start()
     {
         currentHp = maxHp;
         scene = SceneManager.GetActiveScene();
+        audio = this.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -53,6 +56,8 @@ public class Boss2_Status : MonoBehaviour
             currentHp -= 1;
             Destroy(other.gameObject);
             isHit = true;
+            audio.clip = ad[Random.Range(0, 2)];
+            audio.Play();
         }
     }
 }
