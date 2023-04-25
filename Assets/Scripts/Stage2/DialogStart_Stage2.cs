@@ -20,6 +20,7 @@ public class DialogStart_Stage2 : MonoBehaviour
 	Note note;
 	SwordTrail_Y swordTrail;
 	BossRandomMove_Y bossRandomMove;
+	Izanami_Anim Boss2Anim;
 
 	private void Awake()
     {
@@ -27,6 +28,7 @@ public class DialogStart_Stage2 : MonoBehaviour
 		note = FindObjectOfType<Note>();
 		bossRandomMove = FindObjectOfType<BossRandomMove_Y>();
 		swordTrail = FindObjectOfType<SwordTrail_Y>();
+		Boss2Anim = FindObjectOfType<Izanami_Anim>();
 	}
 
     private IEnumerator Start()
@@ -34,17 +36,20 @@ public class DialogStart_Stage2 : MonoBehaviour
 		startDialog01 = true;
 		audioSource.Pause();
 		line.SetActive(false); bossRandomMove.timeStop = true; swordTrail.timeStop = true;
+		//Boss2Anim.timeStop = true;
+
 		
 		// 첫 번째 대사 분기 시작
 
 		yield return new WaitUntil(() => dialog01.UpdateDialog2());
 		Invoke("delayBGM", 1.2f); // 여기서 노래 시작 부분 확인(원민이랑 조정 해야함)
 		line.SetActive(true); bossRandomMove.timeStop = false; swordTrail.timeStop = false;
+		//Boss2Anim.timeStop = false;
 		// 대사 분기 사이에 원하는 행동을 추가할 수 있다.
 
 		// 캐릭터를 움직이거나 아이템을 획득하는 등의.. 현재는 5-4-3-2-1 카운트 다운 실행
 		//textCountdown.gameObject.SetActive(true);
-		int count = 50;
+		int count = 53;
 		while (count > 0)
 		{
 			//textCountdown.text = count.ToString();
@@ -62,8 +67,10 @@ public class DialogStart_Stage2 : MonoBehaviour
 		// 두 번째 대사 분기 시작
 		audioSource.Pause();
 		line.SetActive(false); bossRandomMove.timeStop = true; swordTrail.timeStop = true;
+		//Boss2Anim.timeStop = true;
 		yield return new WaitUntil(() => dialog02.UpdateDialog2());
 		line.SetActive(true); bossRandomMove.timeStop = false; swordTrail.timeStop = false;
+		//Boss2Anim.timeStop = false;
 		audioSource.Play();
 		/*textCountdown.gameObject.SetActive(true);
 		textCountdown.text = "The End";*/

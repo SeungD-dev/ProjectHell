@@ -11,7 +11,8 @@ public class Izanami_Anim : MonoBehaviour
 
 
     float time;
-        float duration = 3.5f;
+        float duration = 2.5f;
+    public bool timeStop = true;
 
    
 
@@ -30,6 +31,11 @@ public class Izanami_Anim : MonoBehaviour
 
 
         PositionAnimUpdate();
+        
+        if (!timeStop)
+        {
+            time += Time.deltaTime;
+        }
 
     }
 
@@ -39,12 +45,14 @@ public class Izanami_Anim : MonoBehaviour
         //보스 각성 애니메이션
         if (time >= 99)
         {
-            anim.SetBool("Boss2_isIdle2", true);
+           
+            anim.SetBool("Boss2_isIdle1", false);
             anim.SetTrigger("Boss2_Transform");
         }
         if (time >= 99.93)
         {
-            anim.SetTrigger("Boss2_Idle2");
+            //anim.SetTrigger("Boss2_Idle2");
+            anim.SetBool("Boss2_isIdle2", true);
         }
 
         //각성 전 보스 히트
@@ -64,7 +72,34 @@ public class Izanami_Anim : MonoBehaviour
         {
             anim.SetTrigger("Boss2Idle");
         }
+        //각성 후 보스 히트
+        if(boss2_Status.isHit == true && anim.GetBool("Boss2_isIdle2") == true && anim.GetBool("Boss2_isIdle1") == false)
+        {
+            anim.SetTrigger("Boss2_Hit2");
+            boss2_Status.isHit = false;
+        }
+        if(boss2_Status.isHit == false && anim.GetBool("Boss2_isIdle2") == true)
+        {
+            anim.SetTrigger("Boss2_Idle2");
+        }
 
+        //보스 체력 적을 때 Idle
+        if(boss2_Status.currentHp <= 4)
+        {
+            anim.SetBool("Boss2_isIdle2", false);
+            anim.SetBool("Boss2_isLow", true);
+            anim.SetTrigger("Boss2_Low");
+        }
+
+        //보스 체력 적을 때 히트
+        if(boss2_Status.isHit == true && anim.GetBool("Boss2_isLow")==true && anim.GetBool("Boss2_isIdle2") == false)
+        {
+            anim.SetTrigger("Boss2_LowHit");
+        }
+        if(boss2_Status.isHit == false && anim.GetBool("Boss2_isLow") == true)
+        {
+            anim.SetTrigger("Boss2_Low");
+        }
 
         //보스 사망 애니메이션
         if (boss2_Status.currentHp == 0)
@@ -83,7 +118,7 @@ public class Izanami_Anim : MonoBehaviour
                 if (time >= 56f && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
                 {
                     duration += Time.deltaTime;
-                    if(duration >= 4f)
+                    if(duration >= 3f)
                     {
                         anim.SetTrigger("Boss2_Atk1");
                         duration = 0f;
@@ -101,7 +136,7 @@ public class Izanami_Anim : MonoBehaviour
                 if (time >= 56f && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
                 {
                     duration += Time.deltaTime;
-                    if (duration >= 4f)
+                    if (duration >= 3f)
                     {
                         anim.SetTrigger("Boss2_Atk2");
                         duration = 0f;
