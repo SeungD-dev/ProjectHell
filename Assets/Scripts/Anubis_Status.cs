@@ -12,6 +12,7 @@ public class Anubis_Status : MonoBehaviour
    
     public SpriteRenderer spriteRenderer;
     public AudioSource anubisHitSound, anubisDeadSound;
+    public GameObject hitParticle;
     public GameObject Line;
     public bool isHit = false;
 
@@ -19,10 +20,10 @@ public class Anubis_Status : MonoBehaviour
 
     void Start()
     {
-        
         spriteRenderer = GetComponent<SpriteRenderer>();
         sprite_index = 0;
         scene = SceneManager.GetActiveScene();
+        hitParticle.SetActive(false);
     }
 
    
@@ -92,7 +93,14 @@ public class Anubis_Status : MonoBehaviour
                 else
                     anubisDeadSound.Play();
             }
+            hitParticle.SetActive(true);
+            Invoke("BossHitParticle", 1f);
         }
+    }
+
+    void BossHitParticle()
+    {
+        hitParticle.SetActive(false);
     }
 
     IEnumerator BossHitImage()

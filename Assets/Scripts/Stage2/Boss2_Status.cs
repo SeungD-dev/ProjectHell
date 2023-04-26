@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Boss2_Status : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Boss2_Status : MonoBehaviour
     public int currentHp;
     public float boss2_HPtime = 120;
     public GameObject Line;
+    public GameObject hitParticle;
     public bool isHit , isHit_ph2;
     public AudioClip[] ad;
     AudioSource audio;
@@ -19,6 +21,7 @@ public class Boss2_Status : MonoBehaviour
         currentHp = maxHp;
         scene = SceneManager.GetActiveScene();
         audio = this.GetComponent<AudioSource>();
+        hitParticle.SetActive(false);
     }
 
     void Update()
@@ -49,11 +52,18 @@ public class Boss2_Status : MonoBehaviour
         SceneManager.LoadScene("Stage1_Clear");
     }
 
+    void BossHitParticle()
+    {
+        hitParticle.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerAttack"))
         {
             currentHp -= 1;
+            hitParticle.SetActive(true);
+            Invoke("BossHitParticle", 1f);
             Destroy(other.gameObject);
             isHit = true;
             audio.clip = ad[Random.Range(0, 2)];

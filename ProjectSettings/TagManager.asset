@@ -13,6 +13,15 @@ TagManager:
   - Note_X
   - PlayerAttack
   - UnderFloor
+  - Note_BG
+  - Note_BR
+  - Note_CB
+  - Note_CR
+  - Note_BB
+  - Note_CG
+  - Boss
+  - SwordTrail
+  - SwordTrail_Vertical
   layers:
   - Default
   - TransparentFX
@@ -49,4 +58,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Particle
+    uniqueID: 3914171111
     locked: 0

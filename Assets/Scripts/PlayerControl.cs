@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody rb;
 
     public SpriteRenderer ganglim;
+    public GameObject hitParticle;
     
     GameObject jumpBtn, leftBtn, rightBtn;
 
@@ -46,6 +47,8 @@ public class PlayerControl : MonoBehaviour
         jumpBtn = GameObject.Find("JumpButton");
         leftBtn = GameObject.Find("LButton");
         rightBtn = GameObject.Find("RButton");
+
+        hitParticle.SetActive(false);
 
         flip = false;
         jumpCC = false;
@@ -162,12 +165,12 @@ public class PlayerControl : MonoBehaviour
             if (!isHurt)
             {
                 Hurt();
+                hitParticle.SetActive(true);
                 fTickTime = 0f;
                 StartCoroutine(HurtCooldown());
                 StartCoroutine(GanglimHurtdown());
                 PlayerHitSound();
                 StartCoroutine(SoundRoutine());
-
             }          
             Debug.Log(playerhp.player_currentHP);
         }
@@ -203,6 +206,7 @@ public class PlayerControl : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Debug.Log("½ÇÇà");
         isHurt = false;
+        hitParticle.SetActive(false);
     }
 
     IEnumerator SoundRoutine()

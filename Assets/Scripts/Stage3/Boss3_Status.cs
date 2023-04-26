@@ -11,6 +11,7 @@ public class Boss3_Status : MonoBehaviour
 
     public bool isHit = false, isHit_AtkTime1 = false;
     public GameObject Line;
+    public GameObject hitParticle;
     Scene scene;
     AudioSource audio;
 
@@ -22,6 +23,7 @@ public class Boss3_Status : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         ra = FindObjectOfType<Reaper_Anim>();
         audio = this.GetComponent<AudioSource>();
+        hitParticle.SetActive(false);
     }
 
     void Update()
@@ -48,6 +50,10 @@ public class Boss3_Status : MonoBehaviour
         SceneManager.LoadScene("Stage1_Clear");
     }
 
+    void BossHitParticle()
+    {
+        hitParticle.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -55,6 +61,8 @@ public class Boss3_Status : MonoBehaviour
         {
             currentHp -= 1;
             Destroy(other.gameObject);
+            hitParticle.SetActive(true);
+            Invoke("BossHitParticle", 1f);
             isHit = true;
             audio.Play();
         }
@@ -63,6 +71,8 @@ public class Boss3_Status : MonoBehaviour
         {
             currentHp -= 1;
             Destroy(other.gameObject);
+            hitParticle.SetActive(true);
+            Invoke("BossHitParticle", 1f);
             isHit_AtkTime1 = true;
             audio.Play();
         }
