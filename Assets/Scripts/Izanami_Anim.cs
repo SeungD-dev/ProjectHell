@@ -26,7 +26,7 @@ public class Izanami_Anim : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
+        //time += Time.deltaTime;
         AnimationUpdate();
 
 
