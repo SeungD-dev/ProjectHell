@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502da23309129d643b8ee8a5cb8fa46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteSpeed: 5
+  noteSpeed: 7
   timeStop: 0
 --- !u!1 &4813881189086193493
 GameObject:
