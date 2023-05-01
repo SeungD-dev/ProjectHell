@@ -8,6 +8,7 @@ public class LineActive_3 : MonoBehaviour
     public float time;
     public GameObject bind;
     public GameObject tiles;
+    public GameObject BGM;
     public SpriteRenderer black;
     public bool on = false;
     public bool off = false;
@@ -16,6 +17,7 @@ public class LineActive_3 : MonoBehaviour
     {
         playerControl = FindObjectOfType<PlayerControl>();
         bind.SetActive(false);
+        BGM.SetActive(false);
         GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(false);
         GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(false);
@@ -28,6 +30,10 @@ public class LineActive_3 : MonoBehaviour
         if (time >= 0)
         {
             GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(true);
+        }
+        if(time >= 0.9f)
+        {
+            BGM.SetActive(true);
         }
         /*if(time >= 10 && !on)
         {
