@@ -1922,7 +1922,7 @@ GameObject:
   - component: {fileID: 109924446}
   - component: {fileID: 109924449}
   m_Layer: 0
-  m_Name: boom
+  m_Name: boom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2028,6 +2028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 109924447}
+  timeStop: 1
 --- !u!4 &111691588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: 4b3c96b44d3c5be4e8685f4ac008d4bc, type: 3}
@@ -21233,7 +21234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097789974}
   m_LocalRotation: {x: -0.17364816, y: -0, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: 2.68, y: -2.209658, z: -3.102506}
+  m_LocalPosition: {x: 2.12, y: -2.209658, z: -3.102506}
   m_LocalScale: {x: 3.409823, y: 4.087159, z: 5.0625887}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21253,6 +21254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1097789977}
+  timeStop: 1
 --- !u!1001 &1097968585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25381,6 +25383,8 @@ MonoBehaviour:
   dialog02: {fileID: 1500105288}
   startDialog01: 0
   startDialog02: 0
+  audioSource: {fileID: 1559817684}
+  line: {fileID: 1804223923}
 --- !u!4 &1320137455
 Transform:
   m_ObjectHideFlags: 0
@@ -38810,6 +38814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   optionPanel: {fileID: 0}
+  timeStop: 1
 --- !u!4 &1945821077
 Transform:
   m_ObjectHideFlags: 0
@@ -40053,6 +40058,7 @@ MonoBehaviour:
   audioSource: {fileID: 2021083198}
   asdf: 1
   boomSound: 0
+  timeStop: 1
   anubis_roar: {fileID: 1752354466}
   hitGround: {fileID: 1349498711}
 --- !u!65 &2021083196

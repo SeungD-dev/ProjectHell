@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     bool on = false;
     bool IsPause;
+
+    public bool timeStop =true;
     
 
     // Start is called before the first frame update
@@ -46,9 +48,9 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Stage_1")
         {
-            time += Time.deltaTime;
+            //time += Time.deltaTime;
 
-            if(time >= 75) //Default : time >= 75
+            if (time >= 75) //Default : time >= 75
             {                           
                 if (!on)
                 {
@@ -57,6 +59,10 @@ public class GameManager : MonoBehaviour
                 }
                 Tile2.SetActive(false);
                 Tile4.SetActive(false);
+            }
+            if (!timeStop)
+            {
+                time += Time.deltaTime;
             }
             /*if(time >= 69 && fadeCount == 0)
             {

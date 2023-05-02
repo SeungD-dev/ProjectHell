@@ -18,7 +18,7 @@ public class Dialog_Stage1 : MonoBehaviour
     private int currentSpeakerIndex1 = 0; // 현재 말을 하는 화자(Speaker)의 speakers 배열 순번
     private float typingSpeed1 = 0.1f;           // 텍스트 타이핑 효과의 재생 속도
     private bool isTypingEffect1 = false;        // 텍스트 타이핑 효과를 재생중인지
-
+	
     // Update is called once per frame
     private void Awake()
     {
@@ -33,17 +33,6 @@ public class Dialog_Stage1 : MonoBehaviour
 			UpdateDialog1();
 	}*/
 
-    private void DisableObjects()
-    {
-		// 모든 대화 관련 게임 오브젝트 비활성화
-
-		for (int i = 0; i < speakers.Length; ++i)
-		{
-			SetActiveObjects(speakers[i], false);
-			//캐릭터 이미지도 안 보이게
-			speakers[i].spriteRenderer1.gameObject.SetActive(false);
-		}
-	}
 
     private void Setup1()
     {
@@ -110,7 +99,7 @@ public class Dialog_Stage1 : MonoBehaviour
 				}
 			//}
 		}
-		Debug.Log("테스트");
+		
 		return false;
 	}
 

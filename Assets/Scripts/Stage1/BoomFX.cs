@@ -6,15 +6,17 @@ using UnityEngine.Animations;
 public class BoomFX : MonoBehaviour
 {
     public Animator anim;
-    GameObject boom;
+    GameObject boom, boom1;
     SpriteRenderer sr;
     float time;
     bool startFX;
+    public bool timeStop = true;
 
     void Start()
     {
         anim = gameObject.GetComponentInChildren<Animator>();
         boom = GameObject.Find("boom");
+        boom1 = GameObject.Find("boom1");
         sr = boom.GetComponent<SpriteRenderer>();
         sr.color = new Color(255, 255, 255, 255);
         startFX = false;
@@ -23,7 +25,11 @@ public class BoomFX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        if (!timeStop)
+        {
+            time += Time.deltaTime;
+        }
+       
         if (time >= 73.8)
         {
             startFX = true;

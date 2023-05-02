@@ -14,12 +14,36 @@ public class DialogStart_Stage1 : MonoBehaviour
 
 	
 	public bool startDialog01 = false, startDialog02 = false;
-	private IEnumerator Start()
+
+	public AudioSource audioSource;
+
+	GameManager gameManager;
+	Anubis_Anim Boss1Anim;
+	BoomFX boomFX;
+	public GameObject line;
+
+    private void Awake()
+    {
+		gameManager = FindObjectOfType<GameManager>();
+		Boss1Anim = FindObjectOfType<Anubis_Anim>();
+		boomFX = FindObjectOfType<BoomFX>();
+
+		
+    }
+
+    private IEnumerator Start()
 	{
 		startDialog01 = true;
+		audioSource.Pause();
+		gameManager.timeStop = true; Boss1Anim.timeStop = true; boomFX.timeStop = true;
+		line.SetActive(false);
+
 
 		// 첫 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialog01.UpdateDialog1());
+		audioSource.Play();
+		line.SetActive(true); gameManager.timeStop = false; boomFX.timeStop = false;
+        Boss1Anim.timeStop = false;
 		
 
 		// 대사 분기 사이에 원하는 행동을 추가할 수 있다.
@@ -39,12 +63,14 @@ public class DialogStart_Stage1 : MonoBehaviour
 			yield return new WaitForSeconds(1);
 		}
 		//textCountdown.gameObject.SetActive(false);
-
+		audioSource.Pause();
+		line.SetActive(false); Boss1Anim.timeStop = true; gameManager.timeStop = true;
+		boomFX.timeStop = true;
 		// 두 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialog02.UpdateDialog1());
-
-		/*textCountdown.gameObject.SetActive(true);
-		textCountdown.text = "The End";*/
+		line.SetActive(true); Boss1Anim.timeStop = false; gameManager.timeStop = false; boomFX.timeStop = false;
+		audioSource.Play();
+		
 
 		yield return new WaitForSeconds(2);
 

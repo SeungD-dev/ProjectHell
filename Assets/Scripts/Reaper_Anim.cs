@@ -12,7 +12,7 @@ public class Reaper_Anim : MonoBehaviour
     float time;
     public AudioSource audioSource;
     public bool AtkTime1 = false, AtkTime2 = false;
-
+    public bool timeStop = true;
     
     void Start()
     {
@@ -22,7 +22,10 @@ public class Reaper_Anim : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
+        if (!timeStop)
+        {
+            time += Time.deltaTime;
+        }
         if (time >= 38.5)
         {
             AtkTime1 = true;
@@ -85,7 +88,7 @@ public class Reaper_Anim : MonoBehaviour
         if(AtkTime1 == true && anim.GetBool("Boss3_IsAtk1") == true)
         {
            
-            anim.SetTrigger("Boss3_Atk");
+            anim.SetTrigger("Boss3_Atk1");
         }
         if(boss3_Status.isHit_AtkTime1 == true && anim.GetBool("Boss3_IsAtk1") == true)
         {

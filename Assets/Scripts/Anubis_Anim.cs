@@ -18,6 +18,7 @@ public class Anubis_Anim : MonoBehaviour
     //public AudioClip anubis_roar, hitGround;
 
     public bool asdf = true, boomSound = false;
+    public bool timeStop = true;
     public GameObject anubis_roar, hitGround;
     bool isLowHP = false;
 
@@ -35,12 +36,17 @@ public class Anubis_Anim : MonoBehaviour
         hitGround.SetActive(false);
         anubis_Status = FindObjectOfType<Anubis_Status>();
         anim.SetBool("AnubisLow", false);
+        anim.SetBool("Anubis_IsAtk", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        if (!timeStop)
+        {
+            time += Time.deltaTime;
+        }
+   
         if (time >= 73.8 && asdf == true) //time >= 68.8
         {
             anim.SetTrigger("AnubisAtk");
@@ -57,6 +63,7 @@ public class Anubis_Anim : MonoBehaviour
 
         if (time >= 74) //time >= 69
         {
+            anim.SetBool("Anubis_IsAtk", false);
             asdf = false;
         }
         //Debug.Log("¾Æ´©ºñ½º Èý"+ anubis_Status.isHit);
