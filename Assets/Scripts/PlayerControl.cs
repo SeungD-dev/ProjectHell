@@ -36,6 +36,7 @@ public class PlayerControl : MonoBehaviour
 
     public bool flip;
     public bool jumpCC;
+    public int jumpC, leftC, rightC = 0;
 
     public AudioSource playerhitSound;
 
@@ -61,8 +62,6 @@ public class PlayerControl : MonoBehaviour
 
         Renderer rd = this.GetComponent<MeshRenderer>();
         Material[] mat = rd.sharedMaterials;
-        
- 
     }
 
     // Update is called once per frame
@@ -102,7 +101,7 @@ public class PlayerControl : MonoBehaviour
         if (!jumpAllowed && !jumpCC)
         {
             jumpAllowed = true;
-
+            jumpC++;
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJump = true;
             //gameObject.layer = 7;
@@ -115,16 +114,19 @@ public class PlayerControl : MonoBehaviour
         {
             leftBtn.GetComponent<Button>().interactable = true;
             transform.Translate(-0.88f, 0.3f, 0);
+            leftC++;
         }
         else if (gameObject.transform.position.x < 0.89 && flip == true)
         {
             rightBtn.GetComponent<Button>().interactable = true;
             transform.Translate(0.88f, 0.3f, 0);
+            leftC++;
         }
         else if (gameObject.transform.position.x > -0.89 && flip == false && isJump == true)
         {
             leftBtn.GetComponent<Button>().interactable = true;
             transform.Translate(-0.88f, 0, 0);
+            leftC++;
         }
     }
     public void RButtonDown()
@@ -133,16 +135,19 @@ public class PlayerControl : MonoBehaviour
         {
             rightBtn.GetComponent<Button>().interactable = true;
             transform.Translate(0.88f, 0.3f, 0);
+            rightC++;
         }
         else if (gameObject.transform.position.x > -0.89 && flip == true)
         {
             leftBtn.GetComponent<Button>().interactable = true;
             transform.Translate(-0.88f, 0.3f, 0);
+            rightC++;
         }
         else if(gameObject.transform.position.x < 0.89 && flip == false && isJump == true)
         {
             rightBtn.GetComponent<Button>().interactable = true;
             transform.Translate(0.88f, 0, 0);
+            rightC++;
         }
     }
 

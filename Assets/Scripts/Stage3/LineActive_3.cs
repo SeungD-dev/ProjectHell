@@ -19,10 +19,6 @@ public class LineActive_3 : MonoBehaviour
         bind.SetActive(false);
         BGM.SetActive(false);
         GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(false);
-        GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(false);
-        GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(false);
-        GameObject.Find("Line").transform.Find("Line4").gameObject.SetActive(false);
-        GameObject.Find("Line").transform.Find("Line5").gameObject.SetActive(false);
     }
     void Update()
     {
@@ -34,54 +30,6 @@ public class LineActive_3 : MonoBehaviour
         if(time >= 0.9f)
         {
             BGM.SetActive(true);
-        }
-        /*if(time >= 10 && !on)
-        {
-            StartCoroutine(FadeInCoroutine());
-            on = true;
-        }
-        if(time >= 30 && !off)
-        {
-            StartCoroutine (FadeOutCoroutine());
-            off = true;
-        }*/
-        if (time >= 38.5) //강림이 발묶기
-        {
-            GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(true);
-            GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(true);
-            bind.SetActive(true);
-            playerControl.flip = true;
-            playerControl.jumpCC = true;
-            GameObject.Find("Line").transform.Find("Line5").gameObject.SetActive(true);
-        }
-        if(time>= 48.5)
-        {
-            bind.SetActive(false);
-            playerControl.flip = false;
-            playerControl.jumpCC = false;
-        }
-        if(time>= 59.5 && !on) //암전
-        {
-            StartCoroutine(FadeInCoroutine());
-            on = true;
-        }
-        if (time >= 71.2)
-        {
-            GameObject.Find("Line").transform.Find("Line4").gameObject.SetActive(true);
-        }
-        if (time >= 79 && !off)
-        {
-            StartCoroutine(FadeOutCoroutine());
-            off = true;
-        }
-
-        if (fade)
-        {
-            tiles.SetActive(false);
-        }
-        else
-        {
-            tiles.SetActive(true);
         }
     }
 
