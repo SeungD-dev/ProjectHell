@@ -2054,11 +2054,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog01: {fileID: 2119610880}
   dialog02: {fileID: 348463806}
-  dialog03: {fileID: 0}
+  dialog03: {fileID: 1981721597}
   startDialog01: 0
   startDialog02: 0
-  audioSource: {fileID: 1559817684}
   line: {fileID: 1804223923}
+  leftB: {fileID: 1335889494}
+  rightB: {fileID: 159022260}
+  jumpB: {fileID: 368786129}
+  absorbB: {fileID: 1117328647}
 --- !u!1001 &548853223
 PrefabInstance:
   m_ObjectHideFlags: 0
