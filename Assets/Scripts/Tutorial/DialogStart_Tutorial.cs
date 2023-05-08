@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 
 public class DialogStart_Tutorial : MonoBehaviour
@@ -15,13 +16,27 @@ public class DialogStart_Tutorial : MonoBehaviour
     [SerializeField]
     private Dialog_Tutorial dialog03;
 
+    [SerializeField]
+    private Dialog_Tutorial dialog04;
 
-    public bool startDialog01 = false, startDialog02 = false;
+    [SerializeField]
+    private Dialog_Tutorial dialog05;
 
+    [SerializeField]
+    private Dialog_Tutorial dialog06;
+
+    [SerializeField]
+    private Dialog_Tutorial dialogFail;
+
+
+    public bool startDialog01 = false;
+	public GameObject[] notePrefabs;
 	PlayerControl playerControl;
     public GameObject line;
 	public Image leftB, rightB, jumpB, absorbB;
-	bool tutorialNum1, tutorialNum2 = false;
+	bool tutorialNum1, tutorialNum2, tutorialNum3 = false;
+	bool reStart = true;
+	int randNote;
 
 	private void Awake()
 	{
@@ -57,6 +72,46 @@ public class DialogStart_Tutorial : MonoBehaviour
 		{
 			StartCoroutine (Tutorial2());
 		}
+		if(tutorialNum2)
+		{
+			if (playerControl.tutorial.CompareTo("first") == 0)
+			{
+				if (reStart)
+				{
+                    dialogFail.isFirstT = true;
+					dialogFail.isGameStarted = false;
+					dialogFail.currentDialogIndex3 = -1;
+                }
+				reStart = false;
+                StartCoroutine(nameof(Tutorial2_fail));
+			}
+			if (playerControl.tutorial.CompareTo("second") == 0)
+			{
+                if (reStart)
+                {
+                    dialog04.isFirstT = true;
+                    dialog04.isGameStarted = false;
+                    dialog04.currentDialogIndex3 = -1;
+                }
+                reStart = false;
+                StartCoroutine(nameof(Tutorial3));
+            }
+			if(playerControl.tutorial.CompareTo("third") == 0)
+			{
+                if (reStart)
+                {
+                    dialog05.isFirstT = true;
+                    dialog05.isGameStarted = false;
+                    dialog05.currentDialogIndex3 = -1;
+                }
+				reStart = false;
+                StartCoroutine(nameof(Tutorial04));
+            }
+			if(playerControl.tutorial.CompareTo("fourth") == 0)
+			{
+				StartCoroutine(Tutorial05());
+			}
+		}
 	}
 	private IEnumerator Tutorial1()
 	{
@@ -79,7 +134,54 @@ public class DialogStart_Tutorial : MonoBehaviour
         line.SetActive(false);
         // 두 번째 대사 분기 시작
         yield return new WaitUntil(() => dialog03.UpdateDialogT());
+		randNote = Random.Range(0, 3);
+		Instantiate(notePrefabs[randNote], new Vector3(0, 0.2f, 7), Quaternion.identity);
         line.SetActive(true);
         tutorialNum2 = true;
+    }
+
+	private IEnumerator Tutorial2_fail()
+	{
+		yield return new WaitForSeconds(1);
+        line.SetActive(false);
+		yield return new WaitUntil(() => dialogFail.UpdateDialogT());
+		randNote = Random.Range(0, 3);
+		Instantiate(notePrefabs[randNote], new Vector3(0, 0.2f, 7), Quaternion.identity);
+        line.SetActive(true);
+		reStart = true;
+        playerControl.tutorial = "";
+
+	}
+
+	private IEnumerator Tutorial3() 
+	{
+        yield return new WaitForSeconds(1.5f);
+        line.SetActive(false);
+        yield return new WaitUntil(() => dialog04.UpdateDialogT());
+        Instantiate(notePrefabs[randNote], new Vector3(0, 0.2f, 7), Quaternion.identity);
+        line.SetActive(true);
+        reStart = true;
+        playerControl.tutorial = "";
+    }
+
+	private IEnumerator Tutorial04()
+	{
+		yield return new WaitForSeconds(1);
+		line.SetActive(false);
+		yield return new WaitUntil(() => dialog05.UpdateDialogT());
+        Instantiate(notePrefabs[3], new Vector3(0, 0.2f, 7), Quaternion.identity);
+		line.SetActive(true);
+        reStart = true;
+        playerControl.tutorial = "";
+    }
+
+    private IEnumerator Tutorial05()
+    {
+        yield return new WaitForSeconds(1);
+        line.SetActive(false);
+        yield return new WaitUntil(() => dialog06.UpdateDialogT());
+        line.SetActive(true);
+        reStart = true;
+        playerControl.tutorial = "";
     }
 }

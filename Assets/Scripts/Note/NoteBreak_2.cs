@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class NoteBreak_2 : MonoBehaviour
 {
+    PlayerControl playerControl;
     void Start()
     {
-        //bgm.SetActive(false); 
+        playerControl = FindObjectOfType<PlayerControl>();
     }
 
     void Update()
@@ -24,6 +25,14 @@ public class NoteBreak_2 : MonoBehaviour
             other.CompareTag("SwordTrail_Vertical") || other.CompareTag("Note_BB") || other.CompareTag("Note_BG") || other.CompareTag("Note_BR"))
         {
             Destroy(other.gameObject);
+            if (other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B"))
+            {
+                playerControl.tutorial = "first";
+            }
+            if (other.CompareTag("Note_X"))
+            {
+                playerControl.tutorial = "fourth";
+            }
         }
     }
 }

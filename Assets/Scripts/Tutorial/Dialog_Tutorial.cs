@@ -17,8 +17,8 @@ public class Dialog_Tutorial : MonoBehaviour
 	[SerializeField]
 
     DialogStart_Tutorial dialogStart;
-	private bool isFirstT = true;		  // 최초 1회만 호출하기 위한 변수
-	private int currentDialogIndex3 = -1; // 현재 대사 순번
+	public bool isFirstT = true;		  // 최초 1회만 호출하기 위한 변수
+	public int currentDialogIndex3 = -1; // 현재 대사 순번
 	private int currentSpeakerIndex3 = 0; // 현재 말을 하는 화자(Speaker)의 speakers 배열 순번
 	private float typingSpeed3 = 0.1f;    // 텍스트 타이핑 효과의 재생 속도
 	private bool isTypingEffect3 = false; // 텍스트 타이핑 효과를 재생중인지

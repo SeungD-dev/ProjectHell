@@ -37,6 +37,7 @@ public class PlayerControl : MonoBehaviour
     public bool flip;
     public bool jumpCC;
     public int jumpC, leftC, rightC = 0;
+    public string tutorial = "";
 
     public AudioSource playerhitSound;
 
@@ -176,7 +177,15 @@ public class PlayerControl : MonoBehaviour
                 StartCoroutine(GanglimHurtdown());
                 PlayerHitSound();
                 StartCoroutine(SoundRoutine());
-            }          
+                if(other.CompareTag("Note_R") || other.CompareTag("Note_G") || other.CompareTag("Note_B"))
+                {
+                    tutorial = "first";
+                }
+                if (other.CompareTag("Note_X"))
+                {
+                    tutorial = "third";
+                }
+            }        
             Debug.Log(playerhp.player_currentHP);
         }
         else if (other.CompareTag("UnderFloor"))

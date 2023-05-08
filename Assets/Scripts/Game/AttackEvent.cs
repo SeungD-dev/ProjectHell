@@ -55,18 +55,21 @@ public class AttackEvent : MonoBehaviour
             bc = ballColor.normal;
             if (col.gameObject.CompareTag("Note_R") && Absorbmode == true)
             {
+                playerControl.tutorial = "second";
                 AttackNormal(col);
                 asb = asbColor.red;
                 bc = ballColor.red;
             }
             if (col.gameObject.CompareTag("Note_B") && Absorbmode == true)
             {
+                playerControl.tutorial = "second";
                 AttackNormal(col);
                 asb = asbColor.blue;
                 bc = ballColor.blue;
             }
             if (col.gameObject.CompareTag("Note_G") && Absorbmode == true)
             {
+                playerControl.tutorial = "second";
                 AttackNormal(col);
                 asb = asbColor.green;
                 bc = ballColor.green;
@@ -93,6 +96,7 @@ public class AttackEvent : MonoBehaviour
             bc = ballColor.red;
             if (asb == asbColor.red && col.gameObject.CompareTag("Note_R") && Absorbmode == true)
             {
+                playerControl.tutorial = "third";
                 AttackOk(col);
                 r = 1; b = 0; g = 0;
             }
@@ -100,7 +104,7 @@ public class AttackEvent : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Attackmode = false;
-
+                playerControl.tutorial = "second";
                 asb = asbColor.blue;
                 bc = ballColor.blue;
             }
@@ -108,7 +112,7 @@ public class AttackEvent : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Attackmode = false;
-
+                playerControl.tutorial = "second";
                 asb = asbColor.green;
                 bc = ballColor.green;
             }
@@ -134,6 +138,7 @@ public class AttackEvent : MonoBehaviour
             bc = ballColor.blue;
             if (asb == asbColor.blue && col.gameObject.CompareTag("Note_B") && Absorbmode == true)
             {
+                playerControl.tutorial = "third";
                 AttackOk(col);
                 r = 0; b = 1; g = 0;
             }
@@ -141,7 +146,7 @@ public class AttackEvent : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Attackmode = false;
-
+                playerControl.tutorial = "second";
                 asb = asbColor.red;
                 bc = ballColor.red;
             }
@@ -149,7 +154,7 @@ public class AttackEvent : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Attackmode = false;
-
+                playerControl.tutorial = "second";
                 asb = asbColor.green;
                 bc = ballColor.green;
             }
@@ -175,6 +180,7 @@ public class AttackEvent : MonoBehaviour
             bc = ballColor.green;
             if (asb == asbColor.green && col.gameObject.CompareTag("Note_G") && Absorbmode == true)
             {
+                playerControl.tutorial = "third";
                 AttackOk(col);
                 r = 0; g = 1; b = 0;
             }
@@ -182,7 +188,7 @@ public class AttackEvent : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Attackmode = false;
-
+                playerControl.tutorial = "second";
                 asb = asbColor.red;
                 bc = ballColor.red;
             }
@@ -190,7 +196,7 @@ public class AttackEvent : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Attackmode = false;
-
+                playerControl.tutorial = "second";
                 asb = asbColor.blue;
                 bc = ballColor.blue;
             }
