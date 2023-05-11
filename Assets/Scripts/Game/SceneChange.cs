@@ -11,12 +11,15 @@ public class SceneChange : MonoBehaviour
     public GameObject Stage1_Panel;
     public GameObject Stage2_Panel;
     public GameObject Stage3_Panel;
+    public GameObject OptionPanel;
 
     void Start()
     {
+        StagePanel.SetActive(false);
         Stage1_Panel.SetActive(false);
         Stage2_Panel.SetActive(false);
         Stage3_Panel.SetActive(false);
+        OptionPanel.SetActive(false);
     }
 
     /*public void LoadingButton() //버튼클릭시 호출
@@ -31,7 +34,20 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("LoadingScene"); //LodingScene씬으로 전환
     }*/
 
+    public void StageSelect()
+    {
+        StagePanel.SetActive(true);
+    }
 
+    public void Option()
+    {
+        OptionPanel.SetActive(true);
+    }
+
+    public void Option_BackButton()
+    {
+        OptionPanel.SetActive(false);
+    }
 
     public void Stage_1Button() //버튼클릭시 호출
     {
@@ -71,6 +87,10 @@ public class SceneChange : MonoBehaviour
         StagePanel.SetActive(true);
     }
 
+    public void Main_SceneChange()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 
 
     public void Stage1_SceneChange()

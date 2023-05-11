@@ -38,7 +38,7 @@ public class PauseButton : MonoBehaviour
 
     public void selectSceneButton()
     {
-        SceneManager.LoadScene("StageScene"); //StageScene으로 전환
+        SceneManager.LoadScene("MainScene"); //StageScene으로 전환
     }
 
     public void optionButton()
