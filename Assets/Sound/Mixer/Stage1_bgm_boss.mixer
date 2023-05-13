@@ -67,6 +67,8 @@ AudioMixerController:
     name: MusicVol
   - guid: 6db394621320870418c41e8f39a72cfa
     name: BossHitSound
+  - guid: 8aa93c96ce867e94caf118e6c9ed3233
+    name: MainBGM
   - guid: e4397a6ff1d362d428816ebc7cb08e99
     name: PlayerHitSound
   m_AudioMixerGroupViews:
@@ -75,6 +77,7 @@ AudioMixerController:
     - f5e1e568769ce43438de73d3c1d31526
     - 3d98358a27064034d80920778a91d8f5
     - fa2a41dd80324fa4aab89bcb065e1d77
+    - 0bc30842bdfaf934b9760e2001593bb4
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -91,6 +94,7 @@ AudioMixerGroupController:
   - {fileID: 3681123117192020975}
   - {fileID: 7528546527865882574}
   - {fileID: -6245676528144688576}
+  - {fileID: 6435779192233605510}
   m_Volume: 1b84b46537f24f34eb489c8f2d65c50c
   m_Pitch: b8c3cf875b0562d4b9ae8fef75307c17
   m_Send: 00000000000000000000000000000000
@@ -158,6 +162,39 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &6435779192233605510
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MainBGM
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 0bc30842bdfaf934b9760e2001593bb4
+  m_Children: []
+  m_Volume: 8aa93c96ce867e94caf118e6c9ed3233
+  m_Pitch: 4b1ce9daaba609c40a4fedd4d2a23ced
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 6650788119835904383}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &6650788119835904383
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 930330fa36bd5934786be72f4b8eb90c
+  m_EffectName: Attenuation
+  m_MixLevel: 39a2aef688ec9e14fa8a97fa9f0774fc
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &7528546527865882574
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
