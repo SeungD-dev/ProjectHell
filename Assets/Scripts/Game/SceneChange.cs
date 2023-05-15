@@ -8,6 +8,7 @@ public class SceneChange : MonoBehaviour
 {
     //public Image fadeOutPanel; //검은화면 컴포넌트
     public GameObject StagePanel;
+    public GameObject Tutorial_Panel;
     public GameObject Stage1_Panel;
     public GameObject Stage2_Panel;
     public GameObject Stage3_Panel;
@@ -16,6 +17,7 @@ public class SceneChange : MonoBehaviour
     void Start()
     {
         StagePanel.SetActive(false);
+        Tutorial_Panel.SetActive(false);
         Stage1_Panel.SetActive(false);
         Stage2_Panel.SetActive(false);
         Stage3_Panel.SetActive(false);
@@ -37,6 +39,11 @@ public class SceneChange : MonoBehaviour
     public void StageSelect()
     {
         StagePanel.SetActive(true);
+    }
+
+    public void Stage_BackButton()
+    {
+        StagePanel.SetActive(false);
     }
 
     public void Option()
@@ -87,6 +94,18 @@ public class SceneChange : MonoBehaviour
         StagePanel.SetActive(true);
     }
 
+    public void Tutorial_Button()
+    {
+        StagePanel.SetActive(false);
+        Tutorial_Panel.SetActive(true);
+    }
+
+    public void Tutorial_BackButton()
+    {
+        Tutorial_Panel.SetActive(false);
+        StagePanel.SetActive(true);
+    }
+
     public void Main_SceneChange()
     {
         SceneManager.LoadScene("MainScene");
@@ -106,6 +125,11 @@ public class SceneChange : MonoBehaviour
     public void Stage3_SceneChange()
     {
         SceneManager.LoadScene("Stage_3");
+    }
+
+    public void Tutorial_SceneChange()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void StageButton() //버튼클릭시 호출

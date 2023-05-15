@@ -131,6 +131,7 @@ public class DialogStart_Tutorial : MonoBehaviour
 	{
         yield return new WaitForSeconds(2);
         jumpB.GetComponent<Image>().color = Color.white;
+		absorbB.GetComponent<Image>().color = Color.red;
         line.SetActive(false);
         // 두 번째 대사 분기 시작
         yield return new WaitUntil(() => dialog03.UpdateDialogT());
@@ -144,7 +145,8 @@ public class DialogStart_Tutorial : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1);
         line.SetActive(false);
-		yield return new WaitUntil(() => dialogFail.UpdateDialogT());
+        absorbB.GetComponent<Image>().color = Color.red;
+        yield return new WaitUntil(() => dialogFail.UpdateDialogT());
 		randNote = Random.Range(0, 3);
 		Instantiate(notePrefabs[randNote], new Vector3(0, 0.2f, 7), Quaternion.identity);
         line.SetActive(true);
@@ -157,6 +159,7 @@ public class DialogStart_Tutorial : MonoBehaviour
 	{
         yield return new WaitForSeconds(1.5f);
         line.SetActive(false);
+        absorbB.GetComponent<Image>().color = Color.red;
         yield return new WaitUntil(() => dialog04.UpdateDialogT());
         Instantiate(notePrefabs[randNote], new Vector3(0, 0.2f, 7), Quaternion.identity);
         line.SetActive(true);
@@ -168,7 +171,10 @@ public class DialogStart_Tutorial : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1);
 		line.SetActive(false);
-		yield return new WaitUntil(() => dialog05.UpdateDialogT());
+        absorbB.GetComponent<Image>().color = Color.white;
+        leftB.GetComponent<Image>().color = Color.red;
+        rightB.GetComponent<Image>().color = Color.red;
+        yield return new WaitUntil(() => dialog05.UpdateDialogT());
         Instantiate(notePrefabs[3], new Vector3(0, 0.2f, 7), Quaternion.identity);
 		line.SetActive(true);
         reStart = true;
@@ -178,6 +184,8 @@ public class DialogStart_Tutorial : MonoBehaviour
     private IEnumerator Tutorial05()
     {
         yield return new WaitForSeconds(1);
+        leftB.GetComponent<Image>().color = Color.white;
+        rightB.GetComponent<Image>().color = Color.white;
         line.SetActive(false);
         yield return new WaitUntil(() => dialog06.UpdateDialogT());
         line.SetActive(true);
