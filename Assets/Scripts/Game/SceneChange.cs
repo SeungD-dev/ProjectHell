@@ -13,6 +13,7 @@ public class SceneChange : MonoBehaviour
     public GameObject Stage2_Panel;
     public GameObject Stage3_Panel;
     public GameObject OptionPanel;
+    public AudioSource ClickSound;
 
     void Start()
     {
@@ -39,21 +40,25 @@ public class SceneChange : MonoBehaviour
     public void StageSelect()
     {
         StagePanel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Stage_BackButton()
     {
         StagePanel.SetActive(false);
+        ClickSound.Play();
     }
 
     public void Option()
     {
         OptionPanel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Option_BackButton()
     {
         OptionPanel.SetActive(false);
+        ClickSound.Play();
     }
 
     public void Stage_1Button() //버튼클릭시 호출
@@ -63,47 +68,55 @@ public class SceneChange : MonoBehaviour
         Invoke("Stage_1SceneChange", 0.3f); //0.3f 후 Change실행*/
         StagePanel.SetActive(false);
         Stage1_Panel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Stage1_BackButton()
     {
         Stage1_Panel.SetActive(false);
         StagePanel.SetActive(true);
+        ClickSound.Play();
     }
     public void Stage2_Button() //버튼클릭시 호출
     {
         StagePanel.SetActive(false);
         Stage2_Panel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Stage2_BackButton()
     {
         Stage2_Panel.SetActive(false);
         StagePanel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Stage3_Button() //버튼클릭시 호출
     {
         StagePanel.SetActive(false);
         Stage3_Panel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Stage3_BackButton()
     {
         Stage3_Panel.SetActive(false);
         StagePanel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Tutorial_Button()
     {
         StagePanel.SetActive(false);
         Tutorial_Panel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Tutorial_BackButton()
     {
         Tutorial_Panel.SetActive(false);
         StagePanel.SetActive(true);
+        ClickSound.Play();
     }
 
     public void Main_SceneChange()
@@ -147,6 +160,7 @@ public class SceneChange : MonoBehaviour
     public void ExitButton()
     {
         ExitGame();
+        ClickSound.Play();
     }
 
     public void ExitGame()

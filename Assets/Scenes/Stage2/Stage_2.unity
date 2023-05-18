@@ -3937,15 +3937,15 @@ PrefabInstance:
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: e91ab05a7b5ef654593445a0a16413c8, type: 3}
+      objectReference: {fileID: 21300000, guid: f519a02e66619d94caeb2de95fb04de4, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 439cd03f9dfeba94d80cfc0b29cf58be, type: 3}
+      objectReference: {fileID: 21300000, guid: b60763333126a3844a3918c59c03d2da, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: af6427c0ab524a94a86d6da9b98c10c9, type: 3}
+      objectReference: {fileID: 21300000, guid: 75d23e3c79c5ec340ab0b6d3e05fbf96, type: 3}
     - target: {fileID: 7791380139753288763, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5135,15 +5135,15 @@ PrefabInstance:
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: e91ab05a7b5ef654593445a0a16413c8, type: 3}
+      objectReference: {fileID: 21300000, guid: f519a02e66619d94caeb2de95fb04de4, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 439cd03f9dfeba94d80cfc0b29cf58be, type: 3}
+      objectReference: {fileID: 21300000, guid: b60763333126a3844a3918c59c03d2da, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: af6427c0ab524a94a86d6da9b98c10c9, type: 3}
+      objectReference: {fileID: 21300000, guid: 75d23e3c79c5ec340ab0b6d3e05fbf96, type: 3}
     - target: {fileID: 7791380139753288763, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -10475,15 +10475,15 @@ PrefabInstance:
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: e91ab05a7b5ef654593445a0a16413c8, type: 3}
+      objectReference: {fileID: 21300000, guid: f519a02e66619d94caeb2de95fb04de4, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 439cd03f9dfeba94d80cfc0b29cf58be, type: 3}
+      objectReference: {fileID: 21300000, guid: b60763333126a3844a3918c59c03d2da, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: af6427c0ab524a94a86d6da9b98c10c9, type: 3}
+      objectReference: {fileID: 21300000, guid: 75d23e3c79c5ec340ab0b6d3e05fbf96, type: 3}
     - target: {fileID: 7791380139753288763, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11553,15 +11553,15 @@ PrefabInstance:
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: e91ab05a7b5ef654593445a0a16413c8, type: 3}
+      objectReference: {fileID: 21300000, guid: f519a02e66619d94caeb2de95fb04de4, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 439cd03f9dfeba94d80cfc0b29cf58be, type: 3}
+      objectReference: {fileID: 21300000, guid: b60763333126a3844a3918c59c03d2da, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: af6427c0ab524a94a86d6da9b98c10c9, type: 3}
+      objectReference: {fileID: 21300000, guid: 75d23e3c79c5ec340ab0b6d3e05fbf96, type: 3}
     - target: {fileID: 7791380139753288763, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -30145,6 +30145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StagePanel: {fileID: 0}
+  Tutorial_Panel: {fileID: 0}
   Stage1_Panel: {fileID: 0}
   Stage2_Panel: {fileID: 0}
   Stage3_Panel: {fileID: 0}
@@ -32761,6 +32762,7 @@ MonoBehaviour:
   BgmSlider: {fileID: 759432405}
   PlayerHitSlider: {fileID: 62682925}
   BossHitSlider: {fileID: 1418945082}
+  MainBGM: {fileID: 0}
 --- !u!114 &1630474277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34102,6 +34104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StagePanel: {fileID: 0}
+  Tutorial_Panel: {fileID: 0}
   Stage1_Panel: {fileID: 0}
   Stage2_Panel: {fileID: 0}
   Stage3_Panel: {fileID: 0}
@@ -37026,15 +37029,15 @@ PrefabInstance:
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: e91ab05a7b5ef654593445a0a16413c8, type: 3}
+      objectReference: {fileID: 21300000, guid: f519a02e66619d94caeb2de95fb04de4, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 439cd03f9dfeba94d80cfc0b29cf58be, type: 3}
+      objectReference: {fileID: 21300000, guid: b60763333126a3844a3918c59c03d2da, type: 3}
     - target: {fileID: 7791380139753288761, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: stage2_sprites.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: af6427c0ab524a94a86d6da9b98c10c9, type: 3}
+      objectReference: {fileID: 21300000, guid: 75d23e3c79c5ec340ab0b6d3e05fbf96, type: 3}
     - target: {fileID: 7791380139753288763, guid: 1e566a08783789542b1b428fb7164a0d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

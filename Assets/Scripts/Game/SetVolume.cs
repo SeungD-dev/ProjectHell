@@ -12,6 +12,7 @@ public class SetVolume : MonoBehaviour
     public Slider PlayerHitSlider;
     public Slider BossHitSlider;
     public Slider MainBGM;
+    public Slider MainClick;
 
 
     public void SetLevel ()
@@ -32,5 +33,10 @@ public class SetVolume : MonoBehaviour
     public void SetMainBGM() 
     {
         mixer.SetFloat("MainBGM", Mathf.Log10(MainBGM.value) * 20);
+    }
+
+    public void SetMainClick()
+    {
+        mixer.SetFloat("MainClick", Mathf.Log10(MainClick.value) * 20);
     }
 }
