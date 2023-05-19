@@ -13,12 +13,14 @@ public class SceneChange : MonoBehaviour
     public GameObject Stage2_Panel;
     public GameObject Stage3_Panel;
     public GameObject OptionPanel;
+    public GameObject TutoCheck_Panel;
     public AudioSource ClickSound;
 
     void Start()
     {
         StagePanel.SetActive(false);
         Tutorial_Panel.SetActive(false);
+        TutoCheck_Panel.SetActive(false);
         Stage1_Panel.SetActive(false);
         Stage2_Panel.SetActive(false);
         Stage3_Panel.SetActive(false);
@@ -116,6 +118,18 @@ public class SceneChange : MonoBehaviour
     {
         Tutorial_Panel.SetActive(false);
         StagePanel.SetActive(true);
+        ClickSound.Play();
+    }
+
+    public void TutoCheck_Button()
+    {
+        TutoCheck_Panel.SetActive(true);
+        ClickSound.Play();
+    }
+
+    public void TutoCheck_NButton()
+    {
+        TutoCheck_Panel.SetActive(false);
         ClickSound.Play();
     }
 
