@@ -399,7 +399,7 @@ RectTransform:
   m_GameObject: {fileID: 8949949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.5, y: 5, z: 1}
+  m_LocalScale: {x: 11.4, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 843447053}
@@ -407,7 +407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -0}
+  m_AnchoredPosition: {x: -3, y: -26.000029}
   m_SizeDelta: {x: -980, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8949951
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68802e526a34cc54dafd835c0901222b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ee44c1d8e0c96847a7c4f591df509b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4600,7 +4600,7 @@ RectTransform:
   m_GameObject: {fileID: 174923243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.5, y: 5, z: 1}
+  m_LocalScale: {x: 11.4, y: 5.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 393022002}
@@ -4608,7 +4608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -0}
+  m_AnchoredPosition: {x: -3, y: -26}
   m_SizeDelta: {x: -980, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &174923245
@@ -4639,7 +4639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68802e526a34cc54dafd835c0901222b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ee44c1d8e0c96847a7c4f591df509b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8200,7 +8200,7 @@ RectTransform:
   m_GameObject: {fileID: 300924835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.835625, y: 2, z: 1}
+  m_LocalScale: {x: 3.61, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 843447053}
@@ -8208,7 +8208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 440, y: 62}
+  m_AnchoredPosition: {x: 490, y: -56}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &300924837
@@ -25135,7 +25135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162, y: -91}
+  m_AnchoredPosition: {x: 323, y: -102.000015}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1030073682
@@ -25175,8 +25175,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -25200,7 +25200,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -32375,7 +32375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162, y: -91}
+  m_AnchoredPosition: {x: 323, y: -102}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1319395836
@@ -32415,8 +32415,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -32440,7 +32440,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -35390,9 +35390,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StagePanel: {fileID: 0}
+  Tutorial_Panel: {fileID: 0}
   Stage1_Panel: {fileID: 0}
   Stage2_Panel: {fileID: 0}
   Stage3_Panel: {fileID: 0}
+  OptionPanel: {fileID: 0}
+  TutoCheck_Panel: {fileID: 0}
+  ClickSound: {fileID: 0}
 --- !u!114 &1461217808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37829,7 +37833,7 @@ RectTransform:
   m_GameObject: {fileID: 1580947520}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.61, y: 2, z: 1}
+  m_LocalScale: {x: 3.61, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 393022002}
@@ -37837,7 +37841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 422, y: 62}
+  m_AnchoredPosition: {x: 490, y: -56}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1580947522
@@ -40650,9 +40654,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StagePanel: {fileID: 0}
+  Tutorial_Panel: {fileID: 0}
   Stage1_Panel: {fileID: 0}
   Stage2_Panel: {fileID: 0}
   Stage3_Panel: {fileID: 0}
+  OptionPanel: {fileID: 0}
+  TutoCheck_Panel: {fileID: 0}
+  ClickSound: {fileID: 0}
 --- !u!114 &1690871740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43250,6 +43258,8 @@ MonoBehaviour:
   BgmSlider: {fileID: 1895732251}
   PlayerHitSlider: {fileID: 70459672}
   BossHitSlider: {fileID: 2046765662}
+  MainBGM: {fileID: 0}
+  MainClick: {fileID: 0}
 --- !u!4 &1768067729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34680953296216637, guid: be739e53536038a49a9a756f1e7b04c3, type: 3}
@@ -49736,6 +49746,10 @@ MonoBehaviour:
   hitParticle: {fileID: 548853225}
   flip: 0
   jumpCC: 0
+  jumpC: 0
+  leftC: 0
+  rightC: 0
+  tutorial: 
   playerhitSound: {fileID: 2068493930}
 --- !u!54 &1973964575
 Rigidbody:

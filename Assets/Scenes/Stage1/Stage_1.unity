@@ -404,7 +404,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162, y: -91}
+  m_AnchoredPosition: {x: 315, y: -115.000046}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9468297
@@ -436,8 +436,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2071,7 +2071,7 @@ RectTransform:
   m_GameObject: {fileID: 119676181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.5, y: 5, z: 1}
+  m_LocalScale: {x: 11.4, y: 7.2875004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 160364386}
@@ -2079,8 +2079,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -0}
-  m_SizeDelta: {x: -980, y: -400}
+  m_AnchoredPosition: {x: -3, y: -35}
+  m_SizeDelta: {x: -980, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119676183
 MonoBehaviour:
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68802e526a34cc54dafd835c0901222b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6530cfac68861f44d8369f2cc83944b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3248,7 +3248,7 @@ RectTransform:
   m_GameObject: {fileID: 160364385}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.97973734, y: 0.97973734, z: 0.97973734}
+  m_LocalScale: {x: 0.97973996, y: 0.97973996, z: 0.97973996}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 119676182}
@@ -7486,7 +7486,7 @@ RectTransform:
   m_GameObject: {fileID: 368886434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4769427, y: 1, z: 1}
+  m_LocalScale: {x: 3.61, y: 3.1748, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 778135422}
@@ -7494,7 +7494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 214, y: 62}
+  m_AnchoredPosition: {x: 505, y: -55}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368886436
@@ -12019,7 +12019,7 @@ RectTransform:
   m_GameObject: {fileID: 628074712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.61, y: 2, z: 1}
+  m_LocalScale: {x: 3.61, y: 3.1748, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 160364386}
@@ -12027,7 +12027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 440, y: 62}
+  m_AnchoredPosition: {x: 505, y: -55}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628074714
@@ -14419,6 +14419,8 @@ MonoBehaviour:
   BgmSlider: {fileID: 1006044035}
   PlayerHitSlider: {fileID: 804583886}
   BossHitSlider: {fileID: 1368339561}
+  MainBGM: {fileID: 0}
+  MainClick: {fileID: 0}
 --- !u!114 &721925663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15652,7 +15654,7 @@ RectTransform:
   m_GameObject: {fileID: 778135421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.97973734, y: 0.97973734, z: 0.97973734}
+  m_LocalScale: {x: 0.97973996, y: 0.97973996, z: 0.97973996}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1565449562}
@@ -19434,7 +19436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162, y: -91}
+  m_AnchoredPosition: {x: 315, y: -115}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987570870
@@ -19466,8 +19468,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -19491,7 +19493,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -28358,9 +28360,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StagePanel: {fileID: 0}
+  Tutorial_Panel: {fileID: 0}
   Stage1_Panel: {fileID: 0}
   Stage2_Panel: {fileID: 0}
   Stage3_Panel: {fileID: 0}
+  OptionPanel: {fileID: 0}
+  TutoCheck_Panel: {fileID: 0}
+  ClickSound: {fileID: 0}
 --- !u!114 &1461217808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30379,7 +30385,7 @@ RectTransform:
   m_GameObject: {fileID: 1565449561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10.5, y: 5, z: 1}
+  m_LocalScale: {x: 11.4, y: 7.2875004, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 778135422}
@@ -30387,8 +30393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -0}
-  m_SizeDelta: {x: -980, y: -400}
+  m_AnchoredPosition: {x: -3, y: -34.999985}
+  m_SizeDelta: {x: -980, y: -427}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565449563
 MonoBehaviour:
@@ -30410,7 +30416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68802e526a34cc54dafd835c0901222b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6530cfac68861f44d8369f2cc83944b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33492,9 +33498,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StagePanel: {fileID: 0}
+  Tutorial_Panel: {fileID: 0}
   Stage1_Panel: {fileID: 0}
   Stage2_Panel: {fileID: 0}
   Stage3_Panel: {fileID: 0}
+  OptionPanel: {fileID: 0}
+  TutoCheck_Panel: {fileID: 0}
+  ClickSound: {fileID: 0}
 --- !u!114 &1690871740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39585,6 +39595,10 @@ MonoBehaviour:
   hitParticle: {fileID: 443622713}
   flip: 0
   jumpCC: 0
+  jumpC: 0
+  leftC: 0
+  rightC: 0
+  tutorial: 
   playerhitSound: {fileID: 1902442719}
 --- !u!54 &1973964575
 Rigidbody:
