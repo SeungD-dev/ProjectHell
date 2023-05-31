@@ -27,7 +27,10 @@ public class Izanami_Anim : MonoBehaviour
     void Update()
     {
         //time += Time.deltaTime;
-        AnimationUpdate();
+        if (boss2_Status.currentHp >= 5)
+            AnimationUpdate();
+        else if (boss2_Status.currentHp <= 4)
+            AnimationUpdate_Low();
 
 
         PositionAnimUpdate();
@@ -48,8 +51,9 @@ public class Izanami_Anim : MonoBehaviour
            
             anim.SetBool("Boss2_isIdle1", false);
             anim.SetTrigger("Boss2_Transform");
+           
         }
-        if (time >= 99.93)
+        if (time >= 99.93 && boss2_Status.currentHp >=5)
         {
             //anim.SetTrigger("Boss2_Idle2");
             anim.SetBool("Boss2_isIdle2", true);
@@ -83,20 +87,30 @@ public class Izanami_Anim : MonoBehaviour
             anim.SetTrigger("Boss2_Idle2");
         }
 
+       
+
+    }
+    void AnimationUpdate_Low()
+    {
         //보스 체력 적을 때 Idle
-        if(boss2_Status.currentHp <= 4)
+        if (boss2_Status.currentHp <= 4)
         {
             anim.SetBool("Boss2_isIdle2", false);
             anim.SetBool("Boss2_isLow", true);
             anim.SetTrigger("Boss2_Low");
+           
         }
-
+        if(anim.GetBool("Boss2_isLow") == true)
+        {
+            anim.SetTrigger("Boss2_Low");
+        }
         //보스 체력 적을 때 히트
-        if(boss2_Status.isHit == true && anim.GetBool("Boss2_isLow")==true && anim.GetBool("Boss2_isIdle2") == false)
+        if (boss2_Status.isHit == true && anim.GetBool("Boss2_isLow") == true)
         {
             anim.SetTrigger("Boss2_LowHit");
+            boss2_Status.isHit = false;
         }
-        if(boss2_Status.isHit == false && anim.GetBool("Boss2_isLow") == true)
+        if (boss2_Status.isHit == false && anim.GetBool("Boss2_isLow") == true)
         {
             anim.SetTrigger("Boss2_Low");
         }
@@ -106,7 +120,6 @@ public class Izanami_Anim : MonoBehaviour
         {
             anim.SetTrigger("Boss2_Death");
         }
-
 
     }
 

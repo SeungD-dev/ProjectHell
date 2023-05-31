@@ -20597,7 +20597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74795ab901377da42a5e94ae49c5ac39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 25
+  maxHp: 4
   currentHp: 0
   boss2_HPtime: 180
   Line: {fileID: 1804223923}
@@ -31625,7 +31625,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3681123117192020975, guid: 11c0bf642f602e74ea08b5fb7fd7edd0, type: 2}
   m_audioClip: {fileID: 8300000, guid: d73a5b73fef67c645b84310620ed98e0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
