@@ -20455,6 +20455,7 @@ MonoBehaviour:
   slash:
   - {fileID: 7351717229710443770, guid: a0d9e6867057f944097f7ea88b14ec14, type: 3}
   - {fileID: 2196665828978943546, guid: 28226164f0bdd7a4c95cbd1e79f453a0, type: 3}
+  - {fileID: 4320387675806354086, guid: c485a80bec3b66740a6fd50d3f8e0f69, type: 3}
   boss: {fileID: 1030576425}
   possibleXValues:
   - -1.7
@@ -34193,7 +34194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1698875049
 SpriteRenderer:
   m_ObjectHideFlags: 0
