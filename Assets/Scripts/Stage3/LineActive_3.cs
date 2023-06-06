@@ -19,6 +19,9 @@ public class LineActive_3 : MonoBehaviour
         bind.SetActive(false);
         BGM.SetActive(false);
         GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(false);
+        GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(false);
+        GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(false);
+        GameObject.Find("Line").transform.Find("Line4").gameObject.SetActive(false);
     }
     void Update()
     {
@@ -26,6 +29,12 @@ public class LineActive_3 : MonoBehaviour
         if (time >= 0)
         {
             GameObject.Find("Line").transform.Find("Line1").gameObject.SetActive(true);
+        }
+        if(time >= 4)
+        {
+            GameObject.Find("Line").transform.Find("Line2").gameObject.SetActive(true);
+            GameObject.Find("Line").transform.Find("Line3").gameObject.SetActive(true);
+            GameObject.Find("Line").transform.Find("Line4").gameObject.SetActive(true);
         }
         if(time >= 0.9f)
         {

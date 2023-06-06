@@ -191,6 +191,8 @@ public class PlayerControl : MonoBehaviour
         else if (other.CompareTag("UnderFloor"))
         {
             Hurt();
+            fTickTime = 0;
+            StartCoroutine(HurtCooldown());
             Debug.Log(playerhp.player_currentHP);
         }     
     }
