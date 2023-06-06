@@ -25,6 +25,10 @@ public class SceneChange : MonoBehaviour
         Stage2_Panel.SetActive(false);
         Stage3_Panel.SetActive(false);
         OptionPanel.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "StageScene")
+        {
+            StagePanel.SetActive(true);
+        }
     }
 
     /*public void LoadingButton() //버튼클릭시 호출
