@@ -17588,11 +17588,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 15
   currentHp: 0
-  boss2_HPtime: 90
-  Line: {fileID: 0}
+  boss2_HPtime: 120
+  Line: {fileID: 1804223923}
   hitParticle: {fileID: 1817241025}
   isHit: 0
   isHit_ph2: 0
+  timeStop: 0
   ad:
   - {fileID: 8300000, guid: 2ae55b205749d05409dc1a5bdbde679f, type: 3}
   - {fileID: 8300000, guid: dc59328e349afc44b8612b4dfbcf54f6, type: 3}
@@ -20605,6 +20606,7 @@ MonoBehaviour:
   hitParticle: {fileID: 0}
   isHit: 0
   isHit_ph2: 0
+  timeStop: 0
   ad: []
 --- !u!1001 &1031474655
 PrefabInstance:

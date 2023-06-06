@@ -11,7 +11,7 @@ public class Boss2_Status : MonoBehaviour
     public float boss2_HPtime = 120;
     public GameObject Line;
     public GameObject hitParticle;
-    public bool isHit , isHit_ph2;
+    public bool isHit , isHit_ph2, timeStop = false;
     public AudioClip[] ad;
     AudioSource audio;
     Scene scene;
@@ -27,7 +27,11 @@ public class Boss2_Status : MonoBehaviour
     void Update()
     // Update is called once per frame
     {
-        boss2_HPtime -= Time.deltaTime;
+        if (!timeStop)
+        {
+            boss2_HPtime -= Time.deltaTime;
+        }
+       
         if (currentHp <= 0)
         {
             Line.SetActive(false);
@@ -35,7 +39,7 @@ public class Boss2_Status : MonoBehaviour
             Destroy(GameObject.FindWithTag("SwordTrail_Vertical"));
             GameResultButton.clear = scene.name;
             Debug.Log(scene.name);
-            Invoke("LoadScene", 2f);
+            Invoke("LoadScene", 4f);
         }
         if (boss2_HPtime <= 0)
         {
@@ -43,7 +47,7 @@ public class Boss2_Status : MonoBehaviour
             Destroy(GameObject.FindWithTag("SwordTrail"));
             Destroy(GameObject.FindWithTag("SwordTrail_Vertical"));
             GameResultButton.clear = scene.name;
-            Invoke("LoadScene", 2f);
+            Invoke("LoadScene", 4f);
         }
     }
 
