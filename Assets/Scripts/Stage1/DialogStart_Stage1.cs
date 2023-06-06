@@ -20,14 +20,15 @@ public class DialogStart_Stage1 : MonoBehaviour
 	GameManager gameManager;
 	Anubis_Anim Boss1Anim;
 	BoomFX boomFX;
-	public GameObject line;
+	Anubis_Status statusB1;
+    public GameObject line;
 
     private void Awake()
     {
 		gameManager = FindObjectOfType<GameManager>();
 		Boss1Anim = FindObjectOfType<Anubis_Anim>();
 		boomFX = FindObjectOfType<BoomFX>();
-
+		statusB1 = FindObjectOfType<Anubis_Status>();
 		
     }
 
@@ -35,14 +36,14 @@ public class DialogStart_Stage1 : MonoBehaviour
 	{
 		startDialog01 = true;
 		audioSource.Pause();
-		gameManager.timeStop = true; Boss1Anim.timeStop = true; boomFX.timeStop = true;
+		gameManager.timeStop = true; Boss1Anim.timeStop = true; boomFX.timeStop = true; statusB1.timeStop = true;
 		line.SetActive(false);
 
 
 		// 첫 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialog01.UpdateDialog1());
 		audioSource.Play();
-		line.SetActive(true); gameManager.timeStop = false; boomFX.timeStop = false;
+		line.SetActive(true); gameManager.timeStop = false; boomFX.timeStop = false; statusB1.timeStop = false;
         Boss1Anim.timeStop = false;
 		
 
@@ -64,12 +65,12 @@ public class DialogStart_Stage1 : MonoBehaviour
 		}
 		//textCountdown.gameObject.SetActive(false);
 		audioSource.Pause();
-		line.SetActive(false); Boss1Anim.timeStop = true; gameManager.timeStop = true;
-		boomFX.timeStop = true;
+		line.SetActive(false); Boss1Anim.timeStop = true; gameManager.timeStop = true; statusB1.timeStop = true;
+        boomFX.timeStop = true;
 		// 두 번째 대사 분기 시작
 		yield return new WaitUntil(() => dialog02.UpdateDialog1());
-		line.SetActive(true); Boss1Anim.timeStop = false; gameManager.timeStop = false; boomFX.timeStop = false;
-		audioSource.Play();
+		line.SetActive(true); Boss1Anim.timeStop = false; gameManager.timeStop = false; boomFX.timeStop = false; statusB1.timeStop = false;
+        audioSource.Play();
 		
 
 		yield return new WaitForSeconds(2);

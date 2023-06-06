@@ -9,7 +9,7 @@ public class Boss3_Status : MonoBehaviour
     public int currentHp;
     public float boss3_HPtime = 90;
 
-    public bool isHit = false, isHit_AtkTime1 = false;
+    public bool isHit = false, isHit_AtkTime1 = false, timeStop = true;
     public GameObject Line;
     public GameObject hitParticle;
     Scene scene;
@@ -29,7 +29,10 @@ public class Boss3_Status : MonoBehaviour
     void Update()
     // Update is called once per frame
     {
-        boss3_HPtime -= Time.deltaTime;
+        if (!timeStop)
+        {
+            boss3_HPtime -= Time.deltaTime;
+        }        
 
         if (currentHp <= 0)
         {

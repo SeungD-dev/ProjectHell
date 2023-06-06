@@ -52341,7 +52341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnubisHP: 10
-  AnubisHPtime: 150
+  AnubisHPtime: 130
   sprites:
   - {fileID: 21300000, guid: db93f8cd09803e04ab259e04bd9f0ff4, type: 3}
   - {fileID: 21300000, guid: 9c3e40ca9cf8b3f4bb19e609a1bbff19, type: 3}
@@ -52352,6 +52352,7 @@ MonoBehaviour:
   hitParticle: {fileID: 367529513}
   Line: {fileID: 1804223923}
   isHit: 0
+  timeStop: 1
 --- !u!82 &2021083198
 AudioSource:
   m_ObjectHideFlags: 0

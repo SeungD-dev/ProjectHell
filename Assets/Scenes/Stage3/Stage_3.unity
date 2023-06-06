@@ -51805,7 +51805,8 @@ MonoBehaviour:
   boss3_HPtime: 135
   isHit: 0
   isHit_AtkTime1: 0
-  Line: {fileID: 0}
+  timeStop: 1
+  Line: {fileID: 1804223923}
   hitParticle: {fileID: 294930153}
 --- !u!82 &2021083199
 AudioSource:

@@ -14,7 +14,7 @@ public class Anubis_Status : MonoBehaviour
     public AudioSource anubisHitSound, anubisDeadSound;
     public GameObject hitParticle;
     public GameObject Line;
-    public bool isHit = false;
+    public bool isHit = false, timeStop = true;
 
     Scene scene;
 
@@ -29,7 +29,10 @@ public class Anubis_Status : MonoBehaviour
    
     void Update()
     {
-        AnubisHPtime -= Time.deltaTime;
+        if (!timeStop)
+        {
+            AnubisHPtime -= Time.deltaTime;
+        }
 
         if(AnubisHP <= 0)
         {
