@@ -70,8 +70,16 @@ public class Boss2_Status : MonoBehaviour
             Invoke("BossHitParticle", 1f);
             Destroy(other.gameObject);
             isHit = true;
-            audio.clip = ad[Random.Range(0, 2)];
-            audio.Play();
+            if(currentHp >= 1)
+            {
+                audio.clip = ad[Random.Range(0, 2)];
+                audio.Play();
+            }
+            else if (currentHp <= 0)
+            {
+                audio.clip = ad[2];
+                audio.Play();
+            }
         }
     }
 }
