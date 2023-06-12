@@ -95,6 +95,59 @@ public class PlayerControl : MonoBehaviour
                 fTickTime = 0f;
             }
         }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (gameObject.transform.position.x > -0.89 && flip == false && isJump == false)
+            {
+                leftBtn.GetComponent<Button>().interactable = true;
+                transform.Translate(-0.88f, 0.3f, 0);
+                leftC++;
+            }
+            else if (gameObject.transform.position.x < 0.89 && flip == true)
+            {
+                rightBtn.GetComponent<Button>().interactable = true;
+                transform.Translate(0.88f, 0.3f, 0);
+                leftC++;
+            }
+            else if (gameObject.transform.position.x > -0.89 && flip == false && isJump == true)
+            {
+                leftBtn.GetComponent<Button>().interactable = true;
+                transform.Translate(-0.88f, 0, 0);
+                leftC++;
+            }
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            if (gameObject.transform.position.x < 0.89 && flip == false && isJump == false)
+            {
+                rightBtn.GetComponent<Button>().interactable = true;
+                transform.Translate(0.88f, 0.3f, 0);
+                rightC++;
+            }
+            else if (gameObject.transform.position.x > -0.89 && flip == true)
+            {
+                leftBtn.GetComponent<Button>().interactable = true;
+                transform.Translate(-0.88f, 0.3f, 0);
+                rightC++;
+            }
+            else if (gameObject.transform.position.x < 0.89 && flip == false && isJump == true)
+            {
+                rightBtn.GetComponent<Button>().interactable = true;
+                transform.Translate(0.88f, 0, 0);
+                rightC++;
+            }
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (!jumpAllowed && !jumpCC)
+            {
+                jumpAllowed = true;
+                jumpC++;
+                GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                isJump = true;
+                //gameObject.layer = 7;
+            }
+        }
     }
 
     public void JumpTouched()
