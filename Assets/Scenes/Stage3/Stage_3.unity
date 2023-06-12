@@ -50039,8 +50039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e282f36c593124191d433c41e0c926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_MaxHP: 100
-  player_currentHP: 100
+  player_MaxHP: 3
+  player_currentHP: 3
   hpImage:
   - {fileID: 1630572550}
   - {fileID: 1995319749}
@@ -51800,7 +51800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9d5a47e788a8f4f8c5e4a2c49d8126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 25
+  maxHp: 20
   currentHp: 0
   boss3_HPtime: 135
   isHit: 0

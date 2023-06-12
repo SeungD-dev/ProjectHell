@@ -149,7 +149,7 @@ public class Izanami_Anim : MonoBehaviour
                 if (time >= 56f && anim.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Idle"))
                 {
                     duration += Time.deltaTime;
-                    if (duration >= 3f)
+                    if (duration >= 2.5f)
                     {
                         anim.SetTrigger("Boss2_Atk2");
                         duration = 0f;
