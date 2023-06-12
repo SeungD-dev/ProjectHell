@@ -51808,6 +51808,9 @@ MonoBehaviour:
   timeStop: 1
   Line: {fileID: 1804223923}
   hitParticle: {fileID: 294930153}
+  ad:
+  - {fileID: 8300000, guid: 33d98aea768e6ca4cb7d2a1282a30be9, type: 3}
+  - {fileID: 8300000, guid: 7f34cb06886579f488ffefba4d4db64f, type: 3}
 --- !u!82 &2021083199
 AudioSource:
   m_ObjectHideFlags: 0
@@ -51818,7 +51821,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6245676528144688576, guid: 11c0bf642f602e74ea08b5fb7fd7edd0, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ed691a57926023c428047a8cc0bf24ea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 33d98aea768e6ca4cb7d2a1282a30be9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

@@ -14,6 +14,7 @@ public class Boss3_Status : MonoBehaviour
     public GameObject hitParticle;
     Scene scene;
     AudioSource audio;
+    public AudioClip[] ad;
 
     Reaper_Anim ra;
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class Boss3_Status : MonoBehaviour
         ra = FindObjectOfType<Reaper_Anim>();
         audio = this.GetComponent<AudioSource>();
         hitParticle.SetActive(false);
+        audio.clip = ad[0];
     }
 
     void Update()
@@ -68,6 +70,11 @@ public class Boss3_Status : MonoBehaviour
             Invoke("BossHitParticle", 1f);
             isHit = true;
             audio.Play();
+            if(currentHp <= 0)
+            {
+                audio.clip = ad[1];
+                audio.Play();
+            }
         }
         //첫 번째 기믹 모션 중 피격
         if (other.CompareTag("PlayerAttack") && ra.AtkTime1 == true)
@@ -78,6 +85,11 @@ public class Boss3_Status : MonoBehaviour
             Invoke("BossHitParticle", 1f);
             isHit_AtkTime1 = true;
             audio.Play();
+            if (currentHp <= 0)
+            {
+                audio.clip = ad[1];
+                audio.Play();
+            }
         }
     }
 }

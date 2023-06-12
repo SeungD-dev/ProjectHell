@@ -27,6 +27,7 @@ public class GameResultButton : MonoBehaviour
     {
         switch (clear)
         {
+            
             case "Stage_1":
                 Stage1_Clear.SetActive(true);
                 break;
