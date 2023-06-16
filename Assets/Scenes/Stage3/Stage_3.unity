@@ -9710,7 +9710,7 @@ MonoBehaviour:
   dialogs3:
   - speakerIndex3: 0
     name3: "\uADF8\uB9BC \uB9AC\uD37C"
-    dialog3: "\uB300\uC0AC\uAC00 \uB098\uC640\uC6A9 "
+    dialog3: ...........
   dialogStart_Stage3: {fileID: 473332124}
   isGameStarted: 0
 --- !u!4 &350091475 stripped
@@ -54668,7 +54668,7 @@ MonoBehaviour:
   dialogs3:
   - speakerIndex3: 0
     name3: "\uADF8\uB9BC \uB9AC\uD37C"
-    dialog3: "\uB300\uC0AC\uAC00 \uB098\uC640\uC6A9 "
+    dialog3: .....
   dialogStart_Stage3: {fileID: 473332124}
   isGameStarted: 0
 --- !u!4 &2120164391 stripped

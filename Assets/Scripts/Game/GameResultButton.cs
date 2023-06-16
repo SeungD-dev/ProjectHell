@@ -61,6 +61,8 @@ public class GameResultButton : MonoBehaviour
         Stage2_Fail.SetActive(false);
         Stage3_Clear.SetActive(false);
         Stage3_Fail.SetActive(false);
+        clear = "";
+        fail = "";
         SceneManager.LoadScene("MainScene");
     }
 
@@ -72,6 +74,8 @@ public class GameResultButton : MonoBehaviour
         Stage2_Fail.SetActive(false);
         Stage3_Clear.SetActive(false);
         Stage3_Fail.SetActive(false);
+        clear = "";
+        fail = "";
         SceneManager.LoadScene("StageScene");
     }
 
@@ -83,6 +87,8 @@ public class GameResultButton : MonoBehaviour
         Stage2_Fail.SetActive(false);
         Stage3_Clear.SetActive(false);
         Stage3_Fail.SetActive(false);
+        clear = "";
+        fail = "";
         SceneManager.LoadScene("Stage_1");
     }
 
@@ -94,6 +100,8 @@ public class GameResultButton : MonoBehaviour
         Stage2_Fail.SetActive(false);
         Stage3_Clear.SetActive(false);
         Stage3_Fail.SetActive(false);
+        clear = "";
+        fail = "";
         SceneManager.LoadScene("Stage_2");
     }
 
@@ -105,6 +113,8 @@ public class GameResultButton : MonoBehaviour
         Stage2_Fail.SetActive(false);
         Stage3_Clear.SetActive(false);
         Stage3_Fail.SetActive(false);
+        clear = "";
+        fail = "";
         SceneManager.LoadScene("Stage_3");
     }
 }
