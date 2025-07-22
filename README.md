@@ -3,8 +3,7 @@
 Unity 기반의 졸업작품으로 제작한 2D 액션 런게임입니다.  
 플레이어는 보스의 영역으로 진입해 점점 강해지는 몬스터를 상대하고, 보스전을 거쳐 클리어하는 구조입니다.
 
-▶️ **[게임 플레이 영상 보기](https://youtu.be/ue9dcApmsUo)**  
-🔗 **[팀원 GitHub 링크 (이윤수)](https://github.com/SeungD-dev)**
+▶️ [게임 플레이 영상 보기](https://youtu.be/ue9dcApmsUo)
 
 ![게임 썸네일](https://img.youtube.com/vi/ue9dcApmsUo/0.jpg)
 
